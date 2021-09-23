@@ -19,7 +19,6 @@
     <body>
     <!-- HEADER -->
         <header>
-            <section>
                 <a href="./index.html"><img src="./images/logo_orinoco.png" alt="Logo Orinoco"/></a>
                 <button class="nav-toggler"><i class="fas fa-bars"></i></button>
                 <nav>
@@ -29,17 +28,16 @@
                         <li><a href="./panier.html"><i class="fas fa-shopping-cart"></i>Mon panier</a></li>
                     </ul>
                 </nav>
-            </section>
-            <section class="">
-                <h1>Orinoako</h1>
-                <hr>
-                <p>Meubles en chêne</p>
-            </section>
         </header>
 
     <!-- MAIN -->
         <main>
             <section class="presentation">
+                <header>
+                    <h1>Orinoako</h1>
+                    <hr>
+                    <p>Meubles en chêne</p>
+                </header>
                 <figure>
                     <img>
                     <figcaption>
@@ -50,7 +48,9 @@
                 </figure>
             </section>
             <section class="products" id="products-section">
-                <h2 class="products-title">Nos produits</h2>
+                <header>
+                    <h2 class="products-title">Nos produits</h2>
+                </header>
                 <article class="products-card">
                     <a href="#">
                         <figure>
@@ -106,66 +106,60 @@
                         </figure>
                     </a>
                 </article>
+            </section>
+            <section>
+                <h3>Inscrivez-vous à notre newsletter et recevez nos dernières actus et nos offres exclusives</h3>
+                <form method="post" action="">
+                    <label for="email">
+                        <i class="far fa-envelope"></i>
+                    </label>
+                    <input type="email" name="email" placeholder="Entrez votre adresse e-mail" id="email"/>
+                    <button>S'abonner</button>
+                </form>
             </section>
         </main>
 
     <!-- FOOTER -->
         <footer>
-            <section>
-                <p>Inscrivez-vous à notre newsletter et recevez nos dernières actus et nos offres exclusives</p>
-                <form method="post" action="">
-                    <label for="mail">
-                        <i class="far fa-envelope"></i>
-                    </label>
-                    <input type="mail" name="mail" placeholder="Entrez votre adresse e-mail" id="mail"/>
-                    <button>S'abonner</button>
-                </form>
-            </section>
-            <section>
-                <h3>Mentions
-                    <nav>
-                        <ul>
-                            <li><a href="#">Mentions légales</a></li>
-                            <li><a href="#">CGV</a></li>
-                            <li><a href="#">Politique de confidentialité</a></li>
-                            <li><a href="#">Cookies</a></li>
-                        </ul>
-                    </nav>
-                </h3>
-                <h3>Liens utiles
-                    <nav>
-                        <ul>
-                            <li><a href="#">Partenaires</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Support technique</a></li>
-                            <li><a href="#">Presse</a></li>
-                         </ul>
-                    </nav>
-                </h3>
-                <h3>Services
-                    <nav>
-                        <ul>
-                            <li><a href="#">A propos</a></li>
-                            <li><a href="#">Suivi de colis</a></li>
-                            <li><a href="#">Retours</a></li>
-                            <li><a href="#">Carrière</a></li>
-                            <li><a href="#">Nous écrire</a></li>
-                        </ul>
-                    </nav>
-                </h3>
-                <h3>Nous suivre
-                    <nav>
-                        <ul>
-                            <li><a><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a><i class="fab fa-twitter"></i></a></li>
-                            <li><a><i class="fab fa-google-plus-g"></i></a></li>
-                            <li><a><i class="fab fa-instagram"></i></a></li>
-                            <li><a><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a><i class="fab fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </nav>
-                </h3>
-            </section>
+            <h3>Mentions</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">CGV</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </nav>
+            <h3>Liens utiles</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">Partenaires</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support technique</a></li>
+                    <li><a href="#">Presse</a></li>
+                </ul>
+            </nav>
+            <h3>Services</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">A propos</a></li>
+                    <li><a href="#">Suivi de colis</a></li>
+                    <li><a href="#">Retours</a></li>
+                    <li><a href="#">Carrière</a></li>
+                    <li><a href="#">Nous écrire</a></li>
+                </ul>
+            </nav>
+            <h3>Nous suivre</h3>
+            <nav>
+                <ul>
+                    <li><a><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a><i class="fab fa-twitter"></i></a></li>
+                    <li><a><i class="fab fa-google-plus-g"></i></a></li>
+                    <li><a><i class="fab fa-instagram"></i></a></li>
+                    <li><a><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a><i class="fab fa-pinterest-p"></i></a></li>
+                </ul>
+            </nav>
             <hr>
             <p>©2021 Copyright - Orinoco</p>
         </footer>
