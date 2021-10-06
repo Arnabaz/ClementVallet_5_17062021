@@ -1,4 +1,8 @@
 /* -------------------------------------------------- GENERAL CONTENT ------------------------------------------ */
+root {
+  font-size: 10px;
+}
+
 /* ----- Consent form  ----- */
 #consent_form {
   display: none;
@@ -7,6 +11,8 @@
 /* ----- Header ----- */
 .header {
   padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo_link img {
@@ -15,15 +21,13 @@
 }
 
 .bars-button {
-  height: 40px;
-  width: 40px;
   border: none;
   background-color: transparent;
 }
 
 .bars-icon {
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 35px;
+  width: 70px;
 }
 
 .menu-navbar {
@@ -31,6 +35,47 @@
 }
 
 /* ----- Main ----- */
+.presentation_header {
+  background: linear-gradient(rgba(201, 155, 76, 0.43), rgba(201, 155, 76, 0.43)), url("../images/presentation_background.jpg");
+  background-color: #c99b4c;
+  background-size: cover;
+  height: 250px;
+  width: 100%;
+  padding: 25px 10%;
+}
+.presentation_title {
+  font-size: 2.4rem;
+  font-family: Voltaire, Helvetica;
+  text-align: center;
+  line-height: 100px;
+  border-bottom: solid 3px black;
+}
+.presentation_subtitle {
+  font-size: 1.75rem;
+  font-family: Voltaire, Helvetica;
+  font-weight: 300;
+  text-align: center;
+  line-height: 100px;
+}
+.presentation_figure {
+  padding: 20px;
+}
+.presentation_figure-img {
+  height: 210px;
+  object-fit: cover;
+  object-position: bottom;
+}
+.presentation_figure-text {
+  display: inline-block;
+  border: solid 2px black;
+  font-size: 1.5rem;
+  font-family: Voltaire, "Arial";
+  font-weight: 200;
+  line-height: 50px;
+  text-align: center;
+  margin: 0 15px;
+}
+
 /* ----- Footer ----- */
 
 /*# sourceMappingURL=style.css.map */

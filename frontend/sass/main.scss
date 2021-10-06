@@ -12,7 +12,7 @@
 
 /* -------------------------------------------------- GENERAL CONTENT ------------------------------------------ */
 root {
-
+  font-size: 10px;
 }
 body {
 
@@ -20,6 +20,8 @@ body {
 a {
 
 }
+
+
 /* ----- Consent form  ----- */
 #consent_form {
   display: none;
@@ -29,6 +31,8 @@ a {
 /* ----- Header ----- */
 .header {
   padding : 5px 20px;
+  display: flex;
+  justify-content: space-between;
 }
 .logo_link img {
   height: 70px;
@@ -36,15 +40,13 @@ a {
 }
 
 .bars-button {
-  height: 40px;
-  width: 40px;
   border: none;
   background-color: transparent;
 }
 
 .bars-icon {
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 35px;
+  width: 70px;
 }
 
 .menu-navbar {
@@ -54,6 +56,49 @@ a {
 
 
 /* ----- Main ----- */
+.presentation {
+  &_header {
+    background : linear-gradient(rgba(201, 155, 76, .43), rgba(201, 155, 76, .43)), url("../images/presentation_background.jpg");
+    background-color: rgba(201, 155, 76, 1);
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    padding: 25px 10%;
+  }
+  &_title {
+      font-size: 2.4rem;
+      font-family: Voltaire, Helvetica;
+      text-align: center;
+    line-height : 100px;
+    border-bottom: solid 3px black;
+  }
+  &_subtitle {
+    font-size: 1.75rem;
+    font-family: Voltaire, Helvetica;
+    font-weight : 300;
+    text-align : center;
+    line-height: 100px;
+  }
+  &_figure {
+    padding: 20px;
+    &-img {
+      height: 210px;
+      object-fit: cover;
+    object-position: bottom;
+    }
+    &-text {
+      display: inline-block;
+      border : solid 2px black;
+      font-size: 1.5rem;
+      font-family: Voltaire, "Arial";
+      font-weight: 200;
+      line-height: 50px;
+      text-align: center;
+      margin: 0 15px;
+    }
+  }
+}
+
 
 
 

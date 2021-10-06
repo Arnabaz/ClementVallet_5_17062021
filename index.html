@@ -8,6 +8,9 @@
     <meta name="robots" content="follow">
     <meta name="viewport" content="width=device-width, initial scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./frontend/css/normalizer.css">
     <link rel="stylesheet" type="text/css" href="./frontend/css/style.css">
 
@@ -66,7 +69,8 @@
 <!-- HEADER -->
 <header class="header">
     <a href="./index.html" class="logo_link"><img src="./frontend/images/logo_orinoco.png" alt="Logo Orinoco"/></a>
-    <button class="bars-button"><i class="fas fa-bars bars-icon"></i></button>
+    <button class="bars-button">
+        <i class="fas fa-bars bars-icon"></i></button>
     <nav class="menu-navbar">
         <ul class="menu-items">
             <li class="menu-item"><a href="#products-section">Produits</a></li>
@@ -79,16 +83,14 @@
 <!-- MAIN -->
 <main>
     <section class="presentation">
-        <header>
-            <h1>Orinoako</h1>
-            <p>Meubles en chêne</p>
+        <header class="presentation_header">
+            <h1 class="presentation_title">Orinoako</h1>
+            <h2 class="presentation_subtitle">Meubles en chêne</h2>
         </header>
-        <figure>
-            <img>
-            <figcaption>
-                <h2>Meubles 100% rustiques</h2>
-                <h2>Meubles 100% authentiques</h2>
-            </figcaption>
+        <figure class="presentation_figure">
+            <img class="presentation_figure-img" src="./frontend/images/presentation_homepage.jpg" alt="Orinoco">
+                <span class="presentation_figure-text">Meubles 100% rustiques</span>
+                <span class="presentation_figure-text">Meubles 100% authentiques</span>
         </figure>
     </section>
     <section class="products" id="products-section">
@@ -164,28 +166,28 @@
 </main>
 
 <!-- FOOTER -->
-<footer>
-    <h3>Mentions</h3>
-    <nav>
-        <ul>
-            <li><a href="#">Mentions légales</a></li>
-            <li><a href="#">CGV</a></li>
-            <li><a href="#">Politique de confidentialité</a></li>
-            <li><a href="#">Cookies</a></li>
+<footer class="footer">
+    <h3 class="footer_title">Mentions</h3>
+    <nav class="footer_nav">
+        <ul class="footer_nav-list">
+            <li class="footer_nav-list_item"><a href="./frontend/legal.html">Mentions légales</a></li>
+            <li class="footer_nav-list_item"><a href="./frontend/cgv.html">CGV</a></li>
+            <li class="footer_nav-list_item"><a href="./frontend/rgpd.html">Politique de confidentialité</a></li>
+            <li class="footer_nav-list_item"><a href="./frontend/cookies.html">Cookies</a></li>
         </ul>
     </nav>
-    <h3>Liens utiles</h3>
-    <nav>
-        <ul>
+    <h3 class="footer_title">Liens utiles</h3>
+    <nav class="footer_nav">
+        <ul class="footer_nav-list">
             <li><a href="#">Partenaires</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Support technique</a></li>
             <li><a href="#">Presse</a></li>
         </ul>
     </nav>
-    <h3>Services</h3>
-    <nav>
-        <ul>
+    <h3 class="footer_title">Services</h3>
+    <nav class="footer_nav">
+        <ul class="footer_nav-list">
             <li><a href="#">A propos</a></li>
             <li><a href="#">Suivi de colis</a></li>
             <li><a href="#">Retours</a></li>
@@ -193,8 +195,8 @@
             <li><a href="#">Nous écrire</a></li>
         </ul>
     </nav>
-    <h3>Nous suivre</h3>
-    <nav>
+    <h3 class="footer_title">Nous suivre</h3>
+    <nav class="footer_nav-list">
         <ul>
             <li><a><i class="fab fa-facebook-f"></i></a></li>
             <li><a><i class="fab fa-twitter"></i></a></li>
@@ -204,7 +206,6 @@
             <li><a><i class="fab fa-pinterest-p"></i></a></li>
         </ul>
     </nav>
-    <hr>
     <p>©2021 Copyright - Orinoco</p>
 </footer>
 
