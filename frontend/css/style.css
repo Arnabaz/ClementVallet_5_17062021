@@ -5,6 +5,31 @@
 }
 
 /* ----- Header ----- */
+.header {
+  padding: 5px 20px;
+}
+
+.logo_link img {
+  height: 70px;
+  width: auto;
+}
+
+.bars-button {
+  height: 40px;
+  width: 40px;
+  border: none;
+  background-color: transparent;
+}
+
+.bars-icon {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.menu-navbar {
+  display: none;
+}
+
 /* ----- Main ----- */
 /* ----- Footer ----- */
 
