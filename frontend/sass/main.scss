@@ -213,7 +213,7 @@ a {
   }
 }
 
-/* PRODUCTS SECTION */
+/* HOMEPAGE - Products Section */
 .products-section {
   background : linear-gradient(rgba(67, 101, 138, .7), rgba(67, 101, 138, .7)), url("../images/products_background.jpg");
   background-color: rgba(67, 101, 138, 1);
@@ -289,10 +289,69 @@ a {
   }
 }
 
+/* PAGE PRODUIT - Product Section */
+.product-section {
+  padding: 20px;
+  text-align:  center;
 
-
-
-
+  &__card {
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px 3px silver;
+    margin-bottom: 50px;
+  }
+}
+.product-page {
+  &__img {
+    border-radius: 20px 20px 0 0;
+    height : 188px;
+    object-fit: cover;
+  }
+  &__info {
+    text-align: center;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+  }
+  &__name {
+    padding: 20px;
+    font-family: "Open sans", sans-serif;
+    font-size : 1.5rem;
+    font-weight : 300;
+    color: $color-tertiary;
+    line-height: 40px;
+  }
+  &__price {
+    padding: 11px 20px;
+    font-family: "Open sans", sans-serif;
+    font-size: 1rem;
+    font-weight : 200;
+    color: $color-tertiary;
+    line-height: 40px;
+  }
+  &__text {
+    padding: 20px;
+    font-family: "Open sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight : 200;
+    color: $color-tertiary;
+    line-height: 24px;
+  }
+  &__form {
+    padding: 20px;
+    font-family: "Open sans", sans-serif;
+    font-size: 1rem;
+    font-weight : 200;
+    color: $color-tertiary;
+  }
+  &__add-to-cart {
+    font-family: "Open sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: $color-tertiary;
+    padding: 16px 30%;
+    border-radius: 5px;
+  }
+}
 
 /* SUBSCRIPTION SECTION */
 .sub {
