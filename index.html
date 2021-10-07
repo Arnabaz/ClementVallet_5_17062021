@@ -22,20 +22,20 @@
 <!-- ------------------------------------------------------ BODY -------------------------------------- -->
 <body>
 <!-- CONSENT FORM -->
-<div id="consent_form">
-    <div>
-        <img>
-        <a>Continuer sans accepter ></a>
-        <h1>Avant de continuer sur le site Orinoco</h1>
-        <p>Nos partenaires et nous-mêmes utilisons des cookies ou une technologie équivalente pou stocker et/ou accéder à des informations sur votre appareil. Ces informations personnelles (comme vos données de navigation et votre adresse IP) peuvent être utilisées pour vous présenter des publications et du contenu personnalisés ; pour mesurer la performance publicitaire et du contenu ; et en apprendre plus sur leur audience ; pour développer et améliorer les produits de nos partenaires. Vous pouvez paramétrez vos choix pour accepter ou non les cookies soumis à votre consentement, ou vous y opposer lorsque les cookies concernés ne relèvent pas de votre consentement (tels que certains cookies de mesure d'audience.</p>
-        <a>Pour en savoir plus, consultez notre politique de confidentialité</a>
-        <a>Tout accepter</a>
-        <a>Personnaliser</a>
+<div class="consent-form">
+    <div class="consent-form__page-1">
+        <img class="consent-form__logo" src="./frontend/images/logo_orinoco.png" alt="Logo Orinoco"/>
+        <a class="consent-form__no-consent">Continuer sans accepter ></a>
+        <h1 class="consent-form__title">Avant de continuer sur le site Orinoco</h1>
+        <p class="consent-form__text">Nos partenaires et nous-mêmes utilisons des cookies ou une technologie équivalente pou stocker et/ou accéder à des informations sur votre appareil. Ces informations personnelles (comme vos données de navigation et votre adresse IP) peuvent être utilisées pour vous présenter des publications et du contenu personnalisés; pour mesurer la performance publicitaire et du contenu; et en apprendre plus sur leur audience ; pour développer et améliorer les produits de nos partenaires. Vous pouvez paramétrez vos choix pour accepter ou non les cookies soumis à votre consentement, ou vous y opposer lorsque les cookies concernés ne relèvent pas de votre consentement (tels que certains cookies de mesure d'audience.</p>
+        <a class="consent-form__gdpr" href="./frontend/gdpr.html">Pour en savoir plus, consultez notre politique de confidentialité</a>
+        <a class="consent-form__accept">Tout accepter</a>
+        <a class="consent-form__customize" href="#consent-form__page-2">Personnaliser</a>
     </div>
-    <div>
-        <img>
-        <h2>Personnaliser mes choix</h2>
-        <p>
+    <div class="consent-form__page-2" id="consent-form__page-2">
+        <img class="consent-form__logo" src="./frontend/images/logo_orinoco.png" alt="Logo Orinoco"/>
+        <h2 class="consent-form__title">Personnaliser mes choix</h2>
+        <p class="consent-form__text">
             Vous pouvez paramétrer vos choix ici concernant les
             cookies déposés sur le site. Vous pouvez cliquez sur
             les différentes catégories de cookies pour obtenir
@@ -56,19 +56,19 @@
             ne relèvent pas de votre choix et ne peuvent pas être
             désactivés.
         </p>
-        <table>
+        <table class="consent-form__table">
             <tr>
 
             </tr>
 
         </table>
-        <a>Confirmer</a>
+        <a class="consent-form__confirm">Confirmer</a>
     </div>
 </div>
 
 <!-- HEADER -->
 <header class="header">
-    <a href="index.html" class="logo_link"><img src="./frontend/images/logo_orinoco.png" alt="Logo Orinoco"/></a>
+    <a href="index.html" class="logo__link"><img src="./frontend/images/logo_orinoco.png" alt="Logo Orinoco"/></a>
     <button class="bars-button">
         <i class="fas fa-bars bars-icon"></i></button>
     <nav class="menu-navbar">
@@ -82,72 +82,74 @@
 
 <!-- MAIN -->
 <main>
-    <section class="presentation">
-        <header class="presentation_header">
-            <h1 class="presentation_title">Orinoako</h1>
-            <h2 class="presentation_subtitle">Meubles en chêne</h2>
+    <section class="presentation-section">
+        <header class="presentation-section__header">
+            <h1 class="presentation-section__title">Orinoako</h1>
+            <h2 class="presentation-section__subtitle">Meubles en chêne</h2>
         </header>
-        <figure class="presentation_figure">
-            <img class="presentation_figure-img" src="./frontend/images/presentation_homepage.jpg" alt="Orinoco">
-                <span class="presentation_figure-text">Meubles 100% rustiques</span>
-                <span class="presentation_figure-text">Meubles 100% authentiques</span>
+        <figure class="presentation-section__figure">
+            <img class="presentation-section__figure-img" src="./frontend/images/presentation_homepage.jpg" alt="Orinoco">
+            <div>
+                <span class="presentation-section__figure-text">Meubles 100% rustiques</span>
+                <span class="presentation-section__figure-text">Moments 100% authentiques</span>
+            </div>
         </figure>
     </section>
-    <section class="products" id="products-section">
+    <section class="products-section" id="products-section">
         <header>
-            <h2 class="products_title">Nos produits</h2>
+            <h2 class="products-section__title">Nos produits</h2>
         </header>
-        <article class="products_card">
+        <article class="products-section__article products-section__article-1">
             <a href="#">
-                <figure>
-                    <img/>
-                    <figcaption>
-                        <h3></h3>
-                        <p></p>
+                <figure class="product-card">
+                    <img class="product-card__img" src="./backend/images/oak_1.jpg" alt="Table en chêne"/>
+                    <figcaption class="product-card__info">
+                        <h3 class="product-card__name">Cross-table</h3>
+                        <p class="product-card__price">699,00€</p>
                     </figcaption>
                 </figure>
             </a>
         </article>
-        <article class="products-card">
+        <article class="products-section__article products-section__article-2">
             <a href="#">
-                <figure>
-                    <img/>
-                    <figcaption>
-                        <h3></h3>
-                        <p></p>
+                <figure class="product-card">
+                    <img class="product-card__img" src="./backend/images/oak_2.jpg" alt="Table en chêne"/>
+                    <figcaption class="product-card__info">
+                        <h3 class="product-card__name">Coffee-table</h3>
+                        <p class="product-card__price">699,00€</p>
                     </figcaption>
                 </figure>
             </a>
         </article>
-        <article class="products-card">
+        <article class="products-section__article products-section__article-3">
             <a href="#">
-                <figure>
-                    <img/>
-                    <figcaption>
-                        <h3></h3>
-                        <p></p>
+                <figure class="product-card">
+                    <img class="product-card__img" src="./backend/images/oak_3.jpg" alt="Table en chêne"/>
+                    <figcaption class="product-card__info">
+                        <h3 class="product-card__name">Dining-table (extendable)</h3>
+                        <p class="product-card__price">699,00€</p>
                     </figcaption>
                 </figure>
             </a>
         </article>
-        <article class="products-card">
+        <article class="products-section__article products-section__article-4">
             <a href="#">
-                <figure>
-                    <img/>
-                    <figcaption>
-                        <h3></h3>
-                        <p></p>
+                <figure class="product-card">
+                    <img class="product-card__img" src="./backend/images/oak_4.jpg" alt="Banc en chêne"/>
+                    <figcaption class="product-card__info">
+                        <h3 class="product-card__name">Bench</h3>
+                        <p class="product-card__price">699,00€</p>
                     </figcaption>
                 </figure>
             </a>
         </article>
-        <article class="products-card">
+        <article class="products-section__article products-section__article-5">
             <a href="#">
-                <figure>
-                    <img/>
-                    <figcaption>
-                        <h3></h3>
-                        <p></p>
+                <figure class="product-card">
+                    <img class="product-card__img" src="./backend/images/oak_5.jpg" alt="Chaise en chêne"/>
+                    <figcaption class="product-card__info">
+                        <h3 class="product-card__name">Vintage chair</h3>
+                        <p class="product-card__price">699,00€</p>
                     </figcaption>
                 </figure>
             </a>
@@ -177,7 +179,7 @@
         <ul class="footer_nav-list">
             <li class="footer_nav-list_item"><a href="./frontend/legal.html">Mentions légales</a></li>
             <li class="footer_nav-list_item"><a href="./frontend/cgv.html">CGV</a></li>
-            <li class="footer_nav-list_item"><a href="./frontend/rgpd.html">Politique de confidentialité</a></li>
+            <li class="footer_nav-list_item"><a href="frontend/gdpr.html">Politique de confidentialité</a></li>
             <li class="footer_nav-list_item"><a href="./frontend/cookies.html">Cookies</a></li>
         </ul>
     </nav>

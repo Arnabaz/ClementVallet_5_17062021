@@ -29,8 +29,107 @@ a {
 
 
 /* ----- Consent form  ----- */
-#consent_form {
-  display: none;
+.consent-form {
+  padding: 20px 37.5px;
+  background-color: transparent;
+  z-index: 100;
+  &__page{
+    &-1 {
+      display: grid;
+      grid-template-areas: "consent-form__logo consent-form__no-consent" "consent-form__title consent-form__title" "consent-form__text consent-form__text" "consent-form__gdpr consent-form__gdpr" "consent-form__accept consent-form__customize";
+      border: solid 2px $color-tertiary;
+      border-radius: 5px;
+      padding: 5px;
+    }
+    &-2 {
+      border: solid 2px $color-tertiary;
+      border-radius: 5px;
+      padding: 5px;
+    }
+  }
+  &__logo {
+    grid-area: consent-form__logo;
+  height: 45px;
+    width: auto;
+    padding: 5px 0 0 20px;
+  }
+  &__no-consent {
+    grid-area: consent-form__no-consent;
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 200;
+    color: $color-tertiary;
+    text-decoration: underline;
+    text-align: right;
+    line-height: 12px;
+  }
+  &__title {
+    grid-area: consent-form__title;
+    font-family: "Open sans", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: $color-tertiary;
+    text-align: center;
+    line-height : 16px;
+    padding : 15px 0;
+  }
+  &__text {
+    grid-area: consent-form__text;
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 100;
+    color: $color-tertiary;
+    text-align: center;
+    padding: 5px;
+  }
+  &__gdpr {
+    grid-area: consent-form__gdpr;
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 200;
+    color: $color-tertiary;
+    text-decoration: underline;
+    text-align: center;
+    padding: 5px 5px 15px 5px;
+  }
+  &__accept {
+    grid-area: consent-form__accept;
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: $color-tertiary;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0;
+  }
+  &__customize {
+    grid-area: consent-form__customize;
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: $color-tertiary;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0;
+  }
+  &__confirm {
+    display: inline-block;
+    color: $color-tertiary;
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: white;
+    background-color: $color-tertiary;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0;
+  }
+
 }
 
 
@@ -40,7 +139,7 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.logo_link img {
+.logo__link img {
   height: 70px;
   width: auto;
 }
@@ -53,6 +152,7 @@ a {
 .bars-icon {
   font-size: 35px;
   width: 70px;
+  color: $color-tertiary;
 }
 
 .menu-navbar {
@@ -62,8 +162,8 @@ a {
 
 
 /* ----- Main ----- */
-.presentation {
-  &_header {
+.presentation-section {
+  &__header {
     background : linear-gradient(rgba(201, 155, 76, .43), rgba(201, 155, 76, .43)), url("../images/presentation_background.jpg");
     background-color: rgba(201, 155, 76, 1);
     background-size: cover;
@@ -71,23 +171,33 @@ a {
     width: 100%;
     padding: 25px 10%;
   }
-  &_title {
+  &__title {
       font-size: 2.4rem;
       font-family: 'Open sans', sans-serif;
       text-align: center;
     line-height : 100px;
     text-transform: uppercase;
-    border-bottom: solid 3px black;
+    border-bottom: solid 3px $color-tertiary;
+    color: $color-tertiary;
   }
-  &_subtitle {
+  &__subtitle {
     font-size: 1.75rem;
     font-family: 'Open sans', sans-serif;
     font-weight : 400;
+    color: $color-tertiary;
     text-align : center;
     line-height: 100px;
   }
-  &_figure {
+  &__figure {
     padding: 20px;
+
+    div
+    {
+      text-align: center;
+      border : solid 3px $color-quinary;
+      margin : -5px 5px 0 5px;
+      padding: 35px 10px;
+    }
     &-img {
       height: 210px;
       object-fit: cover;
@@ -95,35 +205,93 @@ a {
     }
     &-text {
       display: inline-block;
-      border : solid 2px black;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-family: 'Open sans', sans-serif;
-      font-weight: 200;
+      font-weight: 500;
       line-height: 50px;
-      text-align: center;
-      margin: 0 15px;
     }
   }
 }
 
 /* PRODUCTS SECTION */
-.products {
+.products-section {
   background : linear-gradient(rgba(67, 101, 138, .7), rgba(67, 101, 138, .7)), url("../images/products_background.jpg");
   background-color: rgba(67, 101, 138, 1);
   background-size: cover;
   padding: 50px 20px;
+  display: grid;
+  grid-template-areas: "title" "article-1" "article-2" "article-3" "article-4" "article-5";
+  grid-row-gap: 25px;
 
-  &_title {
+  header {
+    grid-area: title;
+  }
+
+  &__title {
+    padding-bottom : 20px;
     font-size: 1.8rem;
     font-family: "Open sans", sans-serif;
     font-weight: 400;
     color: white;
     line-height: 36px;
-
-
   }
-
+  &__article{
+    cursor: pointer;
+    &-1 {
+      grid-area: article-1;
+    }
+    &-2 {
+      grid-area: article-2;
+    }
+    &-3 {
+      grid-area: article-3;
+    }
+    &-4 {
+      grid-area: article-4;
+    }
+    &-5 {
+      grid-area: article-5;
+    }
+  }
 }
+.product-card {
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px 3px darken($color-tertiary, 10%);
+  &__img {
+    border-radius: 20px 20px 0 0;
+    height : 188px;
+    object-fit: cover;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    height: 62px;
+    border-radius: 0 0 20px 20px;
+  }
+  &__name {
+    padding: 11px 20px;
+    display: inline;
+    font-family: "Open sans", sans-serif;
+    font-size : 1.2rem;
+    font-weight : 400;
+    color: $color-tertiary;
+    line-height: 40px;
+  }
+  &__price {
+    padding: 11px 20px;
+    display: inline;
+    font-family: "Open sans", sans-serif;
+    font-size: 1rem;
+    font-weight : 200;
+    color: $color-tertiary;
+    line-height: 40px;
+  }
+}
+
+
+
+
 
 
 /* SUBSCRIPTION SECTION */
@@ -132,18 +300,19 @@ a {
   padding: 50px 20px;
 
   &_title {
-    padding: 0 20px;
+    padding: 0 10px;
     font-size: 1.25rem;
     line-height: 22px;
     font-family: 'Open sans', sans-serif;
     font-weight: 300;
+    color: $color-tertiary;
     text-align: center;
   }
 
   &_form {
     text-align: center;
     div {
-      border : solid 1px black;
+      border : solid 1px $color-tertiary;
       margin : 22px 50px;
     }
 
@@ -162,6 +331,7 @@ a {
         font-size: 12px;
         font-family: 'Open sans', sans-serif;
         font-weight: 200;
+        color: $color-tertiary;
         text-align: center;
       overflow: visible;
     }
@@ -170,9 +340,9 @@ a {
     &-button {
       padding : 0 25px;
       line-height: 30px;
-      font-size: 12px;
+      font-size: 1rem;
       font-family: 'Open sans', sans-serif;
-      font-weight: 200;
+      font-weight: 500;
       text-align: center;
       background-color: $color-quaternary;
       color: $color-tertiary;

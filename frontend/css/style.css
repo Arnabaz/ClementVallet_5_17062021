@@ -8,8 +8,104 @@ a {
 }
 
 /* ----- Consent form  ----- */
-#consent_form {
-  display: none;
+.consent-form {
+  padding: 20px 37.5px;
+  background-color: transparent;
+  z-index: 100;
+}
+.consent-form__page-1 {
+  display: grid;
+  grid-template-areas: "consent-form__logo consent-form__no-consent" "consent-form__title consent-form__title" "consent-form__text consent-form__text" "consent-form__gdpr consent-form__gdpr" "consent-form__accept consent-form__customize";
+  border: solid 2px #24303D;
+  border-radius: 5px;
+  padding: 5px;
+}
+.consent-form__page-2 {
+  border: solid 2px #24303D;
+  border-radius: 5px;
+  padding: 5px;
+}
+.consent-form__logo {
+  grid-area: consent-form__logo;
+  height: 45px;
+  width: auto;
+  padding: 5px 0 0 20px;
+}
+.consent-form__no-consent {
+  grid-area: consent-form__no-consent;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: #24303D;
+  text-decoration: underline;
+  text-align: right;
+  line-height: 12px;
+}
+.consent-form__title {
+  grid-area: consent-form__title;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #24303D;
+  text-align: center;
+  line-height: 16px;
+  padding: 15px 0;
+}
+.consent-form__text {
+  grid-area: consent-form__text;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 100;
+  color: #24303D;
+  text-align: center;
+  padding: 5px;
+}
+.consent-form__gdpr {
+  grid-area: consent-form__gdpr;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: #24303D;
+  text-decoration: underline;
+  text-align: center;
+  padding: 5px 5px 15px 5px;
+}
+.consent-form__accept {
+  grid-area: consent-form__accept;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: #24303D;
+  text-align: center;
+  padding: 10px;
+  margin: 5px 0;
+}
+.consent-form__customize {
+  grid-area: consent-form__customize;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #24303D;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+  margin: 5px 0;
+}
+.consent-form__confirm {
+  display: inline-block;
+  color: #24303D;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: white;
+  background-color: #24303D;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+  margin: 5px 0;
 }
 
 /* ----- Header ----- */
@@ -19,7 +115,7 @@ a {
   justify-content: space-between;
 }
 
-.logo_link img {
+.logo__link img {
   height: 70px;
   width: auto;
 }
@@ -32,6 +128,7 @@ a {
 .bars-icon {
   font-size: 35px;
   width: 70px;
+  color: #24303D;
 }
 
 .menu-navbar {
@@ -39,7 +136,7 @@ a {
 }
 
 /* ----- Main ----- */
-.presentation_header {
+.presentation-section__header {
   background: linear-gradient(rgba(201, 155, 76, 0.43), rgba(201, 155, 76, 0.43)), url("../images/presentation_background.jpg");
   background-color: #c99b4c;
   background-size: cover;
@@ -47,53 +144,118 @@ a {
   width: 100%;
   padding: 25px 10%;
 }
-.presentation_title {
+.presentation-section__title {
   font-size: 2.4rem;
   font-family: "Open sans", sans-serif;
   text-align: center;
   line-height: 100px;
   text-transform: uppercase;
-  border-bottom: solid 3px black;
+  border-bottom: solid 3px #24303D;
+  color: #24303D;
 }
-.presentation_subtitle {
+.presentation-section__subtitle {
   font-size: 1.75rem;
   font-family: "Open sans", sans-serif;
   font-weight: 400;
+  color: #24303D;
   text-align: center;
   line-height: 100px;
 }
-.presentation_figure {
+.presentation-section__figure {
   padding: 20px;
 }
-.presentation_figure-img {
+.presentation-section__figure div {
+  text-align: center;
+  border: solid 3px #3D3424;
+  margin: -5px 5px 0 5px;
+  padding: 35px 10px;
+}
+.presentation-section__figure-img {
   height: 210px;
   object-fit: cover;
   object-position: bottom;
 }
-.presentation_figure-text {
+.presentation-section__figure-text {
   display: inline-block;
-  border: solid 2px black;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-family: "Open sans", sans-serif;
-  font-weight: 200;
+  font-weight: 500;
   line-height: 50px;
-  text-align: center;
-  margin: 0 15px;
 }
 
 /* PRODUCTS SECTION */
-.products {
+.products-section {
   background: linear-gradient(rgba(67, 101, 138, 0.7), rgba(67, 101, 138, 0.7)), url("../images/products_background.jpg");
   background-color: #43658a;
   background-size: cover;
   padding: 50px 20px;
+  display: grid;
+  grid-template-areas: "title" "article-1" "article-2" "article-3" "article-4" "article-5";
+  grid-row-gap: 25px;
 }
-.products_title {
+.products-section header {
+  grid-area: title;
+}
+.products-section__title {
+  padding-bottom: 20px;
   font-size: 1.8rem;
   font-family: "Open sans", sans-serif;
   font-weight: 400;
   color: white;
   line-height: 36px;
+}
+.products-section__article {
+  cursor: pointer;
+}
+.products-section__article-1 {
+  grid-area: article-1;
+}
+.products-section__article-2 {
+  grid-area: article-2;
+}
+.products-section__article-3 {
+  grid-area: article-3;
+}
+.products-section__article-4 {
+  grid-area: article-4;
+}
+.products-section__article-5 {
+  grid-area: article-5;
+}
+
+.product-card {
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px 3px #11171d;
+}
+.product-card__img {
+  border-radius: 20px 20px 0 0;
+  height: 188px;
+  object-fit: cover;
+}
+.product-card__info {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  height: 62px;
+  border-radius: 0 0 20px 20px;
+}
+.product-card__name {
+  padding: 11px 20px;
+  display: inline;
+  font-family: "Open sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #24303D;
+  line-height: 40px;
+}
+.product-card__price {
+  padding: 11px 20px;
+  display: inline;
+  font-family: "Open sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #24303D;
+  line-height: 40px;
 }
 
 /* SUBSCRIPTION SECTION */
@@ -102,18 +264,19 @@ a {
   padding: 50px 20px;
 }
 .sub_title {
-  padding: 0 20px;
+  padding: 0 10px;
   font-size: 1.25rem;
   line-height: 22px;
   font-family: "Open sans", sans-serif;
   font-weight: 300;
+  color: #24303D;
   text-align: center;
 }
 .sub_form {
   text-align: center;
 }
 .sub_form div {
-  border: solid 1px black;
+  border: solid 1px #24303D;
   margin: 22px 50px;
 }
 .sub_form-label i {
@@ -129,15 +292,16 @@ a {
   font-size: 12px;
   font-family: "Open sans", sans-serif;
   font-weight: 200;
+  color: #24303D;
   text-align: center;
   overflow: visible;
 }
 .sub_form-button {
   padding: 0 25px;
   line-height: 30px;
-  font-size: 12px;
+  font-size: 1rem;
   font-family: "Open sans", sans-serif;
-  font-weight: 200;
+  font-weight: 500;
   text-align: center;
   background-color: #C99D5C;
   color: #24303D;
