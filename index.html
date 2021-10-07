@@ -68,7 +68,7 @@
 
 <!-- HEADER -->
 <header class="header">
-    <a href="./index.html" class="logo_link"><img src="./frontend/images/logo_orinoco.png" alt="Logo Orinoco"/></a>
+    <a href="index.html" class="logo_link"><img src="./frontend/images/logo_orinoco.png" alt="Logo Orinoco"/></a>
     <button class="bars-button">
         <i class="fas fa-bars bars-icon"></i></button>
     <nav class="menu-navbar">
@@ -153,22 +153,24 @@
             </a>
         </article>
     </section>
-    <section>
-        <h3>Inscrivez-vous à notre newsletter et recevez nos dernières actus et nos offres exclusives</h3>
-        <form method="post" action="">
-            <label for="email">
+    <section class="sub">
+        <h3 class="sub_title">Inscrivez-vous à notre newsletter et recevez nos dernières actus et nos offres exclusives</h3>
+        <form class="sub_form" method="post" action="">
+            <div>
+            <label class="sub_form-label" for="email">
                 <i class="far fa-envelope"></i>
             </label>
-            <input type="email" name="email" placeholder="Entrez votre adresse e-mail" id="email"/>
-            <button>S'abonner</button>
+            <input class="sub_form-input" type="email" name="email" placeholder="Entrez votre adresse e-mail" id="email"/>
+            </div>
+            <button class="sub_form-button">S'abonner</button>
         </form>
     </section>
 </main>
 
 <!-- FOOTER -->
 <footer class="footer">
-    <h3 class="footer_title">Mentions</h3>
-    <nav class="footer_nav">
+    <h3 class="footer_title footer_title-1">Mentions</h3>
+    <nav class="footer_nav footer_nav-1">
         <ul class="footer_nav-list">
             <li class="footer_nav-list_item"><a href="./frontend/legal.html">Mentions légales</a></li>
             <li class="footer_nav-list_item"><a href="./frontend/cgv.html">CGV</a></li>
@@ -176,34 +178,32 @@
             <li class="footer_nav-list_item"><a href="./frontend/cookies.html">Cookies</a></li>
         </ul>
     </nav>
-    <h3 class="footer_title">Liens utiles</h3>
-    <nav class="footer_nav">
+    <h3 class="footer_title footer_title-2">Liens utiles</h3>
+    <nav class="footer_nav footer_nav-2">
         <ul class="footer_nav-list">
-            <li><a href="#">Partenaires</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Support technique</a></li>
-            <li><a href="#">Presse</a></li>
+            <li class="footer_nav-list_item"><a href="#">Partenaires</a></li>
+            <li class="footer_nav-list_item"><a href="#">Blog</a></li>
+            <li class="footer_nav-list_item"><a href="#">Support technique</a></li>
+            <li class="footer_nav-list_item"><a href="#">Presse</a></li>
         </ul>
     </nav>
-    <h3 class="footer_title">Services</h3>
-    <nav class="footer_nav">
+    <h3 class="footer_title footer_title-3">Services</h3>
+    <nav class="footer_nav footer_nav-3">
         <ul class="footer_nav-list">
-            <li><a href="#">A propos</a></li>
-            <li><a href="#">Suivi de colis</a></li>
-            <li><a href="#">Retours</a></li>
-            <li><a href="#">Carrière</a></li>
-            <li><a href="#">Nous écrire</a></li>
+            <li class="footer_nav-list_item"><a href="#">A propos</a></li>
+            <li class="footer_nav-list_item"><a href="#">Suivi de colis</a></li>
+            <li class="footer_nav-list_item"><a href="#">Retours</a></li>
+            <li class="footer_nav-list_item"><a href="#">Carrière</a></li>
+            <li class="footer_nav-list_item"><a href="./frontend/contact.html">Nous écrire</a></li>
         </ul>
     </nav>
-    <h3 class="footer_title">Nous suivre</h3>
-    <nav class="footer_nav-list">
-        <ul>
-            <li><a><i class="fab fa-facebook-f"></i></a></li>
-            <li><a><i class="fab fa-twitter"></i></a></li>
-            <li><a><i class="fab fa-google-plus-g"></i></a></li>
-            <li><a><i class="fab fa-instagram"></i></a></li>
-            <li><a><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a><i class="fab fa-pinterest-p"></i></a></li>
+    <h3 class="footer_title footer_title-4">Nous suivre</h3>
+    <nav class="footer_nav footer_nav-4">
+        <ul class="footer_nav-list footer_nav-list-4">
+            <li class="footer_nav-list_item"><a><i class="fab fa-facebook-f"></i></a></li>
+            <li class="footer_nav-list_item"><a><i class="fab fa-instagram"></i></a></li>
+            <li class="footer_nav-list_item"><a><i class="fab fa-linkedin-in"></i></a></li>
+            <li class="footer_nav-list_item"><a><i class="fab fa-pinterest-p"></i></a></li>
         </ul>
     </nav>
     <p>©2021 Copyright - Orinoco</p>

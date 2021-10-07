@@ -3,6 +3,10 @@ root {
   font-size: 10px;
 }
 
+a {
+  color: white;
+}
+
 /* ----- Consent form  ----- */
 #consent_form {
   display: none;
@@ -45,14 +49,14 @@ root {
 }
 .presentation_title {
   font-size: 2.4rem;
-  font-family: Voltaire, Helvetica;
+  font-family: Voltaire, sans-serif;
   text-align: center;
   line-height: 100px;
   border-bottom: solid 3px black;
 }
 .presentation_subtitle {
   font-size: 1.75rem;
-  font-family: Voltaire, Helvetica;
+  font-family: Voltaire, sans-serif;
   font-weight: 300;
   text-align: center;
   line-height: 100px;
@@ -69,13 +73,125 @@ root {
   display: inline-block;
   border: solid 2px black;
   font-size: 1.5rem;
-  font-family: Voltaire, "Arial";
+  font-family: Voltaire, sans-serif;
   font-weight: 200;
   line-height: 50px;
   text-align: center;
   margin: 0 15px;
 }
 
+/* SUBSCRIPTION SECTION */
+.sub {
+  background-color: white;
+  padding: 50px 20px;
+}
+.sub_title {
+  padding: 0 20px;
+  font-size: 1.25rem;
+  line-height: 22px;
+  font-family: Voltaire, sans-serif;
+  font-weight: 200;
+  text-align: center;
+}
+.sub_form {
+  font-size: 12px;
+  font-family: Voltaire, sans-serif;
+  font-weight: 200;
+  text-align: center;
+}
+.sub_form div {
+  border: solid 1px black;
+  margin: 22px 50px;
+}
+.sub_form-label i {
+  font-size: 15px;
+  line-height: 25px;
+}
+.sub_form-input {
+  background: transparent;
+  padding: 0 50px;
+  margin-left: -15px;
+  line-height: 25px;
+  border: none;
+}
+.sub_form-input::placeholder {
+  text-align: center;
+  overflow: visible;
+}
+.sub_form-button {
+  padding: 0 25px;
+  line-height: 30px;
+  font-size: 12px;
+  font-family: Voltaire, sans-serif;
+  font-weight: 200;
+  text-align: center;
+  background-color: #C99D5C;
+  color: #24303D;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 2px grey;
+}
+
 /* ----- Footer ----- */
+.footer {
+  background-color: #24303D;
+  display: grid;
+  grid-template-areas: "footer_title-1" "footer_nav-1" "footer_title-2" "footer_nav-2" "footer_title-3" "footer_nav-3" "footer_title-4" "footer_nav-4";
+  padding: 20px;
+}
+.footer_title {
+  font-size: 1.2rem;
+  font-family: Voltaire, sans-serif;
+  font-weight: 200;
+  line-height: 24px;
+  color: white;
+  text-decoration: underline;
+}
+.footer_title-1 {
+  grid-area: footer_title-1;
+}
+.footer_title-2 {
+  grid-area: footer_title-2;
+}
+.footer_title-3 {
+  grid-area: footer_title-3;
+}
+.footer_title-4 {
+  grid-area: footer_title-4;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.footer_nav-1 {
+  grid-area: footer_nav-1;
+}
+.footer_nav-2 {
+  grid-area: footer_nav-2;
+}
+.footer_nav-3 {
+  grid-area: footer_nav-3;
+}
+.footer_nav-4 {
+  grid-area: footer_nav-4;
+}
+.footer_nav-list-4 {
+  display: flex;
+  justify-content: center;
+}
+.footer_nav-list_item {
+  font-size: 1.1rem;
+  font-family: Voltaire, sans-serif;
+  font-weight: 100;
+  line-height: 20px;
+  color: white;
+}
+.footer p {
+  font-size: 1.1rem;
+  font-family: Voltaire, sans-serif;
+  font-weight: 100;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+  border-top: solid 2px white;
+}
 
 /*# sourceMappingURL=style.css.map */
