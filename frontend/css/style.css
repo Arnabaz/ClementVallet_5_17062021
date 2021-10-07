@@ -7,6 +7,17 @@ a {
   color: white;
 }
 
+.section-title {
+  font-family: "Open sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: center;
+  border: solid 2px #24303D;
+  border-right: none;
+  border-left: none;
+}
+
 /* ----- Consent form  ----- */
 .consent-form {
   padding: 20px 37.5px;
@@ -100,7 +111,6 @@ a {
   font-family: "Open sans", sans-serif;
   font-size: 0.8rem;
   font-weight: 400;
-  color: white;
   background-color: #43658A;
   text-transform: uppercase;
   text-align: center;
@@ -325,17 +335,6 @@ a {
 .cart-section {
   padding: 20px;
 }
-.cart-section__title {
-  font-family: "Open sans", sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 60px;
-  text-align: center;
-  border: solid 2px #24303D;
-  border-right: none;
-  border-left: none;
-}
-
 /* PAGE CART - Form section */
 .form-section {
   margin: 0 20px;
@@ -384,6 +383,50 @@ a {
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px silver;
   margin: 50px 50px 0 50px;
+}
+
+/* PAGE ORDER - Order Section */
+.order-section {
+  padding: 20px;
+}
+
+/* PAGE CONTACT - Contact Section */
+.contact-section {
+  padding: 20px;
+}
+
+/* PAGE CGV - cgv Section */
+.cgv-section {
+  padding: 20px;
+}
+
+/* PAGE GDPR - gdpr Section */
+.gdpr-section {
+  padding: 20px;
+}
+
+/* PAGE COOKIES - Cookies Section */
+.cookies-section {
+  padding: 10px 20px 0 20px;
+}
+.cookies-section__text {
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 100;
+  padding: 10px 10px 20px 10px;
+  border-bottom: solid 2px #24303D;
+}
+
+/* PAGE LEGAL - legal Section */
+.legal-section {
+  padding: 10px 20px 0 20px;
+}
+.legal-section__text {
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 100;
+  padding: 10px 10px 20px 10px;
+  border-bottom: solid 2px #24303D;
 }
 
 /* SUBSCRIPTION SECTION */

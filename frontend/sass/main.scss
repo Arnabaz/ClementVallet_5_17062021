@@ -26,7 +26,16 @@ body {
 a {
   color: white;
 }
-
+.section-title {
+  font-family: "Open sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height : 60px;
+  text-align: center;
+  border: solid 2px $color-tertiary;
+  border-right: none;
+  border-left: none;
+}
 
 /* ----- Consent form  ----- */
 .consent-form {
@@ -122,7 +131,6 @@ a {
     font-family: "Open sans", sans-serif;
     font-size: 0.8rem;
     font-weight: 400;
-    color: white;
     background-color: $color-primary;
     text-transform: uppercase;
     text-align: center;
@@ -359,15 +367,6 @@ a {
   padding: 20px;
 
   &__title {
-    font-family: "Open sans", sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height : 60px;
-    text-align: center;
-    border: solid 2px $color-tertiary;
-    border-right: none;
-    border-left: none;
-
   }
 }
 
@@ -425,6 +424,51 @@ a {
   }
 }
 
+/* PAGE ORDER - Order Section */
+.order-section {
+  padding: 20px;
+}
+
+/* PAGE CONTACT - Contact Section */
+.contact-section {
+  padding: 20px;
+}
+
+/* PAGE CGV - cgv Section */
+.cgv-section {
+  padding: 20px;
+}
+
+/* PAGE GDPR - gdpr Section */
+.gdpr-section {
+  padding: 20px;
+}
+
+/* PAGE COOKIES - Cookies Section */
+.cookies-section {
+  padding: 10px 20px 0 20px;
+
+  &__text {
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 100;
+    padding: 10px 10px 20px 10px;
+    border-bottom: solid 2px $color-tertiary;
+  }
+}
+
+/* PAGE LEGAL - legal Section */
+.legal-section {
+  padding: 10px 20px 0 20px;
+
+  &__text {
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 100;
+    padding: 10px 10px 20px 10px;
+    border-bottom: solid 2px $color-tertiary;
+  }
+}
 
 /* SUBSCRIPTION SECTION */
 .sub {
