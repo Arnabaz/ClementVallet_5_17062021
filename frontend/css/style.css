@@ -333,7 +333,7 @@ a {
 
 /* PAGE CART - Cart section */
 .cart-section {
-  padding: 20px;
+  padding: 10px 20px 0 20px;
 }
 /* PAGE CART - Form section */
 .form-section {
@@ -387,22 +387,50 @@ a {
 
 /* PAGE ORDER - Order Section */
 .order-section {
-  padding: 20px;
+  padding: 10px 0 40px 0;
+  margin: 0 20px;
+  text-align: center;
+  border-bottom: solid 2px #24303D;
+}
+.order-section__text {
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 200;
+  padding: 10px 10px 50px 10px;
+}
+.order-section__text-message {
+  padding: 10px 0 30px 0;
+  line-height: 24px;
+}
+.order-section__order-summary {
+  padding: 10px;
+  border: solid 1px #24303D;
+  line-height: 25px;
+}
+.order-section__return-button {
+  font-family: "Open sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  background-color: #43658A;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 5px silver;
+  padding: 20px 50px;
 }
 
 /* PAGE CONTACT - Contact Section */
 .contact-section {
-  padding: 20px;
+  padding: 10px 20px 0 20px;
 }
 
 /* PAGE CGV - cgv Section */
 .cgv-section {
-  padding: 20px;
+  padding: 10px 20px 0 20px;
 }
 
 /* PAGE GDPR - gdpr Section */
 .gdpr-section {
-  padding: 20px;
+  padding: 10px 20px 0 20px;
 }
 
 /* PAGE COOKIES - Cookies Section */
@@ -415,6 +443,8 @@ a {
   font-weight: 100;
   padding: 10px 10px 20px 10px;
   border-bottom: solid 2px #24303D;
+  height: 400px;
+  overflow-y: scroll;
 }
 
 /* PAGE LEGAL - legal Section */
