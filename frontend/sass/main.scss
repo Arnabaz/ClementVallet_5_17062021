@@ -73,15 +73,16 @@ a {
   }
   &_title {
       font-size: 2.4rem;
-      font-family: Voltaire, sans-serif;
+      font-family: 'Open sans', sans-serif;
       text-align: center;
     line-height : 100px;
+    text-transform: uppercase;
     border-bottom: solid 3px black;
   }
   &_subtitle {
     font-size: 1.75rem;
-    font-family: Voltaire, sans-serif;
-    font-weight : 300;
+    font-family: 'Open sans', sans-serif;
+    font-weight : 400;
     text-align : center;
     line-height: 100px;
   }
@@ -96,13 +97,32 @@ a {
       display: inline-block;
       border : solid 2px black;
       font-size: 1.5rem;
-      font-family: Voltaire, sans-serif;
+      font-family: 'Open sans', sans-serif;
       font-weight: 200;
       line-height: 50px;
       text-align: center;
       margin: 0 15px;
     }
   }
+}
+
+/* PRODUCTS SECTION */
+.products {
+  background : linear-gradient(rgba(67, 101, 138, .7), rgba(67, 101, 138, .7)), url("../images/products_background.jpg");
+  background-color: rgba(67, 101, 138, 1);
+  background-size: cover;
+  padding: 50px 20px;
+
+  &_title {
+    font-size: 1.8rem;
+    font-family: "Open sans", sans-serif;
+    font-weight: 400;
+    color: white;
+    line-height: 36px;
+
+
+  }
+
 }
 
 
@@ -115,15 +135,12 @@ a {
     padding: 0 20px;
     font-size: 1.25rem;
     line-height: 22px;
-    font-family: Voltaire, sans-serif;
-    font-weight: 200;
+    font-family: 'Open sans', sans-serif;
+    font-weight: 300;
     text-align: center;
   }
 
   &_form {
-    font-size: 12px;
-    font-family: Voltaire, sans-serif;
-    font-weight: 200;
     text-align: center;
     div {
       border : solid 1px black;
@@ -138,12 +155,13 @@ a {
     }
     &-input {
       background: transparent;
-      padding : 0 50px;
-      margin-left : -15px;
       line-height : 25px;
       border : none;
 
       &::placeholder {
+        font-size: 12px;
+        font-family: 'Open sans', sans-serif;
+        font-weight: 200;
         text-align: center;
       overflow: visible;
     }
@@ -153,7 +171,7 @@ a {
       padding : 0 25px;
       line-height: 30px;
       font-size: 12px;
-      font-family: Voltaire, sans-serif;
+      font-family: 'Open sans', sans-serif;
       font-weight: 200;
       text-align: center;
       background-color: $color-quaternary;
@@ -174,8 +192,8 @@ a {
   padding : 20px;
   &_title {
     font-size : 1.2rem;
-    font-family: Voltaire, sans-serif;
-    font-weight: 200;
+    font-family: 'Open sans', sans-serif;
+    font-weight: 400;
     line-height: 24px;
     color: white;
     text-decoration : underline;
@@ -192,9 +210,11 @@ a {
       grid-area : footer_title-4;
       text-decoration : none;
       text-transform: uppercase;
+      font-weight: 500;
     }
   }
   &_nav {
+    padding-bottom: 40px;
     &-1 {
       grid-area : footer_nav-1;
     }
@@ -211,11 +231,18 @@ a {
     &-list{
       &-4 {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        margin-top: 30px;
+        padding: 0 80px;
+
+        i {
+          font-size : 25px;
+          width: 25px;
+        }
       }
     &_item {
       font-size : 1.1rem;
-      font-family: Voltaire, sans-serif;
+      font-family: 'Open sans', sans-serif;
       font-weight: 100;
       line-height: 20px;
       color: white;
@@ -223,8 +250,9 @@ a {
     }
   }
   p {
-    font-size : 1.1rem;
-    font-family: Voltaire, sans-serif;
+    padding-top : 20px;
+    font-size : 0.8rem;
+    font-family: 'Open sans', sans-serif;
     font-weight: 100;
     line-height: 20px;
     color: white;

@@ -49,15 +49,16 @@ a {
 }
 .presentation_title {
   font-size: 2.4rem;
-  font-family: Voltaire, sans-serif;
+  font-family: "Open sans", sans-serif;
   text-align: center;
   line-height: 100px;
+  text-transform: uppercase;
   border-bottom: solid 3px black;
 }
 .presentation_subtitle {
   font-size: 1.75rem;
-  font-family: Voltaire, sans-serif;
-  font-weight: 300;
+  font-family: "Open sans", sans-serif;
+  font-weight: 400;
   text-align: center;
   line-height: 100px;
 }
@@ -73,11 +74,26 @@ a {
   display: inline-block;
   border: solid 2px black;
   font-size: 1.5rem;
-  font-family: Voltaire, sans-serif;
+  font-family: "Open sans", sans-serif;
   font-weight: 200;
   line-height: 50px;
   text-align: center;
   margin: 0 15px;
+}
+
+/* PRODUCTS SECTION */
+.products {
+  background: linear-gradient(rgba(67, 101, 138, 0.7), rgba(67, 101, 138, 0.7)), url("../images/products_background.jpg");
+  background-color: #43658a;
+  background-size: cover;
+  padding: 50px 20px;
+}
+.products_title {
+  font-size: 1.8rem;
+  font-family: "Open sans", sans-serif;
+  font-weight: 400;
+  color: white;
+  line-height: 36px;
 }
 
 /* SUBSCRIPTION SECTION */
@@ -89,14 +105,11 @@ a {
   padding: 0 20px;
   font-size: 1.25rem;
   line-height: 22px;
-  font-family: Voltaire, sans-serif;
-  font-weight: 200;
+  font-family: "Open sans", sans-serif;
+  font-weight: 300;
   text-align: center;
 }
 .sub_form {
-  font-size: 12px;
-  font-family: Voltaire, sans-serif;
-  font-weight: 200;
   text-align: center;
 }
 .sub_form div {
@@ -109,12 +122,13 @@ a {
 }
 .sub_form-input {
   background: transparent;
-  padding: 0 50px;
-  margin-left: -15px;
   line-height: 25px;
   border: none;
 }
 .sub_form-input::placeholder {
+  font-size: 12px;
+  font-family: "Open sans", sans-serif;
+  font-weight: 200;
   text-align: center;
   overflow: visible;
 }
@@ -122,7 +136,7 @@ a {
   padding: 0 25px;
   line-height: 30px;
   font-size: 12px;
-  font-family: Voltaire, sans-serif;
+  font-family: "Open sans", sans-serif;
   font-weight: 200;
   text-align: center;
   background-color: #C99D5C;
@@ -141,8 +155,8 @@ a {
 }
 .footer_title {
   font-size: 1.2rem;
-  font-family: Voltaire, sans-serif;
-  font-weight: 200;
+  font-family: "Open sans", sans-serif;
+  font-weight: 400;
   line-height: 24px;
   color: white;
   text-decoration: underline;
@@ -160,6 +174,10 @@ a {
   grid-area: footer_title-4;
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 500;
+}
+.footer_nav {
+  padding-bottom: 40px;
 }
 .footer_nav-1 {
   grid-area: footer_nav-1;
@@ -175,18 +193,25 @@ a {
 }
 .footer_nav-list-4 {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0 80px;
+}
+.footer_nav-list-4 i {
+  font-size: 25px;
+  width: 25px;
 }
 .footer_nav-list_item {
   font-size: 1.1rem;
-  font-family: Voltaire, sans-serif;
+  font-family: "Open sans", sans-serif;
   font-weight: 100;
   line-height: 20px;
   color: white;
 }
 .footer p {
-  font-size: 1.1rem;
-  font-family: Voltaire, sans-serif;
+  padding-top: 20px;
+  font-size: 0.8rem;
+  font-family: "Open sans", sans-serif;
   font-weight: 100;
   line-height: 20px;
   color: white;
