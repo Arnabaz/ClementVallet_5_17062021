@@ -100,7 +100,7 @@ a {
     color: white;
     text-transform: uppercase;
     border-radius: 5px;
-    background-color: $color-tertiary;
+    background-color: $color-primary;
     text-align: center;
     padding: 10px;
     margin: 5px 0;
@@ -118,12 +118,12 @@ a {
   }
   &__confirm {
     display: inline-block;
-    color: $color-tertiary;
+    color: white;
     font-family: "Open sans", sans-serif;
     font-size: 0.8rem;
     font-weight: 400;
     color: white;
-    background-color: $color-tertiary;
+    background-color: $color-primary;
     text-transform: uppercase;
     text-align: center;
     padding: 10px;
@@ -347,11 +347,84 @@ a {
     font-size: 1rem;
     font-weight: 500;
     color: white;
-    background-color: $color-tertiary;
+    background-color: $color-primary;
     padding: 16px 30%;
     border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px silver;
   }
 }
+
+/* PAGE CART - Cart section */
+.cart-section {
+  padding: 20px;
+
+  &__title {
+    font-family: "Open sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height : 60px;
+    text-align: center;
+    border: solid 2px $color-tertiary;
+    border-right: none;
+    border-left: none;
+
+  }
+}
+
+/* PAGE CART - Form section */
+.form-section {
+  margin: 0 20px;
+  padding: 20px 0;
+  border-top: solid 2px $color-tertiary;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  &__text {
+    padding : 0 10px 10px 10px;
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 200;
+
+  }
+  &__title {
+    font-family: "Open sans", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 30px;
+    padding: 10px;
+  }
+
+  &__label {
+    font-family: "Open sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 25px;
+    padding: 20px 0 5px 0;
+  }
+
+  &__input {
+    font-family: "Open sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 30px;
+    padding: 0 50px;
+  }
+  &__button {
+    font-family: "Open sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    line-height: 40px;
+    background-color: $color-primary;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px silver;
+    margin: 50px 50px 0 50px;
+  }
+}
+
 
 /* SUBSCRIPTION SECTION */
 .sub {

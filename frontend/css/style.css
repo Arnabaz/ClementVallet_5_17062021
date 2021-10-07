@@ -78,7 +78,7 @@ a {
   color: white;
   text-transform: uppercase;
   border-radius: 5px;
-  background-color: #24303D;
+  background-color: #43658A;
   text-align: center;
   padding: 10px;
   margin: 5px 0;
@@ -96,12 +96,12 @@ a {
 }
 .consent-form__confirm {
   display: inline-block;
-  color: #24303D;
+  color: white;
   font-family: "Open sans", sans-serif;
   font-size: 0.8rem;
   font-weight: 400;
   color: white;
-  background-color: #24303D;
+  background-color: #43658A;
   text-transform: uppercase;
   text-align: center;
   padding: 10px;
@@ -315,9 +315,75 @@ a {
   font-size: 1rem;
   font-weight: 500;
   color: white;
-  background-color: #24303D;
+  background-color: #43658A;
   padding: 16px 30%;
   border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px silver;
+}
+
+/* PAGE CART - Cart section */
+.cart-section {
+  padding: 20px;
+}
+.cart-section__title {
+  font-family: "Open sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: center;
+  border: solid 2px #24303D;
+  border-right: none;
+  border-left: none;
+}
+
+/* PAGE CART - Form section */
+.form-section {
+  margin: 0 20px;
+  padding: 20px 0;
+  border-top: solid 2px #24303D;
+}
+.form-section__form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.form-section__text {
+  padding: 0 10px 10px 10px;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+.form-section__title {
+  font-family: "Open sans", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 30px;
+  padding: 10px;
+}
+.form-section__label {
+  font-family: "Open sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 25px;
+  padding: 20px 0 5px 0;
+}
+.form-section__input {
+  font-family: "Open sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 30px;
+  padding: 0 50px;
+}
+.form-section__button {
+  font-family: "Open sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: white;
+  line-height: 40px;
+  background-color: #43658A;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px silver;
+  margin: 50px 50px 0 50px;
 }
 
 /* SUBSCRIPTION SECTION */

@@ -38,28 +38,30 @@
             <h2 class="presentation-section__subtitle">Meubles en chêne</h2>
         </header>
     </section>
-    <section>
-        <h2>Votre panier</h2>
+    <section class="cart-section">
+        <header>
+            <h2 class="cart-section__title">Votre panier</h2>
+        </header>
         <form>
-            <table></table>
-            <button></button>
+            <table class="cart-section__table"></table>
+            <a class="cart-section__link-return">< Continuer mes achats</a>
         </form>
     </section>
-    <section>
-        <form>
-            <p>Afin de formaliser votre commande, merci de bien vouloir remplir le formulaire ci-dessous</p>
-            <h2>Formulaire de commande</h2>
-            <label>Prénom</label>
-            <input />
-            <label>Nom</label>
-            <input />
-            <label>Adresse</label>
-            <input />
-            <label>Ville</label>
-            <input />
-            <label>Email</label>
-            <input />
-            <button>Valider le formulaire</button>
+    <section class="form-section">
+        <form class="form-section__form" method="post" action="">
+            <p class="form-section__text">Afin de formaliser votre commande,<br /> merci de bien vouloir remplir le formulaire ci-dessous</p>
+            <h2 class="form-section__title">Formulaire de commande</h2>
+            <label class="form-section__label" for="first-name">Prénom</label>
+            <input class="form-section__input" id="first-name" name="" required/>
+            <label class="form-section__label" for="name">Nom</label>
+            <input class="form-section__input" id="name" name="" required/>
+            <label class="form-section__label" for="adress">Adresse</label>
+            <input class="form-section__input" id="adress" name="" required/>
+            <label class="form-section__label" for="city">Ville</label>
+            <input class="form-section__input" id="city" name="" required/>
+            <label class="form-section__label" for="email_order">Email</label>
+            <input class="form-section__input" id="email_order" type="email" name="" required/>
+            <button class="form-section__button">Valider le formulaire</button>
         </form>
     </section>
 </main>
