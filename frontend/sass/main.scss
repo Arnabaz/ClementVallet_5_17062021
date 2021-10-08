@@ -57,6 +57,8 @@ ul.circle-type {
       border: solid 2px $color-tertiary;
       border-radius: 5px;
       padding: 5px;
+      height: 500px;
+      overflow-y: scroll;
     }
   }
   &__logo {
@@ -128,6 +130,13 @@ ul.circle-type {
     padding: 10px;
     margin: 5px 0;
   }
+  &__table {
+      font-family: "Open sans",sans-serif;
+      font-size: 0.8rem;
+      font-weight: 100;
+      padding: 20px;
+    }
+
   &__confirm {
     display: inline-block;
     color: white;
@@ -139,6 +148,7 @@ ul.circle-type {
     text-align: center;
     padding: 10px;
     margin: 5px 0;
+    border-radius: 5px;
   }
 
 }
@@ -371,6 +381,27 @@ ul.circle-type {
 
   &__title {
   }
+
+  &__form {
+    font-family: "Open sans", sans-serif;
+    font-size: 1rem;
+    font-weight : 100;
+    padding: 20px 0 50px 0;
+    table {
+      padding-top: 20px;
+      font-family: "Open sans", sans-serif;
+      font-size: 0.8rem;
+    }
+    a {
+      display: inline-block;
+      padding: 15px;
+      color: $color-tertiary;
+      background-color: $color-quaternary;
+      border-radius: 5px;
+      box-shadow: 3px 3px 10px 3px silver;
+      margin-top: 30px;
+    }
+  }
 }
 
 /* PAGE CART - Form section */
@@ -422,7 +453,7 @@ ul.circle-type {
     line-height: 40px;
     background-color: $color-primary;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px 1px silver;
+    box-shadow: 3px 3px 10px 3px silver;
     margin: 50px 50px 0 50px;
   }
 }

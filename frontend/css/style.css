@@ -39,6 +39,8 @@ ul.circle-type {
   border: solid 2px #24303D;
   border-radius: 5px;
   padding: 5px;
+  height: 500px;
+  overflow-y: scroll;
 }
 .consent-form__logo {
   grid-area: consent-form__logo;
@@ -109,6 +111,12 @@ ul.circle-type {
   padding: 10px;
   margin: 5px 0;
 }
+.consent-form__table {
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 100;
+  padding: 20px;
+}
 .consent-form__confirm {
   display: inline-block;
   color: white;
@@ -120,6 +128,7 @@ ul.circle-type {
   text-align: center;
   padding: 10px;
   margin: 5px 0;
+  border-radius: 5px;
 }
 
 /* ----- Header ----- */
@@ -339,6 +348,27 @@ ul.circle-type {
 .cart-section {
   padding: 10px 20px 0 20px;
 }
+.cart-section__form {
+  font-family: "Open sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 100;
+  padding: 20px 0 50px 0;
+}
+.cart-section__form table {
+  padding-top: 20px;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+}
+.cart-section__form a {
+  display: inline-block;
+  padding: 15px;
+  color: #24303D;
+  background-color: #C99D5C;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 3px silver;
+  margin-top: 30px;
+}
+
 /* PAGE CART - Form section */
 .form-section {
   margin: 0 20px;
@@ -385,7 +415,7 @@ ul.circle-type {
   line-height: 40px;
   background-color: #43658A;
   border-radius: 5px;
-  box-shadow: 1px 1px 1px 1px silver;
+  box-shadow: 3px 3px 10px 3px silver;
   margin: 50px 50px 0 50px;
 }
 
