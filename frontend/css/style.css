@@ -18,6 +18,10 @@ a {
   border-left: none;
 }
 
+ul.circle-type {
+  list-style: circle;
+}
+
 /* ----- Consent form  ----- */
 .consent-form {
   padding: 20px 37.5px;
@@ -328,7 +332,7 @@ a {
   background-color: #43658A;
   padding: 16px 30%;
   border-radius: 5px;
-  box-shadow: 1px 1px 1px 1px silver;
+  box-shadow: 3px 3px 10px 3px silver;
 }
 
 /* PAGE CART - Cart section */
@@ -422,15 +426,92 @@ a {
 .contact-section {
   padding: 10px 20px 0 20px;
 }
+.contact-section__text {
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 100;
+  padding: 10px 10px 20px 10px;
+  text-align: center;
+}
+.contact-section__text h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 10px 20px 0 20px;
+}
+.contact-section__text p {
+  padding: 0 10px 10px 10px;
+}
+.contact-section__heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #24303D;
+  text-decoration: underline;
+  padding-bottom: 10px;
+}
+.contact-section__form {
+  display: flex;
+  flex-direction: column;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 100;
+  text-align: center;
+  border-bottom: solid 2px #24303D;
+}
+.contact-section__input {
+  line-height: 25px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: solid 1px #24303D;
+}
+.contact-section__text-area {
+  padding: 10px 10px 120px 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: solid 1px #24303D;
+}
+.contact-section__button {
+  font-family: "Open sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 40px;
+  color: white;
+  background-color: #43658A;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 3px silver;
+  margin: 40px 40px 50px 40px;
+}
+.contact-section a {
+  color: #24303D;
+}
 
 /* PAGE CGV - cgv Section */
 .cgv-section {
   padding: 10px 20px 0 20px;
 }
+.cgv-section__text {
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 100;
+  padding: 10px 10px 20px 10px;
+  border-bottom: solid 2px #24303D;
+  height: 400px;
+  overflow-y: scroll;
+}
 
 /* PAGE GDPR - gdpr Section */
 .gdpr-section {
   padding: 10px 20px 0 20px;
+}
+.gdpr-section__text {
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 100;
+  padding: 10px 10px 20px 10px;
+  border-bottom: solid 2px #24303D;
+  height: 400px;
+  overflow-y: scroll;
 }
 
 /* PAGE COOKIES - Cookies Section */
@@ -567,7 +648,7 @@ a {
   width: 25px;
 }
 .footer_nav-list_item {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: "Open sans", sans-serif;
   font-weight: 100;
   line-height: 20px;

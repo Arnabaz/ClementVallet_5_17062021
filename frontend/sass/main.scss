@@ -36,6 +36,9 @@ a {
   border-right: none;
   border-left: none;
 }
+ul.circle-type {
+  list-style: circle;
+}
 
 /* ----- Consent form  ----- */
 .consent-form {
@@ -358,7 +361,7 @@ a {
     background-color: $color-primary;
     padding: 16px 30%;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px 1px silver;
+    box-shadow: 3px 3px 10px 3px silver;
   }
 }
 
@@ -464,16 +467,105 @@ a {
 /* PAGE CONTACT - Contact Section */
 .contact-section {
   padding: 10px 20px 0 20px;
-}
+
+  &__text {
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 100;
+    padding: 10px 10px 20px 10px;
+    text-align: center;
+
+    h4 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 10px 20px 0 20px;
+    }
+
+    p{
+      padding: 0 10px 10px 10px;
+    }
+
+
+  }
+    &__heading {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: $color-tertiary;
+      text-decoration: underline;
+      padding-bottom: 10px;
+
+
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      font-family: "Open sans", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 100;
+      text-align: center;
+      border-bottom: solid 2px $color-tertiary;
+    }
+  &__input {
+    line-height: 25px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: solid 1px $color-tertiary;
+  }
+
+  &__text-area {
+    padding: 10px 10px 120px 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: solid 1px $color-tertiary;
+  }
+
+  &__button {
+    font-family: "Open sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 40px;
+    color: white;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px 3px silver;
+    margin: 40px 40px 50px 40px;
+  }
+    a {
+      color: $color-tertiary;
+    }
+  }
 
 /* PAGE CGV - cgv Section */
 .cgv-section {
   padding: 10px 20px 0 20px;
+
+  &__text {
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 100;
+    padding: 10px 10px 20px 10px;
+    border-bottom: solid 2px $color-tertiary;
+    height : 400px;
+    overflow-y: scroll;
+  }
 }
+
 
 /* PAGE GDPR - gdpr Section */
 .gdpr-section {
   padding: 10px 20px 0 20px;
+
+  &__text {
+    font-family: "Open sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 100;
+    padding: 10px 10px 20px 10px;
+    border-bottom: solid 2px $color-tertiary;
+    height : 400px;
+    overflow-y: scroll;
+  }
 }
 
 /* PAGE COOKIES - Cookies Section */
@@ -621,7 +713,7 @@ a {
         }
       }
     &_item {
-      font-size : 1.1rem;
+      font-size : 1rem;
       font-family: 'Open sans', sans-serif;
       font-weight: 100;
       line-height: 20px;

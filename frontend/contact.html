@@ -6,7 +6,7 @@
     <meta name="description"
           content="Orinoako est la référence en ligne  des meubles en chêne. C'est une sous-marque du célèbre site de vente en ligne Orinoco. ">
     <meta name="robots" content="follow">
-    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="./css/normalizer.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -44,15 +44,16 @@
         <header>
          <h2 class="section-title">Service client / Contact</h2>
         </header>
-        <h3>Service client</h3>
+        <article class="contact-section__text">
+        <h3 class="contact-section__heading">Service client</h3>
         <h4>Horaires</h4>
         <p>
-            Du lundi au jeudi : 9h - 12h / 13h - 18h
+            Du lundi au jeudi : 9h - 12h / 13h - 18h<br />
             Vendredi : 9h - 12h / 14h - 16h
         </p>
         <h4>Adresse (fictive)</h4>
         <p>
-            132 rue Jean Martin
+            132 rue Jean Martin<br />
             75000 Paris
         </p>
         <h4>Pour nous téléphoner</h4>
@@ -61,19 +62,27 @@
         </p>
         <h4>Pour nous écrire</h4>
         <p>
-            Soit par e-mail à l'adresse suivante :<a>contact@orinoco.fr</a>
-            Soit plus simplement par le formulaire de contact ci-dessous
+            Soit par e-mail à l'adresse suivante :<br /><a href="mailto:contact@orinoco.fr">contact@orinoco.fr</a><br />
+            Soit plus simplement par le formulaire de contact ci-dessous :
         </p>
-        <form>
-            <h3>Formulaire de contact</h3>
-            <input>
-            <input>
-            <input>
-            <input>
-            <input>
-            <input>
-            <input>
-            <button>Envoyer</button>
+        </article>
+        <form class="contact-section__form" name="contact-form">
+            <h3 class="contact-section__heading">Formulaire de contact</h3>
+            <label for="first-name"></label>
+            <input class="contact-section__input" id="first-name" type="text" placeholder="Prénom *" name="contact-form"/>
+            <label for="name"></label>
+            <input class="contact-section__input" id="name" type="text" placeholder="Nom *" name="contact-form"/>
+            <label for="contact-email"></label>
+            <input class="contact-section__input" id="contact-email" placeholder="Email *" type="email" name="contact-form"/>
+            <label for="phone" ></label>
+            <input class="contact-section__input" id="phone" type="tel" placeholder="Téléphone *" name="contact-form"/>
+            <label for="order-id"></label>
+            <input class="contact-section__input" id="order-id" type="number" placeholder="N° de commande" name="contact-form"/>
+            <label for="object"></label>
+            <input class="contact-section__input" id="object" type="text" placeholder="Objet de ma demande *" name="contact-form"/>
+            <label for="message"></label>
+            <textarea class="contact-section__text-area" id="message" name="contact-form" placeholder="Mon message *"></textarea>
+            <button class="contact-section__button" name="contact-form">Envoyer</button>
         </form>
     </section>
 </main>

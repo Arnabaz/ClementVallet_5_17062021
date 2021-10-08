@@ -47,9 +47,15 @@
                     <p class="product-page__text">Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit, sed do elusmod tempor
                         incidunt ut labore et dolore magna aliqua.</p>
-                    <form class="product-page__form">
-                        <label>Couleur :</label>
-                        <input type=""/>
+                    <form name="product-form" class="product-page__form">
+                        <label for="color-choice">Couleur :</label>
+                        <input list="color-list" id="color-choice" name="product-form"/>
+                        <datalist id="color-list">
+                            <option value="Tan">
+                            <option value="Chocolate">
+                            <option value="Black">
+                            <option value="White">
+                        </datalist>
                     </form>
                 </figcaption>
         </figure>
