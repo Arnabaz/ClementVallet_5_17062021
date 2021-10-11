@@ -4,19 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="robots" content="follow">
-    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="./css/normalizer.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/cart.css">
 
     <script src="https://kit.fontawesome.com/662296abb9.js" crossorigin="anonymous"></script>
 
     <title>Orinoako - Mon panier</title>
 </head>
 
-<!-- ------------------------------------------------------ BODY -------------------------------------- -->
+<!--  BODY  -->
 <body>
-<!-- HEADER -->
+<!-- Header -->
 <header class="header">
     <a href="../index.html" class="logo__link"><img src="./images/logo_orinoco.png" alt="Logo Orinoco"/></a>
     <button class="bars-button">
@@ -30,7 +33,7 @@
     </nav>
 </header>
 
-<!-- MAIN -->
+<!-- Main-->
 <main>
     <section class="presentation-section">
         <header class="presentation-section__header">
@@ -54,19 +57,18 @@
                     <td>Cross-table</td>
                     <td>
                         <label for="quantity-choice"></label>
-                        <input list="quantity-list" id="quantity-choice" name="cart-form"/>
-                        <datalist id="quantity-list">
-                            <option value="1" selected>
-                            <option value="2">
-                            <option value="3">
-                            <option value="4">
-                            <option value="5">
-                            <option value="6">
-                            <option value="7">
-                            <option value="8">
-                            <option value="9">
-                            <option value="10">
-                        </datalist>
+                        <select id="quantity-choice" name="cart-form">
+                            <option style="color: black;" value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                            <option value="6"></option>
+                            <option value="7"></option>
+                            <option value="8"></option>
+                            <option value="9"></option>
+                            <option value="10"></option>
+                        </select>
                     </td>
                     <td>699,00€</td>
                 </tr>
@@ -102,12 +104,10 @@
         <h3 class="sub_title">Inscrivez-vous à notre newsletter et recevez nos dernières actus et nos offres exclusives</h3>
     </header>
     <form class="sub_form" method="post" action="">
-        <div>
             <label class="sub_form-label" for="email">
                 <i class="far fa-envelope"></i>
             </label>
             <input class="sub_form-input" type="email" name="email" placeholder="Entrez votre adresse e-mail" id="email"/>
-        </div>
         <button class="sub_form-button">S'abonner</button>
     </form>
 </section>
@@ -153,7 +153,7 @@
             <li class="footer_nav-list_item"><a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a></li>
         </ul>
     </nav>
-    <p>©2021 Copyright - Orinoco</p>
+    <p>©2021 Copyright - Orinoco - Clément Vallet</p>
 </footer>
 
 <!-- JAVASCRIPT -->

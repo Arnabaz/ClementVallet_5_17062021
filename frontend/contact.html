@@ -8,8 +8,11 @@
     <meta name="robots" content="follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="./css/normalizer.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./frontend/css/contact.css">
 
     <script src="https://kit.fontawesome.com/662296abb9.js" crossorigin="anonymous"></script>
 
@@ -42,61 +45,67 @@
     </section>
     <section class="contact-section">
         <header>
-         <h2 class="section-title">Service client / Contact</h2>
+            <h2 class="section-title">Service client / Contact</h2>
         </header>
-        <article class="contact-section__text">
-        <h3 class="contact-section__heading">Service client</h3>
-        <h4>Horaires</h4>
-        <p>
-            Du lundi au jeudi : 9h - 12h / 13h - 18h<br />
-            Vendredi : 9h - 12h / 14h - 16h
-        </p>
-        <h4>Adresse (fictive)</h4>
-        <p>
-            132 rue Jean Martin<br />
-            75000 Paris
-        </p>
-        <h4>Pour nous téléphoner</h4>
-        <p>
-            +33(0)0 00 00 00 00
-        </p>
-        <h4>Pour nous écrire</h4>
-        <p>
-            Soit par e-mail à l'adresse suivante :<br /><a href="mailto:contact@orinoco.fr">contact@orinoco.fr</a><br />
-            Soit plus simplement par le formulaire de contact ci-dessous :
-        </p>
-        </article>
+        <address class="contact-section__text">
+            <h3 class="contact-section__heading">Service client</h3>
+            <h4>Horaires</h4>
+            <p>
+                Du lundi au jeudi : 9h - 12h / 13h - 18h<br/>
+                Vendredi : 9h - 12h / 14h - 16h
+            </p>
+            <h4>Adresse (fictive)</h4>
+            <p>
+                132 rue Jean Martin<br/>
+                75000 Paris
+            </p>
+            <h4>Pour nous téléphoner</h4>
+            <p>
+                <a href="tel:+0000000000">+33(0)0 00 00 00 00</a>
+            </p>
+            <h4>Pour nous écrire</h4>
+            <p>
+                Soit par e-mail à l'adresse suivante :<br/><a
+                    href="mailto:contact@orinoco.fr">contact@orinoco.fr</a><br/>
+                Soit plus simplement par le formulaire de contact ci-dessous :
+            </p>
+        </address>
         <form class="contact-section__form" name="contact-form">
             <h3 class="contact-section__heading">Formulaire de contact</h3>
             <label for="first-name"></label>
-            <input class="contact-section__input" id="first-name" type="text" placeholder="Prénom *" name="contact-form"/>
+            <input class="contact-section__input" id="first-name" type="text" placeholder="Prénom *"
+                   name="contact-form"/>
             <label for="name"></label>
             <input class="contact-section__input" id="name" type="text" placeholder="Nom *" name="contact-form"/>
             <label for="contact-email"></label>
-            <input class="contact-section__input" id="contact-email" placeholder="Email *" type="email" name="contact-form"/>
-            <label for="phone" ></label>
+            <input class="contact-section__input" id="contact-email" placeholder="Email *" type="email"
+                   name="contact-form"/>
+            <label for="phone"></label>
             <input class="contact-section__input" id="phone" type="tel" placeholder="Téléphone *" name="contact-form"/>
             <label for="order-id"></label>
-            <input class="contact-section__input" id="order-id" type="number" placeholder="N° de commande" name="contact-form"/>
+            <input class="contact-section__input" id="order-id" type="number" placeholder="N° de commande"
+                   name="contact-form"/>
             <label for="object"></label>
-            <input class="contact-section__input" id="object" type="text" placeholder="Objet de ma demande *" name="contact-form"/>
+            <input class="contact-section__input" id="object" type="text" placeholder="Objet de ma demande *"
+                   name="contact-form"/>
             <label for="message"></label>
-            <textarea class="contact-section__text-area" id="message" name="contact-form" placeholder="Mon message *"></textarea>
+            <textarea class="contact-section__text-area" id="message" name="contact-form"
+                      placeholder="Mon message *"></textarea>
             <button class="contact-section__button" name="contact-form">Envoyer</button>
         </form>
     </section>
 </main>
 <section class="sub">
     <header>
-        <h3 class="sub_title">Inscrivez-vous à notre newsletter et recevez nos dernières actus et nos offres exclusives</h3>
+        <h3 class="sub_title">Inscrivez-vous à notre newsletter et recevez nos dernières actus et nos offres
+            exclusives</h3>
     </header>
     <form class="sub_form" method="post" action="">
-        <div>
             <label class="sub_form-label" for="email">
                 <i class="far fa-envelope"></i>
             </label>
-            <input class="sub_form-input" type="email" name="email" placeholder="Entrez votre adresse e-mail" id="email"/>
-        </div>
+            <input class="sub_form-input" type="email" name="email" placeholder="Entrez votre adresse e-mail"
+                   id="email"/>
         <button class="sub_form-button">S'abonner</button>
     </form>
 </section>
@@ -135,14 +144,17 @@
     <h3 class="footer_title footer_title-4">Nous suivre</h3>
     <nav class="footer_nav footer_nav-4">
         <ul class="footer_nav-list footer_nav-list-4">
-            <li class="footer_nav-list_item"><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-            <li class="footer_nav-list_item"><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
-            <li class="footer_nav-list_item"><a href="https://www.pinterest.fr"><i class="fab fa-pinterest-p"></i></a></li>
+            <li class="footer_nav-list_item"><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="footer_nav-list_item"><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li class="footer_nav-list_item"><a href="https://www.pinterest.fr"><i class="fab fa-pinterest-p"></i></a>
+            </li>
             <li class="footer_nav-list_item"><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
             <li class="footer_nav-list_item"><a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a></li>
         </ul>
     </nav>
-    <p>©2021 Copyright - Orinoco</p>
+    <p>©2021 Copyright - Orinoco - Clément Vallet</p>
 </footer>
 
 <!-- JAVASCRIPT -->
