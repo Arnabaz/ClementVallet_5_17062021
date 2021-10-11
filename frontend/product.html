@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!-- HEAD  -->
+<!-- HEAD -->
 <head>
     <meta charset="utf-8">
     <meta name="robots" content="follow">
@@ -52,13 +52,13 @@
                         incidunt ut labore et dolore magna aliqua.</p>
                     <form name="product-form" class="product-page__form">
                         <label for="color-choice">Couleur :</label>
-                        <input type="text" list="color-list" id="color-choice" name="product-form"/>
-                        <datalist id="color-list">
-                            <option value="Tan">
-                            <option value="Chocolate">
-                            <option value="Black">
-                            <option value="White">
-                        </datalist>
+                        <select name="product-form" id="color-choice">
+                            <option value="">Choisissez une couleur</option>
+                            <option value="Tan">Brun clair</option>
+                            <option value="Chocolate">Chocolat</option>
+                            <option value="Black">Noir</option>
+                            <option value="White">Blanc</option>
+                        </select>
                     </form>
                 </figcaption>
         </figure>
@@ -69,7 +69,7 @@
     <header>
         <h3 class="sub_title">Inscrivez-vous à notre newsletter et recevez nos dernières actus et nos offres exclusives</h3>
     </header>
-    <form class="sub_form" method="post" action="">
+    <form class="sub_form" method="post">
             <label class="sub_form-label" for="email">
                 <i class="far fa-envelope"></i>
             </label>

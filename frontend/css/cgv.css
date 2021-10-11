@@ -76,7 +76,7 @@ a {
 .section-title {
   font-family: "Open sans", sans-serif;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 60px;
   text-align: center;
   border: solid 2px #24303D;
@@ -276,6 +276,11 @@ ul.circle-type {
 .cgv-section {
   padding: 10px 20px 0 20px;
 }
+@media (min-width: 320px) and (max-width: 335px) {
+  .cgv-section__title {
+    font-size: 1.05rem;
+  }
+}
 .cgv-section__text {
   font-family: "Open sans", sans-serif;
   font-size: 0.8rem;
@@ -284,6 +289,35 @@ ul.circle-type {
   border-bottom: solid 2px #24303D;
   height: 400px;
   overflow-y: scroll;
+}
+.cgv-section h3, .cgv-section h4, .cgv-section h5 {
+  margin-bottom: 3px;
+}
+.cgv-section h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 25px;
+}
+.cgv-section h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 20px;
+}
+.cgv-section h5 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 15px;
+}
+.cgv-section a {
+  color: #24303D;
+}
+
+.line-break__paragraph {
+  margin-bottom: 12px;
+}
+
+.space-enhance__paragraph {
+  margin-bottom: 6px;
 }
 
 /*# sourceMappingURL=cgv.css.map */

@@ -76,7 +76,7 @@ a {
 .section-title {
   font-family: "Open sans", sans-serif;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 60px;
   text-align: center;
   border: solid 2px #24303D;
@@ -284,6 +284,32 @@ ul.circle-type {
   border-bottom: solid 2px #24303D;
   height: 400px;
   overflow-y: scroll;
+}
+.cookies-section__text h3, .cookies-section__text h4, .cookies-section__text h5 {
+  margin-bottom: 3px;
+}
+.cookies-section__text h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 25px;
+}
+.cookies-section__text h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 20px;
+}
+.cookies-section__text h5 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 15px;
+}
+
+.line-break__paragraph {
+  margin-bottom: 12px;
+}
+
+.space-enhance__paragraph {
+  margin-bottom: 6px;
 }
 
 /*# sourceMappingURL=cookies.css.map */
