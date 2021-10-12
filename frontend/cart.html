@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!-- ------------------------------------------------------ HEAD -------------------------------------- -->
+<!-- HEAD -->
 <head>
     <meta charset="utf-8">
     <meta name="robots" content="follow">
@@ -23,12 +23,13 @@
 <header class="header">
     <a href="../index.html" class="logo__link"><img src="./images/logo_orinoco.png" alt="Logo Orinoco"/></a>
     <button class="bars-button">
-        <i class="fas fa-bars bars-icon"></i></button>
-    <nav class="menu-navbar">
+        <i class="fas fa-bars bars-icon"></i>
+    </button>
+    <nav class="menu-navbar folded">
         <ul class="menu-items">
             <li class="menu-item"><a href="../index.html#products-section">Produits</a></li>
             <li class="menu-item"><a href="./contact.html">Contact</a></li>
-            <li class="menu-item"><a href="./cart.html"><i class="fas fa-shopping-cart"></i>Mon panier</a></li>
+            <li class="menu-item"><a href="./cart.html"><i class="fas fa-shopping-cart cart-icon"></i>Mon panier</a></li>
         </ul>
     </nav>
 </header>
@@ -48,12 +49,15 @@
         <form class="cart-section__form" name="cart-form">
             <span>Votre panier est vide</span>
             <table class="cart-section__table">
-                <tr>
-                    <th>Produit</th>
-                    <th>Quantité</th>
-                    <th>Prix</th>
+                <thead>
+                <tr class="cart-section__thead-line">
+                    <th class="cart-section__table-header table-header__product">Produit</th>
+                    <th class="cart-section__table-header table-header__quantity">Quantité</th>
+                    <th class="cart-section__table-header table-header__price">Prix</th>
                 </tr>
-                <tr>
+                </thead>
+                <tbody>
+                <tr class="cart-section__product-line">
                     <td>Cross-table</td>
                     <td>
                         <label for="quantity-choice"></label>
@@ -72,17 +76,18 @@
                     </td>
                     <td>699,00€</td>
                 </tr>
-                <tr>
+                <tr class="cart-section__total-line">
                     <td></td>
                     <td>TOTAL</td>
                     <td>699,00€</td>
                 </tr>
+                </tbody>
             </table>
-            <a class="cart-section__link-return">< Continuer mes achats</a>
+            <a class="cart-section__link-return" href="../index.html#products-section">&lt; Continuer mes achats</a>
         </form>
     </section>
     <section class="form-section">
-        <form class="form-section__form" method="post" action="" name="order-form">
+        <form class="form-section__form" method="post" name="order-form">
             <p class="form-section__text">Afin de formaliser votre commande,<br /> merci de bien vouloir remplir le formulaire ci-dessous</p>
             <h2 class="form-section__title">Formulaire de commande</h2>
             <label class="form-section__label" for="first-name">Prénom</label>
@@ -103,7 +108,7 @@
     <header>
         <h3 class="sub_title">Inscrivez-vous à notre newsletter et recevez nos dernières actus et nos offres exclusives</h3>
     </header>
-    <form class="sub_form" method="post" action="">
+    <form class="sub_form" method="post">
             <label class="sub_form-label" for="email">
                 <i class="far fa-envelope"></i>
             </label>
@@ -157,6 +162,6 @@
 </footer>
 
 <!-- JAVASCRIPT -->
-
+<script src="./js/menu-toggle.js"></script>
 </body>
 </html>

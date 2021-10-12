@@ -69,6 +69,10 @@ root {
   font-size: 13px;
 }
 
+body {
+  line-height: 1;
+}
+
 a {
   color: white;
 }
@@ -89,30 +93,59 @@ ul.circle-type {
 }
 
 /* ----- Header ----- */
-.header {
-  padding: 5px 20px;
-  display: flex;
-  justify-content: space-between;
+.logo__link {
+  display: inline-block;
+  height: 80px;
 }
-
 .logo__link img {
+  display: inline-block;
   height: 70px;
   width: auto;
+  margin: 5px 0 5px 20px;
 }
 
 .bars-button {
+  position: absolute;
+  right: 20px;
   border: none;
   background-color: transparent;
+  padding: 10px;
+  margin: 12.5px 0;
 }
 
 .bars-icon {
   font-size: 35px;
-  width: 70px;
+  line-height: 35px;
+  width: 35px;
   color: #24303D;
 }
 
-.menu-navbar {
+.menu-navbar.folded {
   display: none;
+}
+.menu-navbar.unfolded {
+  display: block;
+  width: 100%;
+}
+
+.menu-items {
+  font-size: 1rem;
+  font-family: "Open sans", sans-serif;
+  font-weight: 500;
+}
+
+.menu-item {
+  line-height: 40px;
+  border-top: solid 1px #37495d;
+  padding: 5px 20px;
+}
+.menu-item a {
+  color: #24303D;
+}
+
+.cart-icon {
+  color: #5d4f37;
+  margin-right: 5px;
 }
 
 /* ----- Presentation section ----- */

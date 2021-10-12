@@ -69,6 +69,10 @@ root {
   font-size: 13px;
 }
 
+body {
+  line-height: 1;
+}
+
 a {
   color: white;
 }
@@ -89,30 +93,59 @@ ul.circle-type {
 }
 
 /* ----- Header ----- */
-.header {
-  padding: 5px 20px;
-  display: flex;
-  justify-content: space-between;
+.logo__link {
+  display: inline-block;
+  height: 80px;
 }
-
 .logo__link img {
+  display: inline-block;
   height: 70px;
   width: auto;
+  margin: 5px 0 5px 20px;
 }
 
 .bars-button {
+  position: absolute;
+  right: 20px;
   border: none;
   background-color: transparent;
+  padding: 10px;
+  margin: 12.5px 0;
 }
 
 .bars-icon {
   font-size: 35px;
-  width: 70px;
+  line-height: 35px;
+  width: 35px;
   color: #24303D;
 }
 
-.menu-navbar {
+.menu-navbar.folded {
   display: none;
+}
+.menu-navbar.unfolded {
+  display: block;
+  width: 100%;
+}
+
+.menu-items {
+  font-size: 1rem;
+  font-family: "Open sans", sans-serif;
+  font-weight: 500;
+}
+
+.menu-item {
+  line-height: 40px;
+  border-top: solid 1px #37495d;
+  padding: 5px 20px;
+}
+.menu-item a {
+  color: #24303D;
+}
+
+.cart-icon {
+  color: #5d4f37;
+  margin-right: 5px;
 }
 
 /* ----- Presentation section ----- */
@@ -282,19 +315,46 @@ ul.circle-type {
   font-weight: 100;
   padding: 20px 0 50px 0;
 }
-.cart-section__form table {
-  padding-top: 20px;
-  font-family: "Open sans", sans-serif;
-  font-size: 0.8rem;
-}
 .cart-section__form a {
   display: inline-block;
+  font-weight: 500;
   padding: 15px;
   color: #24303D;
   background-color: #C99D5C;
   border-radius: 5px;
   box-shadow: 3px 3px 10px 3px silver;
   margin-top: 30px;
+  line-height: 10px;
+}
+.cart-section__table {
+  width: 100%;
+  margin: 20px 0 10px 0;
+  border-collapse: collapse;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.cart-section__table-header {
+  border: solid 1px black;
+  font-size: 0.9rem;
+  background-color: #5F748A;
+}
+.cart-section__table-header.table-header__product {
+  width: 50%;
+}
+.cart-section__table-header tbody {
+  padding: 10px 0;
+}
+.cart-section__thead-line {
+  line-height: 20px;
+  width: 100%;
+}
+.cart-section__product-line {
+  line-height: 50px;
+}
+.cart-section__total-line {
+  line-height: 30px;
+  font-weight: 600;
 }
 
 /* PAGE CART - Form section */
@@ -337,14 +397,14 @@ ul.circle-type {
 }
 .form-section__button {
   font-family: "Open sans", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 400;
   color: white;
   line-height: 40px;
   background-color: #43658A;
   border-radius: 5px;
   box-shadow: 3px 3px 10px 3px silver;
-  margin: 50px 50px 0 50px;
+  margin: 50px 45px 0 45px;
 }
 
 /*# sourceMappingURL=cart.css.map */
