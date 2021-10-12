@@ -503,6 +503,7 @@ ul.circle-type {
   font-weight: 400;
   color: #24303D;
   line-height: 40px;
+  overflow: hidden;
 }
 .product-card__price {
   padding: 11px 20px;
