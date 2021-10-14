@@ -111,6 +111,7 @@ ul.circle-type {
   background-color: transparent;
   padding: 10px;
   margin: 12.5px 0;
+  cursor: pointer;
 }
 
 .bars-icon {
@@ -141,6 +142,7 @@ ul.circle-type {
 }
 .menu-item a {
   color: #24303D;
+  padding: 10px;
 }
 
 .cart-icon {

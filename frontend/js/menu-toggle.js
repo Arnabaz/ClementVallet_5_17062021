@@ -13,8 +13,6 @@ function menuToggle () {
         }
     });
     // Replier le menu après avoir cliqué sur Produits
-    menuProductsElement.addEventListener("click", () => {
-        menuElement.classList.replace("unfolded", "folded");
-    });
+    menuProductsElement.addEventListener("click", () => {menuElement.classList.replace("unfolded", "folded");});
 }
 menuToggle();
