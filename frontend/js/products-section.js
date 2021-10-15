@@ -41,9 +41,9 @@ createArticleElement = function (number) {
 createAElement = function (number) {
     // Création de l'élément a
     const newAElement = document.createElement("a");
-    // Rattachement des classes à l'élément article
+    // Rattachement des classes à l'élément a
     newAElement.classList.add("products-section__link","products-section__link-" + (number + 1))
-    // Insertion de l'élément article dans le DOM
+    // Insertion de l'élément a dans le DOM
     let currentElement = document.querySelector(".products-section__article-" + (number + 1));
     currentElement.appendChild(newAElement);
     // Ajout de l'attribut href (lien avec id du produit)
@@ -56,7 +56,7 @@ createFigureElement = function (number) {
     const newFigureElement = document.createElement("figure");
     // Rattachement des classes à l'élément figure
     newFigureElement.classList.add("product-card", "product-card-" + (number + 1));
-    // Insertion de l'élément article dans le DOM
+    // Insertion de l'élément figure dans le DOM
     let currentElement = document.querySelector(".products-section__link-" + (number + 1));
     currentElement.appendChild(newFigureElement);
 }
@@ -65,9 +65,9 @@ createFigureElement = function (number) {
 createImgElement = function (number) {
 // Création de l'élément img
     const newImgElement = document.createElement("img");
-// Rattachement des classes à l'élément figure
+// Rattachement des classes à l'élément img
     newImgElement.classList.add("product-card__img");
-// Insertion de l'élément article dans le DOM
+// Insertion de l'élément img dans le DOM
     let currentElement = document.querySelector(".product-card-" + (number + 1));
     currentElement.appendChild(newImgElement);
 // Ajout de l'attribut src (url de l'image)
@@ -80,7 +80,7 @@ createFigcaptionElement = function (number) {
     const newFigcaptionElement = document.createElement("figcaption");
 // Rattachement des classes à l'élément figcaption
     newFigcaptionElement.classList.add("product-card__info", "product-card__info-" + (number + 1));
-// Insertion de l'élément article dans le DOM
+// Insertion de l'élément figcaption dans le DOM
     let currentElement = document.querySelector(".product-card-" + (number + 1));
     currentElement.appendChild(newFigcaptionElement);
 }
@@ -89,7 +89,7 @@ createFigcaptionElement = function (number) {
 createH3Element = function (number) {
 // Création de l'élément h3
     const newH3Element = document.createElement("h3");
-// Rattachement des classes à l'élément figure
+// Rattachement des classes à l'élément h3
     newH3Element.classList.add("product-card__name");
 // Création du contenu de l'élément h3
     const newH3Content = document.createTextNode(
@@ -97,18 +97,20 @@ createH3Element = function (number) {
     );
 // Rattachement du contenu et de l'élément h3
     newH3Element.appendChild(newH3Content);
-// Insertion de l'élément article dans le DOM
+// Insertion de l'élément h3 dans le DOM
     let currentElement = document.querySelector(".product-card__info-" + (number + 1));
     currentElement.appendChild(newH3Element);
 }
+
+//Fonction de création de l'élément p
+// Changement du format du prix (centimes en euros avec décimales)
 createPElement = function (number) {
     let productPrice = parseInt(products[number].price, 10) / 100;
     productPrice = productPrice.toFixed(2);
 
-//Fonction de création de l'élément p
 // Création de l'élément p
     const newPElement = document.createElement("p");
-// Rattachement des classes à l'élément figure
+// Rattachement des classes à l'élément p
     newPElement.classList.add("product-card__price");
 // Création du contenu de l'élément p
     const newPContent = document.createTextNode(

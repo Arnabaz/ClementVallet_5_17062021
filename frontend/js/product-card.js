@@ -34,167 +34,167 @@ Pour chaque élément, il faut :
  */
 
 // Fonction de création de l'élément figure
-createFigureElement2 = function () {
+createFigureElementProductPage = function () {
     //Création de l'élément figure
-    const newFigureElement2 = document.createElement("figure");
+    const newFigureElementProductPage = document.createElement("figure");
     // Rattachement de classe à l'élément figure
-    newFigureElement2.classList.add("product-section__card");
+    newFigureElementProductPage.classList.add("product-section__card");
     // Insertion de l'élément figure dans le DOM
-    let AElement2 = document.querySelector(".product-page__add-to-cart");
-    let currentElement2 = document.querySelector(".product-section");
-    currentElement2.insertBefore(newFigureElement2, AElement2);
+    let AElementProductPage = document.querySelector(".product-page__add-to-cart");
+    let currentElementProductPage = document.querySelector(".product-section");
+    currentElementProductPage.insertBefore(newFigureElementProductPage, AElementProductPage);
 }
 
 // Fonction de création de l'élément img
-createImgElement2 = function () {
+createImgElementProductPage = function () {
     // Création de l'élément img
-    const newImgElement2 = document.createElement("img");
+    const newImgElementProductPage = document.createElement("img");
     // Rattachement de classe à l'élément img
-    newImgElement2.classList.add("product-page__img");
+    newImgElementProductPage.classList.add("product-page__img");
     // Insertion de l'élément img dans le DOM
-    let currentElement2 = document.querySelector(".product-section__card");
-    currentElement2.appendChild(newImgElement2);
+    let currentElementProductPage = document.querySelector(".product-section__card");
+    currentElementProductPage.appendChild(newImgElementProductPage);
 // Ajout de la référence à l'élément img
-newImgElement2.setAttribute("src", product2.imageUrl);
+newImgElementProductPage.setAttribute("src", productProductPage.imageUrl);
 }
 
 // Fonction de création de l'élement figcaption
-createFigcaptionElement2 = function () {
+createFigcaptionElementProductPage = function () {
     // Création de l'élément figcation
-    const newFigcaptionElement2 = document.createElement("figcaption");
+    const newFigcaptionElementProductPage = document.createElement("figcaption");
     // Rattachement de classe à l'élément figcaption
-    newFigcaptionElement2.classList.add("product-page__info");
+    newFigcaptionElementProductPage.classList.add("product-page__info");
     // Insertion de l'élément figcaption dans le DOM
-    let currentElement2 = document.querySelector(".product-section__card");
-    currentElement2.appendChild(newFigcaptionElement2);
+    let currentElementProductPage = document.querySelector(".product-section__card");
+    currentElementProductPage.appendChild(newFigcaptionElementProductPage);
 }
 
 // Fonction de création de l'élément h2
-createH2Element2 = function () {
+createH2ElementProductPage = function () {
 // Création de l'élément img
-    const newH2Element2 = document.createElement("h2");
+    const newH2ElementProductPage = document.createElement("h2");
 // Rattachement de classe à l'élément h2
-    newH2Element2.classList.add("product-page__name");
+    newH2ElementProductPage.classList.add("product-page__name");
     // Création du contenu de l'élément h3
-    const newH2Content2 = document.createTextNode(
-        product2.name
+    const newH2ContentProductPage = document.createTextNode(
+        productProductPage.name
     );
 // Rattachement du contenu et de l'élément h2
-    newH2Element2.appendChild(newH2Content2);
+    newH2ElementProductPage.appendChild(newH2ContentProductPage);
 // Insertion de l'élément h2 dans le DOM
-    let currentElement2 = document.querySelector(".product-page__info");
-    currentElement2.appendChild(newH2Element2);
+    let currentElementProductPage = document.querySelector(".product-page__info");
+    currentElementProductPage.appendChild(newH2ElementProductPage);
 }
 
 // Fonction de création de l'élément span
-createSpanElement2 = function () {
-    let productPrice2 = parseInt(product2.price, 10) / 100;
-    productPrice2 = productPrice2.toFixed(2);
+createSpanElementProductPage = function () {
+    let productPriceProductPage = parseInt(productProductPage.price, 10) / 100;
+    productPriceProductPage = productPriceProductPage.toFixed(2);
 // Création de l'élément span
-    const newSpanElement2 = document.createElement("span");
+    const newSpanElementProductPage = document.createElement("span");
 // Rattachement de classe à l'élément span
-    newSpanElement2.classList.add("product-page__price");
+    newSpanElementProductPage.classList.add("product-page__price");
     // Création du contenu de l'élément span
-    const newPContent2 = document.createTextNode(
-        productPrice2 + "€"
+    const newPContentProductPage = document.createTextNode(
+        productPriceProductPage + "€"
     );
 // Rattachement du contenu et de l'élément P
-    newSpanElement2.appendChild(newPContent2);
+    newSpanElementProductPage.appendChild(newPContentProductPage);
 // Insertion de l'élément span dans le DOM
-    let currentElement2 = document.querySelector(".product-page__info");
-    currentElement2.appendChild(newSpanElement2);
+    let currentElementProductPage = document.querySelector(".product-page__info");
+    currentElementProductPage.appendChild(newSpanElementProductPage);
 }
 
 // Fonction de création de l'élément p
-createPElement2 = function () {
+createPElementProductPage = function () {
 // Création de l'élément p
-    const newPElement2 = document.createElement("p");
+    const newPElementProductPage = document.createElement("p");
 // Rattachement de classe à l'élément p
-    newPElement2.classList.add("product-page__text");
+    newPElementProductPage.classList.add("product-page__text");
     // Création du contenu de l'élément p
-    const newPContent2 = document.createTextNode(
-        product2.description
+    const newPContentProductPage = document.createTextNode(
+        productProductPage.description
     );
 // Rattachement du contenu et de l'élément P
-    newPElement2.appendChild(newPContent2);
+    newPElementProductPage.appendChild(newPContentProductPage);
 // Insertion de l'élément p dans le DOM
-    let currentElement2 = document.querySelector(".product-page__info");
-    currentElement2.appendChild(newPElement2);
+    let currentElementProductPage = document.querySelector(".product-page__info");
+    currentElementProductPage.appendChild(newPElementProductPage);
 }
 
 // Fonction de création de l'élément form
-createFormElement2 = function () {
+createFormElementProductPage = function () {
 // Création de l'élément form
-    const newFormElement2 = document.createElement("form");
+    const newFormElementProductPage = document.createElement("form");
 // Rattachement des classes à l'élément form
-    newFormElement2.classList.add("product-page__form");
+    newFormElementProductPage.classList.add("product-page__form");
 // Insertion de l'élément form dans le DOM
-    let currentElement2 = document.querySelector(".product-page__info");
-    currentElement2.appendChild(newFormElement2);
+    let currentElementProductPage = document.querySelector(".product-page__info");
+    currentElementProductPage.appendChild(newFormElementProductPage);
 // Ajout de l'attribut name à l'élément form
-newFormElement2.setAttribute("name", "product-form");
+newFormElementProductPage.setAttribute("name", "product-form");
 }
 
 // Fonction de création de l'élément label
-createLabelElement2 = function () {
+createLabelElementProductPage = function () {
 // Création de l'élément label
-    const newLabelElement2 = document.createElement("label");
+    const newLabelElementProductPage = document.createElement("label");
 // Création du contenu de l'élément label
-    const newLabelContent2 = document.createTextNode("Couleur :");
+    const newLabelContentProductPage = document.createTextNode("Couleur :");
 // Rattachement du contenu et de l'élément label
-    newLabelElement2.appendChild(newLabelContent2);
+    newLabelElementProductPage.appendChild(newLabelContentProductPage);
 // Insertion de l'élément label dans le DOM
-    let currentElement2 = document.querySelector(".product-page__form");
-    currentElement2.appendChild(newLabelElement2);
+    let currentElementProductPage = document.querySelector(".product-page__form");
+    currentElementProductPage.appendChild(newLabelElementProductPage);
     // Ajout de l'attribut name à l'élément form
-    newLabelElement2.setAttribute("for", "color-choice");
+    newLabelElementProductPage.setAttribute("for", "color-choice");
 }
 
 //Fonction de création de l'élément select
-createSelectElement2 = function () {
+createSelectElementProductPage = function () {
 // Création de l'élément select
-    const newSelectElement2 = document.createElement("select");
+    const newSelectElementProductPage = document.createElement("select");
     // Rattachement des classes à l'élément form
-    newSelectElement2.classList.add("product-form__select");
+    newSelectElementProductPage.classList.add("product-form__select");
 // Insertion de l'élément select dans le DOM
-    let currentElement2 = document.querySelector(".product-page__form");
-    currentElement2.appendChild(newSelectElement2);
+    let currentElementProductPage = document.querySelector(".product-page__form");
+    currentElementProductPage.appendChild(newSelectElementProductPage);
     // Ajout de l'attribut name à l'élément form
-    newSelectElement2.setAttribute("name", "product-form");
-    newSelectElement2.setAttribute("id", "color-choice");
+    newSelectElementProductPage.setAttribute("name", "product-form");
+    newSelectElementProductPage.setAttribute("id", "color-choice");
 }
 
 //Fonction de création de l'élément option n°1 (différent des autres)
-createOptionElement2 = function () {
+createOptionElementProductPage = function () {
 // Création de l'élément option
-    const newOptionElement2 = document.createElement("option");
+    const newOptionElementProductPage = document.createElement("option");
     // Création du contenu de l'élément option
-    const newOptionContent2 = document.createTextNode("Choisissez une couleur");
+    const newOptionContentProductPage = document.createTextNode("Choisissez une couleur");
 // Rattachement du contenu et de l'élément option
-    newOptionElement2.appendChild(newOptionContent2);
+    newOptionElementProductPage.appendChild(newOptionContentProductPage);
 // Insertion de l'élément select dans le DOM
-    let currentElement2 = document.querySelector(".product-form__select");
-    currentElement2.appendChild(newOptionElement2);
+    let currentElementProductPage = document.querySelector(".product-form__select");
+    currentElementProductPage.appendChild(newOptionElementProductPage);
     // Ajout de l'attribut value à l'élément option
-    newOptionElement2.setAttribute("value", "");
+    newOptionElementProductPage.setAttribute("value", "");
 }
 
 
 //Fonction de création des autres éléments option
-createOptionsElement2 = function () {
-    let productColors = product2.varnish;
+createOptionsElementProductPage = function () {
+    let productColors = productProductPage.varnish;
     for (let i = 0; i < productColors.length; i++) {
         // Création de l'élément option
-        const newOptionsElement2 = document.createElement("option");
+        const newOptionsElementProductPage = document.createElement("option");
         // Création du contenu de l'élément option
-        const newOptionsContent2 = document.createTextNode(productColors[i]);
+        const newOptionsContentProductPage = document.createTextNode(productColors[i]);
         // Rattachement du contenu et de l'élément option
-        newOptionsElement2.appendChild(newOptionsContent2);
+        newOptionsElementProductPage.appendChild(newOptionsContentProductPage);
         // Insertion de l'élément select dans le DOM
-        let currentElement2 = document.querySelector(".product-form__select");
-        currentElement2.appendChild(newOptionsElement2);
+        let currentElementProductPage = document.querySelector(".product-form__select");
+        currentElementProductPage.appendChild(newOptionsElementProductPage);
         // Ajout de l'attribut value à l'élément option
-        newOptionsElement2.setAttribute("value", productColors[i]);
+        newOptionsElementProductPage.setAttribute("value", productColors[i]);
     }
 }
 // Interroger l'API pour récupérer les données
@@ -202,27 +202,27 @@ createOptionsElement2 = function () {
 let params = new URLSearchParams(document.location.search);
 let idProduct = params.get("id");
 
-let product2;
+let productProductPage;
 fetch("http://localhost:3000/api/furniture/" + idProduct)
     // Récupérer le body du fichier.JSON
     .then((res) => res.json())
     // Convertir la réponse en .json et la stocker dans la variable products
     .then((data) => {
-        product2 = JSON.stringify(data);
+        productProductPage = JSON.stringify(data);
         // Transformer le .json en objet JS exploitable
-        product2 = JSON.parse(product2);
+        productProductPage = JSON.parse(productProductPage);
 
-        createFigureElement2 ();
-        createImgElement2 ();
-        createFigcaptionElement2 ();
-        createH2Element2();
-        createSpanElement2 ();
-        createPElement2 ();
-        createFormElement2 ();
-        createLabelElement2 ();
-        createSelectElement2();
-        createOptionElement2 ();
-        createOptionsElement2 ();
+        createFigureElementProductPage ();
+        createImgElementProductPage ();
+        createFigcaptionElementProductPage ();
+        createH2ElementProductPage();
+        createSpanElementProductPage ();
+        createPElementProductPage ();
+        createFormElementProductPage ();
+        createLabelElementProductPage ();
+        createSelectElementProductPage ();
+        createOptionElementProductPage ();
+        createOptionsElementProductPage ();
 
     })
 
