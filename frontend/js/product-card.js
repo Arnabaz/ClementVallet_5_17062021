@@ -55,7 +55,7 @@ createImgElementProductPage = function () {
     let currentElementProductPage = document.querySelector(".product-section__card");
     currentElementProductPage.appendChild(newImgElementProductPage);
 // Ajout de la référence à l'élément img
-newImgElementProductPage.setAttribute("src", productProductPage.imageUrl);
+newImgElementProductPage.setAttribute("src", product.imageUrl);
 }
 
 // Fonction de création de l'élement figcaption
@@ -77,7 +77,7 @@ createH2ElementProductPage = function () {
     newH2ElementProductPage.classList.add("product-page__name");
     // Création du contenu de l'élément h3
     const newH2ContentProductPage = document.createTextNode(
-        productProductPage.name
+        product.name
     );
 // Rattachement du contenu et de l'élément h2
     newH2ElementProductPage.appendChild(newH2ContentProductPage);
@@ -88,7 +88,7 @@ createH2ElementProductPage = function () {
 
 // Fonction de création de l'élément span
 createSpanElementProductPage = function () {
-    let productPriceProductPage = parseInt(productProductPage.price, 10) / 100;
+    let productPriceProductPage = parseInt(product.price, 10) / 100;
     productPriceProductPage = productPriceProductPage.toFixed(2);
 // Création de l'élément span
     const newSpanElementProductPage = document.createElement("span");
@@ -113,7 +113,7 @@ createPElementProductPage = function () {
     newPElementProductPage.classList.add("product-page__text");
     // Création du contenu de l'élément p
     const newPContentProductPage = document.createTextNode(
-        productProductPage.description
+        product.description
     );
 // Rattachement du contenu et de l'élément P
     newPElementProductPage.appendChild(newPContentProductPage);
@@ -182,70 +182,47 @@ createOptionElementProductPage = function () {
 
 //Fonction de création des autres éléments option
 createOptionsElementProductPage = function () {
-    let productColors = productProductPage.varnish;
-    for (let i = 0; i < productColors.length; i++) {
+    let productVarnish = product.varnish;
+    for (let i = 0; i < productVarnish.length; i++) {
         // Création de l'élément option
         const newOptionsElementProductPage = document.createElement("option");
         // Création du contenu de l'élément option
-        const newOptionsContentProductPage = document.createTextNode(productColors[i]);
+        const newOptionsContentProductPage = document.createTextNode(productVarnish[i]);
         // Rattachement du contenu et de l'élément option
         newOptionsElementProductPage.appendChild(newOptionsContentProductPage);
         // Insertion de l'élément select dans le DOM
         let currentElementProductPage = document.querySelector(".product-form__select");
         currentElementProductPage.appendChild(newOptionsElementProductPage);
         // Ajout de l'attribut value à l'élément option
-        newOptionsElementProductPage.setAttribute("value", productColors[i]);
+        newOptionsElementProductPage.setAttribute("value", productVarnish[i]);
     }
 }
 // Interroger l'API pour récupérer les données
-
 let params = new URLSearchParams(document.location.search);
 let idProduct = params.get("id");
+let product = [];
+ fetch("http://localhost:3000/api/furniture/" + idProduct)
+        .then((response) =>
+            response.json()
+        )
+        .catch((e) =>
+            console.log(e)
+        )
+        // Convertir la réponse en .json et la stocker dans la variable products
+        .then((data) => {
+            product = data;
+            createFigureElementProductPage ();
+            createImgElementProductPage ();
+            createFigcaptionElementProductPage ();
+            createH2ElementProductPage ();
+            createSpanElementProductPage ();
+            createPElementProductPage ();
+            createFormElementProductPage ();
+            createLabelElementProductPage ();
+            createSelectElementProductPage ();
+            createOptionElementProductPage ();
+            createOptionsElementProductPage ();
+        })
 
-let productProductPage;
-fetch("http://localhost:3000/api/furniture/" + idProduct)
-    // Récupérer le body du fichier.JSON
-    .then((res) => res.json())
-    // Convertir la réponse en .json et la stocker dans la variable products
-    .then((data) => {
-        productProductPage = JSON.stringify(data);
-        // Transformer le .json en objet JS exploitable
-        productProductPage = JSON.parse(productProductPage);
 
-        createFigureElementProductPage ();
-        createImgElementProductPage ();
-        createFigcaptionElementProductPage ();
-        createH2ElementProductPage();
-        createSpanElementProductPage ();
-        createPElementProductPage ();
-        createFormElementProductPage ();
-        createLabelElementProductPage ();
-        createSelectElementProductPage ();
-        createOptionElementProductPage ();
-        createOptionsElementProductPage ();
 
-    })
-
-/* AFFICHER LES PRODUITS A VENDRE
-Interroger l'API sur http://localhost:3000/api/furniture
-Récupérer les données de l'API avec fetch()
-Extraire les données de l'API
-
-Objet Produits : products --> Pour stocker toutes les données envoyées par l'API :
-description
-imageUrl
-name
-price
-varnish :[]
-_id
-*/
-
-/* Nom des variables
-Nombre de produits : productNumber  --> products.length
-Description : productDescription    --> products.description
-Image : productImageURL             --> products.imageURL
-Nom : productName                   --> products.name
-Prix : productPrice                 --> products.price
-Choix couleur : productColorChoice  --> products.varnish
-nombre de couleur                   --> products.varnish.length
-*/

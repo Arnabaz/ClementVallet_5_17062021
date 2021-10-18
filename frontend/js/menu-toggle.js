@@ -12,7 +12,7 @@ function menuToggle () {
             menuElement.classList.replace("unfolded", "folded");
         }
     });
-    // Replier le menu après avoir cliqué sur Produits
+    // Replier le menu après avoir cliqué sur Produits (ne se replie pas seul si clique sur l'item "Produits")
     menuProductsElement.addEventListener("click", () => {menuElement.classList.replace("unfolded", "folded");});
 }
 menuToggle();

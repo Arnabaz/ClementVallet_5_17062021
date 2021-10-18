@@ -93,18 +93,17 @@ ul.circle-type {
 }
 
 /* ----- Header ----- */
-.logo__link {
+.header .logo__link {
   display: inline-block;
   height: 80px;
 }
-.logo__link img {
+.header .logo__link img {
   display: inline-block;
   height: 70px;
   width: auto;
   margin: 5px 0 5px 20px;
 }
-
-.bars-button {
+.header .bars-button {
   position: absolute;
   right: 20px;
   border: none;
@@ -113,39 +112,34 @@ ul.circle-type {
   margin: 12.5px 0;
   cursor: pointer;
 }
-
-.bars-icon {
+.header .bars-icon {
   font-size: 35px;
   line-height: 35px;
   width: 35px;
   color: #24303D;
 }
-
-.menu-navbar.folded {
+.header .menu-navbar {
+  width: 100%;
+  display: block;
+}
+.header .menu-navbar.folded {
   display: none;
 }
-.menu-navbar.unfolded {
-  display: block;
-  width: 100%;
-}
-
-.menu-items {
+.header .menu-items {
   font-size: 1rem;
   font-family: "Open sans", sans-serif;
   font-weight: 500;
 }
-
-.menu-item {
+.header .menu-item {
   line-height: 40px;
   border-top: solid 1px #37495d;
   padding: 5px 20px;
 }
-.menu-item a {
+.header .menu-item a {
   color: #24303D;
   padding: 10px;
 }
-
-.cart-icon {
+.header .cart-icon {
   color: #5d4f37;
   margin-right: 5px;
 }

@@ -1,4 +1,4 @@
-/* Fonctions pour créer la section de présentation des articles de produit
+/* Fonctions pour créer la section "products-section" de la page d'accueil = liste des produits
 Chaque produit possède sa propre carte de présentation. Une boucle for permet de générer autant de produit que nécessaire
 (autant que ce que communique l'API).
 Chaque carte de présentation est organisée de cette manière en HTML :
@@ -25,7 +25,7 @@ Pour chaque élément, il faut :
 5. Insérer tout l'élément HTML dans le DOM
  */
 
-
+// --- Déclarations des fonctions ---
 // Fonction de création de l'élément article
 createArticleElement = function (number) {
     //Création de l'élément article
@@ -72,6 +72,7 @@ createImgElement = function (number) {
     currentElement.appendChild(newImgElement);
 // Ajout de l'attribut src (url de l'image)
     newImgElement.setAttribute("src", products[number].imageUrl);
+    newImgElement.setAttribute("alt", products[number].name);
 }
 
 // Fonction de création de l'élément figcaption
@@ -103,10 +104,9 @@ createH3Element = function (number) {
 }
 
 //Fonction de création de l'élément p
-// Changement du format du prix (centimes en euros avec décimales)
 createPElement = function (number) {
-    let productPrice = parseInt(products[number].price, 10) / 100;
-    productPrice = productPrice.toFixed(2);
+    // Conversion du prix en nombre décimale avec euros.
+    let productPrice = formatPrice(products[number].price);
 
 // Création de l'élément p
     const newPElement = document.createElement("p");
@@ -118,55 +118,54 @@ createPElement = function (number) {
     );
 // Rattachement du contenu et de l'élément P
     newPElement.appendChild(newPContent);
-// Insertion de l'élément article dans le DOM
+// Insertion de l'élément p dans le DOM
     let currentElement = document.querySelector(".product-card__info-" + (number + 1));
     currentElement.appendChild(newPElement);
 }
 
+// Fonction de création de l'élément div (créé s'il n'y a pas de produits disponibles)
+    createNoProductElement = function () {
+    // Création de l'élément p (= NoArticle)
+    const newNoProductElement = document.createElement("p");
+    // Rattachement des classes à l'élément NoArticle
+    newNoProductElement.classList.add("no-product");
+    // Création du contenu de l'élément NoArticle
+        const newNoProductContent = document.createTextNode("Désolé mais nous sommes actuellement en rupture de stock de tous nos produits. Pour vous tenir informés de l’arrivée de nouveaux stocks et de nouveaux produits, n’hésitez pas à vous abonner !");
+    // Rattachement du contenu et de l'élément NoArticle
+    newNoProductElement.appendChild(newNoProductContent);
+    // Insertion de l'élément NoArticle dans le DOM
+        let currentElement = document.getElementById("products-section");
+        currentElement.appendChild(newNoProductElement);
+    }
+
+
 // Interroger l'API pour récupérer les données
-let products
-fetch("http://localhost:3000/api/furniture")
-    // Récupérer le body du fichier.JSON
-    .then((res) => res.json())
+let products;
+fetch(url)
+    .then((response) =>
+        response.json()
+    )
+    .catch((e) =>
+        console.log(e)
+    )
     // Convertir la réponse en .json et la stocker dans la variable products
     .then((data) => {
-        products = JSON.stringify(data);
-        // Transformer le .json en objet JS exploitable
-        products = JSON.parse(products);
-        for (let i = 0; i < products.length; i++) {
-            createArticleElement (i);
-            createAElement (i);
-            createFigureElement(i);
-            createImgElement(i);
-            createFigcaptionElement(i);
-            createH3Element (i);
-            createPElement(i);
-        }
+        products = data;
+        if (products.length === 0) {
+            createNoProductElement();
+        } else if (products.length > 0)
+            for (let i = 0; i < products.length; i++) {
+                createArticleElement(i);
+                createAElement(i);
+                createFigureElement(i);
+                createImgElement(i);
+                createFigcaptionElement(i);
+                createH3Element(i);
+                createPElement(i);
+            }
     })
 
-/* AFFICHER LES PRODUITS A VENDRE
-Interroger l'API sur http://localhost:3000/api/furniture
-Récupérer les données de l'API avec fetch()
-Extraire les données de l'API
 
-Objet Produits : products --> Pour stocker toutes les données envoyées par l'API :
-description
-imageUrl
-name
-price
-varnish :[]
-_id
-*/
-
-/* Nom des variables
-Nombre de produits : productNumber  --> products.length
-Description : productDescription    --> products.description
-Image : productImageURL             --> products.imageURL
-Nom : productName                   --> products.name
-Prix : productPrice                 --> products.price
-Choix couleur : productColorChoice  --> products.varnish
-nombre de couleur                   --> products.varnish.length
-*/
 
 
 
