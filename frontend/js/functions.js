@@ -1,23 +1,33 @@
 // --- Déclaration variables ---
 const url = "http://localhost:3000/api/furniture/";
+const cart = JSON.parse(localStorage.getItem("customCart")) || [];
 
 // --- Déclaration des classes ---
-
-/*
-class CustomCart {
-    constructor(id, name, price, quantity, varnish) {
+class CustomProduct {
+    constructor(id, name, description, price, varnish, quantity, imgURL) {
         this.id = id;
         this.name = name;
+        this.description = description;
         this.price = price;
-        this.quantity = quantity;
         this.varnish = varnish;
+        this.quantity = quantity;
+        this.imgURL = imgURL;
     }
 }
 
-*/
 // --- Déclaration des fonctions ---
+// Supprimer le panier
+function removeCart () {
+    localStorage.clear();
+}
 
-
+// Formattage du prix :
+function formatPrice (price) {
+    let productPrice = parseInt(price, 10) / 100;
+    productPrice = productPrice.toFixed(2);
+    productPrice = productPrice.replace('.', ',');
+    return productPrice;
+}
 
 
 /* AFFICHER LES PRODUITS A VENDRE
@@ -44,10 +54,3 @@ Choix couleur : productColorChoice  --> products.varnish
 nombre de couleur                   --> products.varnish.length
 */
 
-// Fonction de formattage du prix :
-formatPrice = function (price) {
-    let productPrice = parseInt(price, 10) / 100;
-    productPrice = productPrice.toFixed(2);
-    productPrice = productPrice.replace('.', ',');
-    return productPrice;
-};

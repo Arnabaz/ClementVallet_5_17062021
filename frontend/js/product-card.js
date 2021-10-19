@@ -10,8 +10,8 @@ Chaque carte produit est organisée de cette manière en HTML :
                         adipiscing elit, sed do elusmod tempor
                         incidunt ut labore et dolore magna aliqua.</p>
                     <form name="product-form" class="product-page__form">
-                        <label for="color-choice">Couleur :</label>
-                        <select name="product-form" id="color-choice">
+                        <label for="varnish-choice">Couleur :</label>
+                        <select name="product-form" id="varnish-choice">
                             <option value="">Choisissez une couleur</option>
                             <option value="Tan">Brun clair</option>
                             <option value="Chocolate">Chocolat</option>
@@ -33,8 +33,10 @@ Pour chaque élément, il faut :
 5. Insérer tout l'élément HTML dans le DOM
  */
 
+
+// --- Déclaration de fonction
 // Fonction de création de l'élément figure
-createFigureElementProductPage = function () {
+function createFigureElementProductPage () {
     //Création de l'élément figure
     const newFigureElementProductPage = document.createElement("figure");
     // Rattachement de classe à l'élément figure
@@ -46,7 +48,7 @@ createFigureElementProductPage = function () {
 }
 
 // Fonction de création de l'élément img
-createImgElementProductPage = function () {
+function createImgElementProductPage () {
     // Création de l'élément img
     const newImgElementProductPage = document.createElement("img");
     // Rattachement de classe à l'élément img
@@ -54,12 +56,13 @@ createImgElementProductPage = function () {
     // Insertion de l'élément img dans le DOM
     let currentElementProductPage = document.querySelector(".product-section__card");
     currentElementProductPage.appendChild(newImgElementProductPage);
-// Ajout de la référence à l'élément img
-newImgElementProductPage.setAttribute("src", product.imageUrl);
+    // Ajout de la référence à l'élément img
+    newImgElementProductPage.setAttribute("src", product.imageUrl);
+    newImgElementProductPage.setAttribute("alt", product.name)
 }
 
 // Fonction de création de l'élement figcaption
-createFigcaptionElementProductPage = function () {
+function createFigcaptionElementProductPage () {
     // Création de l'élément figcation
     const newFigcaptionElementProductPage = document.createElement("figcaption");
     // Rattachement de classe à l'élément figcaption
@@ -70,7 +73,7 @@ createFigcaptionElementProductPage = function () {
 }
 
 // Fonction de création de l'élément h2
-createH2ElementProductPage = function () {
+function createH2ElementProductPage () {
 // Création de l'élément img
     const newH2ElementProductPage = document.createElement("h2");
 // Rattachement de classe à l'élément h2
@@ -87,7 +90,7 @@ createH2ElementProductPage = function () {
 }
 
 // Fonction de création de l'élément span
-createSpanElementProductPage = function () {
+function createSpanElementProductPage () {
     let productPriceProductPage = parseInt(product.price, 10) / 100;
     productPriceProductPage = productPriceProductPage.toFixed(2);
 // Création de l'élément span
@@ -106,7 +109,7 @@ createSpanElementProductPage = function () {
 }
 
 // Fonction de création de l'élément p
-createPElementProductPage = function () {
+function createPElementProductPage () {
 // Création de l'élément p
     const newPElementProductPage = document.createElement("p");
 // Rattachement de classe à l'élément p
@@ -123,7 +126,7 @@ createPElementProductPage = function () {
 }
 
 // Fonction de création de l'élément form
-createFormElementProductPage = function () {
+function createFormElementProductPage () {
 // Création de l'élément form
     const newFormElementProductPage = document.createElement("form");
 // Rattachement des classes à l'élément form
@@ -136,7 +139,7 @@ newFormElementProductPage.setAttribute("name", "product-form");
 }
 
 // Fonction de création de l'élément label
-createLabelElementProductPage = function () {
+function createLabelElementProductPage () {
 // Création de l'élément label
     const newLabelElementProductPage = document.createElement("label");
 // Création du contenu de l'élément label
@@ -147,25 +150,25 @@ createLabelElementProductPage = function () {
     let currentElementProductPage = document.querySelector(".product-page__form");
     currentElementProductPage.appendChild(newLabelElementProductPage);
     // Ajout de l'attribut name à l'élément form
-    newLabelElementProductPage.setAttribute("for", "color-choice");
+    newLabelElementProductPage.setAttribute("for", "varnish-choice");
 }
 
 //Fonction de création de l'élément select
-createSelectElementProductPage = function () {
-// Création de l'élément select
+function createSelectElementProductPage () {
+    // Création de l'élément select
     const newSelectElementProductPage = document.createElement("select");
     // Rattachement des classes à l'élément form
     newSelectElementProductPage.classList.add("product-form__select");
-// Insertion de l'élément select dans le DOM
+    // Insertion de l'élément select dans le DOM
     let currentElementProductPage = document.querySelector(".product-page__form");
     currentElementProductPage.appendChild(newSelectElementProductPage);
     // Ajout de l'attribut name à l'élément form
     newSelectElementProductPage.setAttribute("name", "product-form");
-    newSelectElementProductPage.setAttribute("id", "color-choice");
+    newSelectElementProductPage.setAttribute("id", "varnish-choice");
 }
 
 //Fonction de création de l'élément option n°1 (différent des autres)
-createOptionElementProductPage = function () {
+function createOptionElementProductPage () {
 // Création de l'élément option
     const newOptionElementProductPage = document.createElement("option");
     // Création du contenu de l'élément option
@@ -181,7 +184,7 @@ createOptionElementProductPage = function () {
 
 
 //Fonction de création des autres éléments option
-createOptionsElementProductPage = function () {
+function createOptionsElementProductPage () {
     let productVarnish = product.varnish;
     for (let i = 0; i < productVarnish.length; i++) {
         // Création de l'élément option
@@ -197,10 +200,13 @@ createOptionsElementProductPage = function () {
         newOptionsElementProductPage.setAttribute("value", productVarnish[i]);
     }
 }
-// Interroger l'API pour récupérer les données
+
+// --- PAGE PRODUIT - Affichage de la fiche du produit sélectionné
+// Récupérer l'id produit dans l'URL
 let params = new URLSearchParams(document.location.search);
 let idProduct = params.get("id");
 let product = [];
+// Interroger l'API pour récupérer les données du produit sélectionné
  fetch("http://localhost:3000/api/furniture/" + idProduct)
         .then((response) =>
             response.json()
@@ -208,7 +214,7 @@ let product = [];
         .catch((e) =>
             console.log(e)
         )
-        // Convertir la réponse en .json et la stocker dans la variable products
+        // Convertir la réponse en .json et la stocker dans la variable product
         .then((data) => {
             product = data;
             createFigureElementProductPage ();

@@ -25,9 +25,9 @@ Pour chaque élément, il faut :
 5. Insérer tout l'élément HTML dans le DOM
  */
 
-// --- Déclarations des fonctions ---
+// --- Déclarations de fonction ---
 // Fonction de création de l'élément article
-createArticleElement = function (number) {
+function createArticleElement (number) {
     //Création de l'élément article
     const newArticleElement = document.createElement("article");
     // Rattachement des classes à l'élément article
@@ -38,7 +38,7 @@ createArticleElement = function (number) {
 }
 
 // Fonction de création de l'élément a
-createAElement = function (number) {
+function createAElement (number) {
     // Création de l'élément a
     const newAElement = document.createElement("a");
     // Rattachement des classes à l'élément a
@@ -51,7 +51,7 @@ createAElement = function (number) {
 }
 
 // Fonction de création de l'élement figure
-createFigureElement = function (number) {
+function createFigureElement (number) {
     // Création de l'élément figure
     const newFigureElement = document.createElement("figure");
     // Rattachement des classes à l'élément figure
@@ -62,7 +62,7 @@ createFigureElement = function (number) {
 }
 
 // Fonction de création de l'élément img
-createImgElement = function (number) {
+function createImgElement (number) {
 // Création de l'élément img
     const newImgElement = document.createElement("img");
 // Rattachement des classes à l'élément img
@@ -76,7 +76,7 @@ createImgElement = function (number) {
 }
 
 // Fonction de création de l'élément figcaption
-createFigcaptionElement = function (number) {
+function createFigcaptionElement (number) {
 // Création de l'élément figcaption
     const newFigcaptionElement = document.createElement("figcaption");
 // Rattachement des classes à l'élément figcaption
@@ -87,7 +87,7 @@ createFigcaptionElement = function (number) {
 }
 
 // Fonction de création de l'élément h3
-createH3Element = function (number) {
+function createH3Element (number) {
 // Création de l'élément h3
     const newH3Element = document.createElement("h3");
 // Rattachement des classes à l'élément h3
@@ -104,7 +104,7 @@ createH3Element = function (number) {
 }
 
 //Fonction de création de l'élément p
-createPElement = function (number) {
+function createPElement (number) {
     // Conversion du prix en nombre décimale avec euros.
     let productPrice = formatPrice(products[number].price);
 
@@ -124,7 +124,7 @@ createPElement = function (number) {
 }
 
 // Fonction de création de l'élément div (créé s'il n'y a pas de produits disponibles)
-    createNoProductElement = function () {
+function createNoProductElement () {
     // Création de l'élément p (= NoArticle)
     const newNoProductElement = document.createElement("p");
     // Rattachement des classes à l'élément NoArticle
@@ -138,7 +138,7 @@ createPElement = function (number) {
         currentElement.appendChild(newNoProductElement);
     }
 
-
+// --- HOMEPAGE - Affichage de la section Produits ---
 // Interroger l'API pour récupérer les données
 let products;
 fetch(url)
