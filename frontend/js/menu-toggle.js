@@ -1,3 +1,6 @@
+/* Sur toutes les pages du site - Affichage/Masquage du menu déroulant
+
+ */
 // Function to unfold/fold the menu navigation bar
 function menuToggle () {
     // Variables

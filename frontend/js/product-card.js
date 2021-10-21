@@ -1,4 +1,4 @@
-/* Fonctions pour créer la carte d'un produit
+/* --- Création de la carte d'un produit dans la page produit ---
 Chaque produit possède sa propre carte.
 Chaque carte produit est organisée de cette manière en HTML :
         <figure class="product-section__card">
@@ -10,9 +10,9 @@ Chaque carte produit est organisée de cette manière en HTML :
                         adipiscing elit, sed do elusmod tempor
                         incidunt ut labore et dolore magna aliqua.</p>
                     <form name="product-form" class="product-page__form">
-                        <label for="varnish-choice">Couleur :</label>
+                        <label for="varnish-choice">Vernis :</label>
                         <select name="product-form" id="varnish-choice">
-                            <option value="">Choisissez une couleur</option>
+                            <option value="">Choisissez un vernis</option>
                             <option value="Tan">Brun clair</option>
                             <option value="Chocolate">Chocolat</option>
                             <option value="Black">Noir</option>
@@ -32,6 +32,11 @@ Pour chaque élément, il faut :
 4. Rattacher le contenu créé à l'élément HTML créé précedemment
 5. Insérer tout l'élément HTML dans le DOM
  */
+
+// --- Déclaration des variables ---
+let params; // Variable pour stocker le paramètre de l'URL
+let idProduct; // Variable pour stocker l'id produit issu du paramètre de l'url
+let product; // Variable pour stocker les données d'un produit de l'API
 
 
 // --- Déclaration de fonction
@@ -143,7 +148,7 @@ function createLabelElementProductPage () {
 // Création de l'élément label
     const newLabelElementProductPage = document.createElement("label");
 // Création du contenu de l'élément label
-    const newLabelContentProductPage = document.createTextNode("Couleur :");
+    const newLabelContentProductPage = document.createTextNode("Vernis :");
 // Rattachement du contenu et de l'élément label
     newLabelElementProductPage.appendChild(newLabelContentProductPage);
 // Insertion de l'élément label dans le DOM
@@ -172,7 +177,7 @@ function createOptionElementProductPage () {
 // Création de l'élément option
     const newOptionElementProductPage = document.createElement("option");
     // Création du contenu de l'élément option
-    const newOptionContentProductPage = document.createTextNode("Choisissez une couleur");
+    const newOptionContentProductPage = document.createTextNode("Choisissez une vernis");
 // Rattachement du contenu et de l'élément option
     newOptionElementProductPage.appendChild(newOptionContentProductPage);
 // Insertion de l'élément select dans le DOM
@@ -203,9 +208,9 @@ function createOptionsElementProductPage () {
 
 // --- PAGE PRODUIT - Affichage de la fiche du produit sélectionné
 // Récupérer l'id produit dans l'URL
-let params = new URLSearchParams(document.location.search);
-let idProduct = params.get("id");
-let product = [];
+params = new URLSearchParams(document.location.search);
+idProduct = params.get("id");
+product = [];
 // Interroger l'API pour récupérer les données du produit sélectionné
  fetch("http://localhost:3000/api/furniture/" + idProduct)
         .then((response) =>

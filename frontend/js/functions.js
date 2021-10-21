@@ -16,12 +16,7 @@ class CustomProduct {
 }
 
 // --- Déclaration des fonctions ---
-// Supprimer le panier
-function removeCart () {
-    localStorage.clear();
-}
-
-// Formattage du prix :
+// Price formatting :
 function formatPrice (price) {
     let productPrice = parseInt(price, 10) / 100;
     productPrice = productPrice.toFixed(2);

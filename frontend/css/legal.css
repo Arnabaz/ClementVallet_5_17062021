@@ -92,6 +92,10 @@ ul.circle-type {
   list-style: circle;
 }
 
+.d-none {
+  display: none !important;
+}
+
 /* ----- Header ----- */
 .header .logo__link {
   display: inline-block;
@@ -200,7 +204,7 @@ ul.circle-type {
 }
 .sub_form-input {
   display: inline-block;
-  margin: 30px 25px 30px 0;
+  margin: 30px 10px 30px 0;
   background: transparent;
   line-height: 25px;
   border: solid 1px #24303D;
@@ -216,7 +220,7 @@ ul.circle-type {
 }
 .sub_form-button {
   padding: 0 25px;
-  margin: 0 30px;
+  margin: 0 auto;
   line-height: 30px;
   font-size: 1rem;
   font-family: "Open sans", sans-serif;

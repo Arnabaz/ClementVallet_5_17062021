@@ -1,4 +1,5 @@
-/* Fonctions pour créer la section "products-section" de la page d'accueil = liste des produits
+/* --- Création de la section "products-section" de la page d'accueil = liste des produits --- */
+/* Explications
 Chaque produit possède sa propre carte de présentation. Une boucle for permet de générer autant de produit que nécessaire
 (autant que ce que communique l'API).
 Chaque carte de présentation est organisée de cette manière en HTML :
@@ -24,6 +25,9 @@ Pour chaque élément, il faut :
 4. Rattacher le contenu créé à l'élément HTML créé précedemment
 5. Insérer tout l'élément HTML dans le DOM
  */
+
+// --- Déclaration des variables ---
+let products; // Variable pour stocker les données produits de l'API
 
 // --- Déclarations de fonction ---
 // Fonction de création de l'élément article
@@ -140,7 +144,6 @@ function createNoProductElement () {
 
 // --- HOMEPAGE - Affichage de la section Produits ---
 // Interroger l'API pour récupérer les données
-let products;
 fetch(url)
     .then((response) =>
         response.json()
