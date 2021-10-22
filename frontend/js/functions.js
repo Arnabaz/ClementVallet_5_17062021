@@ -4,7 +4,7 @@ const cart = JSON.parse(localStorage.getItem("customCart")) || [];
 
 // --- Déclaration des classes ---
 class CustomProduct {
-    constructor(id, name, description, price, varnish, quantity, imgURL) {
+    constructor(id, name, description, price, varnish, quantity, imgURL, totalPrice) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -12,6 +12,7 @@ class CustomProduct {
         this.varnish = varnish;
         this.quantity = quantity;
         this.imgURL = imgURL;
+        this.totalPrice = totalPrice;
     }
 }
 

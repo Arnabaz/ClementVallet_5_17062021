@@ -68,15 +68,20 @@
             <p class="form-section__text">Afin de formaliser votre commande,<br /> merci de bien vouloir remplir le formulaire ci-dessous</p>
             <h2 class="form-section__title">Formulaire de commande</h2>
             <label class="form-section__label" for="first-name">Prénom</label>
-            <input class="form-section__input" id="first-name" type="text" name="order-form" placeholder="ex: Jean" pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$" required/>
+            <input class="form-section__input" id="first-name" type="text" name="order-form" placeholder="ex: Jean" pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$" autocomplete="off" required/>
+            <p class="form-section__error-message first-name d-none">Prénom incorrect</p>
             <label class="form-section__label" for="last-name">Nom</label>
-            <input class="form-section__input" id="last-name" type="text" name="order-form" placeholder="ex: Dupont" pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$" required/>
+            <input class="form-section__input" id="last-name" type="text" name="order-form" placeholder="ex: Dupont" pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$" autocomplete="off" required/>
+            <p class="form-section__error-message last-name d-none">Nom incorrect</p>
             <label class="form-section__label" for="address">Adresse</label>
-            <input class="form-section__input" id="address" type="text" name="order-form" placeholder="ex: 1 rue des Champs-Elysées" pattern="^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$" required/>
+            <input class="form-section__input" id="address" type="text" name="order-form" placeholder="ex: 1 rue des Champs-Elysées" pattern="^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$" autocomplete="off" required/>
+            <p class="form-section__error-message address d-none">Adresse incorrecte</p>
             <label class="form-section__label" for="city">Ville</label>
-            <input class="form-section__input" id="city" type="text" name="order-form" placeholder="ex: Paris"  pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}" required/>
-            <label class="form-section__label" for="email_order">Email</label>
-            <input class="form-section__input" id="email_order" type="email" name="order-form" placeholder="ex: jean-dupont@mail.fr" pattern="^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$"/>
+            <input class="form-section__input" id="city" type="text" name="order-form" placeholder="ex: Paris"  pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}" autocomplete="off" required/>
+            <p class="form-section__error-message city d-none">Ville incorrecte</p>
+            <label class="form-section__label" for="email-order">Email</label>
+            <input class="form-section__input" id="email-order" type="email" name="order-form" placeholder="ex: jean-dupont@mail.fr" pattern="^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$"/>
+            <p class="form-section__error-message first-name d-none">Email incorrect</p>
             <input class="form-section__input" id="cgv-agreement" type="checkbox" value="" required />
             <label class="form-section__label" for="cgv-agreement">
                 <a class="form-section__cgv-link" target="_blank" href="./cgv.html">Accepter les CGV</a>
@@ -145,7 +150,7 @@
 <!-- JAVASCRIPT -->
 <script src="./js/functions.js"></script>
 <script src="./js/menu-toggle.js"></script>
-<script src="./js/cart-viewer.js"></script>
+<script src="js/cart-display.js"></script>
 <script src="./js/order-form-checker.js"></script>
 <script src="./js/total-price-order.js"></script>
 <script src="./js/remove-cart.js"></script>

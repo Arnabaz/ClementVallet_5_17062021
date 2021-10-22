@@ -2,7 +2,7 @@
 
 
 // --- Déclaration des variables ---
-let removeCartElement; // Variable pour viser l'élément pour vider le panier
+// Remarque : La variable removeCartElement est déjà déclarée dans cart-display.js
 
 // --- Déclaration de fonctions ---
 // Fonction de suppression/vidage du panier client

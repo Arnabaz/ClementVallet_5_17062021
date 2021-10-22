@@ -97,7 +97,8 @@ function createH2ElementProductPage () {
 // Fonction de création de l'élément span
 function createSpanElementProductPage () {
     let productPriceProductPage = parseInt(product.price, 10) / 100;
-    productPriceProductPage = productPriceProductPage.toFixed(2);
+    productPriceProductPage = productPriceProductPage.toFixed(2).replace('.', ',');
+
 // Création de l'élément span
     const newSpanElementProductPage = document.createElement("span");
 // Rattachement de classe à l'élément span

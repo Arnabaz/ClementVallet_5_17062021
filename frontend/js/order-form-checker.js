@@ -1,92 +1,144 @@
+/* --- Affichage du formulaire de commande et masquage du bouton de validation panier --- */
 /*
-Affichage du formulaire de commande et masquage du bouton de validation
 
 Contrôle en temps réél des informations entrées dans le formulaire de commande
+
  */
 
-// Fonction d'affichage du formulaire de commande et masquage du bouton de validation du formulaire de commande
-const cartValidatorElement = document.querySelector(".cart-section__button");
-const orderFormElement = document.querySelector(".form-section__form")
+// --- Déclaration des variables ---
+const cartValidatorElement = document.querySelector(".cart-section__button"); // Variable pour viser le bouton de validation du panier
+const orderFormElement = document.querySelector(".form-section__form") // Variable pour viser le formulaire de commande
 
+
+const orderButtonElement = document.getElementById("order-button");
+const regexName = /([A-Z])\w+/;
+const regexAddress = /^[a-zA-Z0-9\s,'-]*$/;
+const regexCity = /([A-Z])\w+/;
+const regexEmail = /^\S+@\S+\.\S+$/;
+const checkBox = document.getElementById("cgv-agreement");
+
+// --- Déclaration de fonction
+// Fonction d'affichage du formulaire de commande et masquage du bouton de validation du panier
+function orderFormDisplaying () {
 cartValidatorElement.addEventListener("click", (e) => {
     e.preventDefault();
     orderFormElement.classList.remove("d-none");
+})}
+orderFormDisplaying();
+
+/* En cours de construction
+// Fonction d'affichage d'une erreur de complétion du champ du formulaire de commande
+function errorMessageDisplaying (tag, message, valid) {
+    const
+}
+
+// Fonction de contrôle du prénom
+const firstNameChecker = (value) => {
+    if (!value.match(/^[a-zA-Z_.-]*$/)) {
+        errorMessageDisplaying("Le prénom doit uniquement contenir des lettres");
+    }
+};
+
+// Fonction de contrôle du nom
+const lastNameChecker = (value) => {
+    console.log(value);
+};
+
+// Fonction de contrôle de l'adresse
+const addressChecker = (value) => {
+    console.log(value);
+};
+
+// Fonction de contrôle de la ville
+const cityChecker = (value) => {
+    console.log(value);
+}
+
+// Fonction de contrôle de l'email
+const emailChecker = (value) => {
+    console.log(value);
+};
+
+// Fonction de contrôle de la checkbox
+const cgvChecker = (value) => {
+    console.log(value);
+};
+
+
+// Contrôle du formulaire de commande en temps réel :
+const inputsOrderForm = document.querySelectorAll(".form-section__input");
+inputsOrderForm.forEach((inputOrderForm) => {
+    inputOrderForm.addEventListener("input", (events) => {
+        switch (events.target.id) {
+            case "first-name":
+                firstNameChecker(events.target.value);
+                break;
+            case "last-name":
+                lastNameChecker(events.target.value);
+                break;
+            case "address":
+                addressChecker(events.target.value);
+                break;
+            case "city":
+                cityChecker(events.target.value);
+                break;
+            case "email-order":
+                emailChecker(events.target.value);
+                break;
+            case "cgv-agreement":
+                cgvChecker(events.target.checked);
+                break;
+            default:
+                null;
+        }
+    })
 })
 
+*/
+
+
 // Validation du formulaire de commande
-const orderButtonElement = document.getElementById("order-button");
-const regexFirstName = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$/;
-const regexLastName = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$/;
-const regexAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
-const regexCity = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$/;
-const regexEmail = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$/;
-const checkBox = document.getElementById("cgv-agreement");
+orderFormElement.addEventListener("submit", (submitEvent) => {
+    console.log("1", submitEvent);
+})
 
 orderButtonElement.addEventListener("click", (event) => {
-    let customData = {
+
+    let contact = {
         firstName: document.getElementById("first-name").value,
         lastName: document.getElementById("last-name").value,
         address: document.getElementById("address").value,
         city: document.getElementById("city").value,
-        email: document.getElementById("email").value,
+        email: document.getElementById("email-order").value,
     };
     if (
-        (regexName.test(customData.firstName) == true) &
-        (regexName.test(customData.lastName) == true) &
-        (regexAddress.test(customData.address) == true) &
-        (regexCity.test(customData.city) == true) &
-        (checkBox.checked == true)
+        (regexName.test(contact.firstName) === true) &&
+        (regexName.test(contact.lastName) === true) &&
+        (regexAddress.test(contact.address) === true) &&
+        (regexCity.test(contact.city) === true) &&
+        (regexEmail.test(contact.email) === true) &&
+        (checkBox.checked === true)
     ) {
 event.preventDefault();
-// on stocke l'heure et la date de la commande
-        const todayDate = new Date();
-        let nowadays = todayDate.getDate();
-        let month = todayDate.getMonth() + 1;
-        let todayHours = todayDate.getHours();
-        let todayMinutes = todayDate.getMinutes();
-
-        if (nowadays < 10) {
-            nowadays = "0" + nowadays;
-        }
-
-        if (month < 10) {
-            month = "0" + month;
-        }
-
-        if (todayHours < 10) {
-            todayHours = "0" + todayHours;
-        }
-
-        if (todayMinutes < 10) {
-            todayMinutes = "0" + todayMinutes;
-        }
-
-        const date = nowadays + "-" + month + "-" + todayDate.getFullYear();
-        const hours = todayHours + ":" + todayMinutes;
-        const fullDate = { date, hours };
-        const infoOrder = JSON.parse(localStorage.getItem("date")) || [];
-        infoOrder.push(fullDate);
-        localStorage.setItem("date", JSON.stringify(infoOrder));
-
-        let customCartOrdered = [];
+        let products = [];
         for (let i = 0; i < cart.length; i++) {
-            customCartOrdered.push(cart[i].id);
+            products.push(cart[i].id);
         }
 
-        // on envoie en POST
+        // Envoi des données à l'API avec post
         fetch("http://localhost:3000/api/furniture//order", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({customData, customCartOrdered}),
+            body: JSON.stringify({contact, products}),
         })
             .then((response) => response.json())
             .then((data) => {
                 localStorage.setItem("order", JSON.stringify(data));
                 document.location.href = "order.html";
             })
-            .catch((erreur) => console.log("erreur : " + erreur));
+            .catch((error) => console.log("error : " + error));
     } else {
         alert(
             "Veuillez correctement renseigner l'entièreté du formulaire pour valider votre commande."

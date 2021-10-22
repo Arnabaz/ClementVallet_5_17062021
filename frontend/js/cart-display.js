@@ -20,51 +20,22 @@ let productLineElement = document.querySelector(".cart-section__product-line"); 
 const cartSectionButton = document.querySelector(".cart-section__button"); // Variable pour viser le bouton de validation du panier
 const cartSectionLinkReturn = document.querySelector(".cart-section__link-return"); // Variable pour viser le lien pour continuer ses achats
 const formSectionElement = document.querySelector(".form-section"); // Variable pour viser la section formulaire de commande
+let idProduct;
 
 // --- Déclaration de fonctions
-
-
-// Fonction de suppression d'un article du panier
-function removeProduct () {
-    productList = document.getElementById("products-list");
-    productLineElement = document.querySelector(".cart-section__product-line");
-    removeProductElement = document.querySelectorAll(".cart-section__remove-product.fa-times")
-    // Si la liste de produit contient au moins un article
-    if (productList.contains(productLineElement)) {
-        // boucle pour viser chaque élément du tableau de manière individuel
-        removeProductElement.forEach((removeElementIndex) => {
-            removeElementIndex.addEventListener("click", (e) => {
-                // Demande une confirmation de supression de l'article du panier
-                if (confirm("Voulez-vous vraiment supprimer cet article de votre panier ?")) {
-                    // Récupérer l'id de l'élément de supression du panier (qui contient l'index objet dans le tableau cart)
-                    let idElement = e.target.id;
-                    // Supprimer le texte inutile de l'id pour n'avoir que l'index
-                    let index = idElement.replace("index-table-", "");
-                        index = parseInt(index, 10);
-                    //Supression de l'article dans le panier et le localStorage ET réindexation du tableau
-                    delete cart.splice(index, 1);
-                    localStorage.setItem("customCart", JSON.stringify(cart));
-                    // Refresh de la page pour actualiser le panier
-                    location.reload();
-                }
-            })
-        })
-    }
-}
-
-// Fonctions affichage du tableau de produit
+// Fonctions d'affichage du tableau de produit et ses composantes
 // Affichage du tableau des articles présents dans le panier du client
 function cartDisplaying (number) {
     productList.innerHTML +=`
     <tr class="cart-section__product-line">
-    <td><i class="fa fa-times cart-section__remove-product" aria-hidden="true" title="Retirer le produit" id="index-table-${[number]}"></i></td>
+    <td><i class="fa fa-times cart-section__remove-product" aria-hidden="true" title="Retirer le produit" data-index="${number}" ></i></td>
     <td class="cart-section__product-name">
         ${cart[number].name}
     <em>${cart[number].varnish}</em>
     </td>
     <td>
-        <label for="quantity-choice-${[number]}"></label>
-            <input type="number" id="quantity-choice-${[number]}" class="quantity-choice" min="1" max="10" name="cart-form" value="${cart[number].quantity}"/>
+        <label for="quantity-choice" data-index="${number}"></label>
+            <input type="number" id="quantity-choice" min="1" max="10" name="cart-form" data-index="${number}" value="${cart[number].quantity}"/>
         </td>
         <td class="cart-section__product-price">${formatPrice(cart[number].price * cart[number].quantity)}€</td>
     </tr>`;
@@ -72,7 +43,7 @@ function cartDisplaying (number) {
     productLineElement = document.querySelector(".cart-section__product-line");
 }
 
-// Affichage du prix total du panier
+// Fonction d'affichage du prix total du panier
 function totalPriceDisplaying () {
     productList.innerHTML += `<tr class="cart-section__total-line">
         <td></td>
@@ -82,50 +53,69 @@ function totalPriceDisplaying () {
    </tr>`;
 }
 
-// Affichage du lien de supression de tout le panier
+// Fonction d'affichage du lien de supression de tout le panier
 function removeCartDisplaying () {
     removeCartElement = document.createElement("p");
     removeCartElement.classList.add("cart-section__remove-cart");
     const removeCartElementContent = document.createTextNode("Vider le panier");
     removeCartElement.appendChild(removeCartElementContent);
     cartSectionElement.insertBefore(removeCartElement, cartSectionFormElement);
-    removeCart();
 }
 
-// Affichage de la quantité choisie d'un article dans le panier
+// Fonction de réglage de l'affichage du prix du produit en fonction de la quantité choisie d'un article dans le panier
+function setPriceProduct (number) {
+    idProduct = cart[number].id;
+    console.log(cart[number].price)
+    // Récupérer les données de l'API
+    fetch("http://localhost:3000/api/furniture/" + idProduct)
+        .then((response) =>
+            response.json()
+        )
+        .catch((e) =>
+            console.log(e)
+        )
+        // Convertir la réponse en .json et la stocker dans la variable products
+        .then((data) => {
+            productData = data;
+            console.log(productData)
+            // Mise à jour du prix du produit
+            cart[number].price = productData.price;
+            // Calcul du prix total de l'article
+            cart[number].totalPrice = cart[number].price * cart[number].quantity;
+            localStorage.setItem("customCart", JSON.stringify(cart));
+            // Changer le prix total du panier
+            console.log(cart[number].quantity);
+            // A finir avec un data-index sur la case du prix pour pouvoir la modifier en temps réel
+            // ... Doit-on afficher seulement le prix unitaire ou doit-on afficher le prix total de l'article ?
+            // Peut-on se contenter de rafraichir la page pour afficher le prix total de l'article ?
+        })
+}
+// Fonction de mise à jour d'affichage de la quantité de produits dans l'article du panier
 function quantityDisplayUpdate () {
-    let inputQuantityChoiceElements = document.querySelectorAll(".quantity-choice");
+    let inputQuantityChoiceElements = document.querySelectorAll("#quantity-choice");
     inputQuantityChoiceElements.forEach((inputQuantityChoiceElement => {
         inputQuantityChoiceElement.addEventListener("input", (e) => {
             let quantityValue = e.target.value;
             quantityValue = parseInt(quantityValue, 10);
-            console.log(typeof quantityValue)
-            console.log(quantityValue)
+            // Vérifier que la variable quantityValue est bien un nombre entier positif inférieur ou égal à 10
             if (Number.isInteger(quantityValue) && quantityValue > 0 && quantityValue <= 10) {
                // Récupérer l'id de l'élément de supression du panier (qui contient l'index objet dans le tableau cart)
-                let idElement = e.target.id;
+                let indexProduct = e.target.getAttribute("data-index");
                 // Supprimer le texte inutile de l'id pour n'avoir que l'index
-                let index = idElement.replace("quantity-choice-", "")
-                    index = parseInt(index, 10);
+                indexProduct = parseInt(indexProduct, 10);
                 // modifier la quantité dans cart
-                cart[index].quantity = quantityValue;
+                cart[indexProduct].quantity = quantityValue;
                 // Modifier la quantité dans le localStorage
                 localStorage.setItem("customCart", JSON.stringify(cart));
                 // Changer le prix de l'article
-                // Changer le prix total du panier
-
-                console.log(cart[index].quantity);
-
-
+                setPriceProduct(indexProduct);
+                location.reload()
             }
-
         })
     }))
 }
 
-
-
-
+// Fonction qui gère tous les affichages de la section du panier client
 function cartSectionDisplaying () {
 if (cart.length < 1) {
     emptyCartElement.classList.remove("d-none");
@@ -149,7 +139,6 @@ if (cart.length < 1) {
 }
 }
 cartSectionDisplaying();
-removeProduct();
 
 
 

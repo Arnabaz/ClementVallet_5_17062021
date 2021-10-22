@@ -71,7 +71,9 @@ function addProductToCart () {
     {
     } else {
 
-        // Sinon ajouter le produit au panier dans le localStorageelse {
+        // Sinon ajouter le produit au panier dans le localStorage
+        // Définition du calcul du prix total du produit personnalisé
+        let totalPriceProduct = productData.price
         // Création de l'objet customProduct pour l'ajouter au panier du localStorage
         let objectCustomProduct = new CustomProduct(
             productData._id,
@@ -80,7 +82,8 @@ function addProductToCart () {
             productData.price,
             varnishCustomSelect.value,
             1,
-            productData.imageUrl
+            productData.imageUrl,
+            totalPriceProduct
         );
         // Vérification de la présence ou non du produit dans le panier
         let isProductAlreadyPresent = false;
