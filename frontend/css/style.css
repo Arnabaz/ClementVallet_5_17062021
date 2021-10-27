@@ -513,6 +513,7 @@ ul.circle-type {
   font-weight: 200;
   color: #24303D;
   line-height: 40px;
+  white-space: nowrap;
 }
 
 .no-product {

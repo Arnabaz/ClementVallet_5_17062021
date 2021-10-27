@@ -36,12 +36,12 @@ Pour chaque élément, il faut :
 // --- Déclaration des variables ---
 let params; // Variable pour stocker le paramètre de l'URL
 let idProduct; // Variable pour stocker l'id produit issu du paramètre de l'url
-let product; // Variable pour stocker les données d'un produit de l'API
+let product = []; // Variable pour stocker les données d'un produit de l'API
 
 
 // --- Déclaration de fonction
 // Fonction de création de l'élément figure
-function createFigureElementProductPage () {
+function createFigureElementProductPage() {
     //Création de l'élément figure
     const newFigureElementProductPage = document.createElement("figure");
     // Rattachement de classe à l'élément figure
@@ -53,7 +53,7 @@ function createFigureElementProductPage () {
 }
 
 // Fonction de création de l'élément img
-function createImgElementProductPage () {
+function createImgElementProductPage() {
     // Création de l'élément img
     const newImgElementProductPage = document.createElement("img");
     // Rattachement de classe à l'élément img
@@ -67,7 +67,7 @@ function createImgElementProductPage () {
 }
 
 // Fonction de création de l'élement figcaption
-function createFigcaptionElementProductPage () {
+function createFigcaptionElementProductPage() {
     // Création de l'élément figcation
     const newFigcaptionElementProductPage = document.createElement("figcaption");
     // Rattachement de classe à l'élément figcaption
@@ -78,7 +78,7 @@ function createFigcaptionElementProductPage () {
 }
 
 // Fonction de création de l'élément h2
-function createH2ElementProductPage () {
+function createH2ElementProductPage() {
 // Création de l'élément img
     const newH2ElementProductPage = document.createElement("h2");
 // Rattachement de classe à l'élément h2
@@ -95,17 +95,15 @@ function createH2ElementProductPage () {
 }
 
 // Fonction de création de l'élément span
-function createSpanElementProductPage () {
-    let productPriceProductPage = parseInt(product.price, 10) / 100;
-    productPriceProductPage = productPriceProductPage.toFixed(2).replace('.', ',');
-
+function createSpanElementProductPage() {
+    let productPriceProductPage = formatPrice(product.price)
 // Création de l'élément span
     const newSpanElementProductPage = document.createElement("span");
 // Rattachement de classe à l'élément span
     newSpanElementProductPage.classList.add("product-page__price");
     // Création du contenu de l'élément span
     const newPContentProductPage = document.createTextNode(
-        productPriceProductPage + "€"
+        productPriceProductPage + " €"
     );
 // Rattachement du contenu et de l'élément P
     newSpanElementProductPage.appendChild(newPContentProductPage);
@@ -115,7 +113,7 @@ function createSpanElementProductPage () {
 }
 
 // Fonction de création de l'élément p
-function createPElementProductPage () {
+function createPElementProductPage() {
 // Création de l'élément p
     const newPElementProductPage = document.createElement("p");
 // Rattachement de classe à l'élément p
@@ -132,7 +130,7 @@ function createPElementProductPage () {
 }
 
 // Fonction de création de l'élément form
-function createFormElementProductPage () {
+function createFormElementProductPage() {
 // Création de l'élément form
     const newFormElementProductPage = document.createElement("form");
 // Rattachement des classes à l'élément form
@@ -141,11 +139,11 @@ function createFormElementProductPage () {
     let currentElementProductPage = document.querySelector(".product-page__info");
     currentElementProductPage.appendChild(newFormElementProductPage);
 // Ajout de l'attribut name à l'élément form
-newFormElementProductPage.setAttribute("name", "product-form");
+    newFormElementProductPage.setAttribute("name", "product-form");
 }
 
 // Fonction de création de l'élément label
-function createLabelElementProductPage () {
+function createLabelElementProductPage() {
 // Création de l'élément label
     const newLabelElementProductPage = document.createElement("label");
 // Création du contenu de l'élément label
@@ -160,7 +158,7 @@ function createLabelElementProductPage () {
 }
 
 //Fonction de création de l'élément select
-function createSelectElementProductPage () {
+function createSelectElementProductPage() {
     // Création de l'élément select
     const newSelectElementProductPage = document.createElement("select");
     // Rattachement des classes à l'élément form
@@ -174,7 +172,7 @@ function createSelectElementProductPage () {
 }
 
 //Fonction de création de l'élément option n°1 (différent des autres)
-function createOptionElementProductPage () {
+function createOptionElementProductPage() {
 // Création de l'élément option
     const newOptionElementProductPage = document.createElement("option");
     // Création du contenu de l'élément option
@@ -190,7 +188,7 @@ function createOptionElementProductPage () {
 
 
 //Fonction de création des autres éléments option
-function createOptionsElementProductPage () {
+function createOptionsElementProductPage() {
     let productVarnish = product.varnish;
     for (let i = 0; i < productVarnish.length; i++) {
         // Création de l'élément option
@@ -211,30 +209,24 @@ function createOptionsElementProductPage () {
 // Récupérer l'id produit dans l'URL
 params = new URLSearchParams(document.location.search);
 idProduct = params.get("id");
-product = [];
 // Interroger l'API pour récupérer les données du produit sélectionné
- fetch("http://localhost:3000/api/furniture/" + idProduct)
-        .then((response) =>
-            response.json()
-        )
-        .catch((e) =>
-            console.log(e)
-        )
-        // Convertir la réponse en .json et la stocker dans la variable product
-        .then((data) => {
-            product = data;
-            createFigureElementProductPage ();
-            createImgElementProductPage ();
-            createFigcaptionElementProductPage ();
-            createH2ElementProductPage ();
-            createSpanElementProductPage ();
-            createPElementProductPage ();
-            createFormElementProductPage ();
-            createLabelElementProductPage ();
-            createSelectElementProductPage ();
-            createOptionElementProductPage ();
-            createOptionsElementProductPage ();
-        })
+getDataProductAPI(idProduct, product)
+    .then((answer) => {
+        product = answer;
+        createFigureElementProductPage();
+        createImgElementProductPage();
+        createFigcaptionElementProductPage();
+        createH2ElementProductPage();
+        createSpanElementProductPage();
+        createPElementProductPage();
+        createFormElementProductPage();
+        createLabelElementProductPage();
+        createSelectElementProductPage();
+        createOptionElementProductPage();
+        createOptionsElementProductPage();
+    })
+    .catch((error) => (console.error(error)));
+
 
 
 

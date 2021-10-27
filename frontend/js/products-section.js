@@ -27,11 +27,12 @@ Pour chaque élément, il faut :
  */
 
 // --- Déclaration des variables ---
-let products; // Variable pour stocker les données produits de l'API
+let product = [];
+let products = []; // Variable pour stocker les données produits de l'API
 
 // --- Déclarations de fonction ---
 // Fonction de création de l'élément article
-function createArticleElement (number) {
+function createArticleElement(number) {
     //Création de l'élément article
     const newArticleElement = document.createElement("article");
     // Rattachement des classes à l'élément article
@@ -42,11 +43,11 @@ function createArticleElement (number) {
 }
 
 // Fonction de création de l'élément a
-function createAElement (number) {
+function createAElement(number) {
     // Création de l'élément a
     const newAElement = document.createElement("a");
     // Rattachement des classes à l'élément a
-    newAElement.classList.add("products-section__link","products-section__link-" + (number + 1))
+    newAElement.classList.add("products-section__link", "products-section__link-" + (number + 1))
     // Insertion de l'élément a dans le DOM
     let currentElement = document.querySelector(".products-section__article-" + (number + 1));
     currentElement.appendChild(newAElement);
@@ -55,7 +56,7 @@ function createAElement (number) {
 }
 
 // Fonction de création de l'élement figure
-function createFigureElement (number) {
+function createFigureElement(number) {
     // Création de l'élément figure
     const newFigureElement = document.createElement("figure");
     // Rattachement des classes à l'élément figure
@@ -66,7 +67,7 @@ function createFigureElement (number) {
 }
 
 // Fonction de création de l'élément img
-function createImgElement (number) {
+function createImgElement(number) {
 // Création de l'élément img
     const newImgElement = document.createElement("img");
 // Rattachement des classes à l'élément img
@@ -80,7 +81,7 @@ function createImgElement (number) {
 }
 
 // Fonction de création de l'élément figcaption
-function createFigcaptionElement (number) {
+function createFigcaptionElement(number) {
 // Création de l'élément figcaption
     const newFigcaptionElement = document.createElement("figcaption");
 // Rattachement des classes à l'élément figcaption
@@ -91,7 +92,7 @@ function createFigcaptionElement (number) {
 }
 
 // Fonction de création de l'élément h3
-function createH3Element (number) {
+function createH3Element(number) {
 // Création de l'élément h3
     const newH3Element = document.createElement("h3");
 // Rattachement des classes à l'élément h3
@@ -108,7 +109,7 @@ function createH3Element (number) {
 }
 
 //Fonction de création de l'élément p
-function createPElement (number) {
+function createPElement(number) {
     // Conversion du prix en nombre décimale avec euros.
     let productPrice = formatPrice(products[number].price);
 
@@ -118,7 +119,7 @@ function createPElement (number) {
     newPElement.classList.add("product-card__price");
 // Création du contenu de l'élément p
     const newPContent = document.createTextNode(
-        productPrice + "€"
+        productPrice + " €"
     );
 // Rattachement du contenu et de l'élément P
     newPElement.appendChild(newPContent);
@@ -128,35 +129,33 @@ function createPElement (number) {
 }
 
 // Fonction de création de l'élément div (créé s'il n'y a pas de produits disponibles)
-function createNoProductElement () {
+function createNoProductElement() {
     // Création de l'élément p (= NoArticle)
     const newNoProductElement = document.createElement("p");
     // Rattachement des classes à l'élément NoArticle
     newNoProductElement.classList.add("no-product");
     // Création du contenu de l'élément NoArticle
-        const newNoProductContent = document.createTextNode("Désolé mais nous sommes actuellement en rupture de stock de tous nos produits. Pour vous tenir informés de l’arrivée de nouveaux stocks et de nouveaux produits, n’hésitez pas à vous abonner !");
+    const newNoProductContent = document.createTextNode("Désolé mais nous sommes actuellement en rupture de stock de tous nos produits. Pour vous tenir informés de l’arrivée de nouveaux stocks et de nouveaux produits, n’hésitez pas à vous abonner !");
     // Rattachement du contenu et de l'élément NoArticle
     newNoProductElement.appendChild(newNoProductContent);
     // Insertion de l'élément NoArticle dans le DOM
-        let currentElement = document.getElementById("products-section");
-        currentElement.appendChild(newNoProductElement);
-    }
+    let currentElement = document.getElementById("products-section");
+    currentElement.appendChild(newNoProductElement);
+}
 
 // --- HOMEPAGE - Affichage de la section Produits ---
-// Interroger l'API pour récupérer les données
-fetch(url)
-    .then((response) =>
-        response.json()
-    )
-    .catch((e) =>
-        console.log(e)
-    )
-    // Convertir la réponse en .json et la stocker dans la variable products
-    .then((data) => {
-        products = data;
+// Interroger l'API pour récupérer les données des produits
+getDataProductsAPI(products)
+    // Résolution de la promesse
+    .then((answer) => {
+        // Stocker la résolution de la promesse dans la variable products
+        products = answer;
+        // S'il n'y a pas de produits disponibles, afficher l'élément NoProduct
         if (products.length === 0) {
             createNoProductElement();
-        } else if (products.length > 0)
+            // S'il y a des éléments disponibles, afficher la liste des produits
+        } else if (products.length > 0) {
+            // Boucle pour récupérer les produits un par un
             for (let i = 0; i < products.length; i++) {
                 createArticleElement(i);
                 createAElement(i);
@@ -166,9 +165,9 @@ fetch(url)
                 createH3Element(i);
                 createPElement(i);
             }
+        }
     })
-
-
-
+    // Rejet de la promesse et renvoi de l'erreur vers la console
+    .catch((error) => console.error(error));
 
 

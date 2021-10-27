@@ -320,7 +320,7 @@ ul.circle-type {
 .order-section__text {
   font-family: "Open sans", sans-serif;
   font-size: 0.8rem;
-  font-weight: 200;
+  font-weight: 400;
   padding: 10px 10px 50px 10px;
 }
 .order-section__text-message {
@@ -331,6 +331,19 @@ ul.circle-type {
   padding: 10px;
   border: solid 1px #24303D;
   line-height: 25px;
+}
+.order-section__order-summary h3 {
+  color: #43658A;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.order-section__order-summary-number strong {
+  color: #C99D5C;
+  font-weight: 800;
+}
+.order-section__order-summary-price strong {
+  color: #24303D;
+  font-weight: 800;
 }
 .order-section__return-button {
   font-family: "Open sans", sans-serif;

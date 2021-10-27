@@ -11,19 +11,21 @@ const orderFormElement = document.querySelector(".form-section__form") // Variab
 
 
 const orderButtonElement = document.getElementById("order-button");
-const regexName = /([A-Z])\w+/;
+const regexName = /^[a-zàâäéèêëîïöôüûù ,.'-]+$/i;
 const regexAddress = /^[a-zA-Z0-9\s,'-]*$/;
-const regexCity = /([A-Z])\w+/;
+const regexCity = /([A-Za-z])\w+/;
 const regexEmail = /^\S+@\S+\.\S+$/;
 const checkBox = document.getElementById("cgv-agreement");
 
 // --- Déclaration de fonction
 // Fonction d'affichage du formulaire de commande et masquage du bouton de validation du panier
-function orderFormDisplaying () {
-cartValidatorElement.addEventListener("click", (e) => {
-    e.preventDefault();
-    orderFormElement.classList.remove("d-none");
-})}
+function orderFormDisplaying() {
+    cartValidatorElement.addEventListener("click", (e) => {
+        e.preventDefault();
+        orderFormElement.classList.remove("d-none");
+    })
+}
+
 orderFormDisplaying();
 
 /* En cours de construction
@@ -98,12 +100,9 @@ inputsOrderForm.forEach((inputOrderForm) => {
 
 
 // Validation du formulaire de commande
-orderFormElement.addEventListener("submit", (submitEvent) => {
-    console.log("1", submitEvent);
-})
-
 orderButtonElement.addEventListener("click", (event) => {
-
+    event.preventDefault();
+    // Création de l'objet contact qui stockera les données entrées par le client
     let contact = {
         firstName: document.getElementById("first-name").value,
         lastName: document.getElementById("last-name").value,
@@ -111,6 +110,13 @@ orderButtonElement.addEventListener("click", (event) => {
         city: document.getElementById("city").value,
         email: document.getElementById("email-order").value,
     };
+    console.log("1", regexName.test(contact.firstName));
+    console.log("2", regexName.test(contact.lastName));
+    console.log("3", regexAddress.test(contact.address));
+    console.log("4", regexCity.test(contact.city));
+    console.log("5", regexEmail.test(contact.email));
+    console.log("6", checkBox.checked);
+    // Vérification des données entrées par le client
     if (
         (regexName.test(contact.firstName) === true) &&
         (regexName.test(contact.lastName) === true) &&
@@ -119,7 +125,7 @@ orderButtonElement.addEventListener("click", (event) => {
         (regexEmail.test(contact.email) === true) &&
         (checkBox.checked === true)
     ) {
-event.preventDefault();
+        // Si tout est OK, on pousse les id des produits vers l'array products avant envoi à l'API
         let products = [];
         for (let i = 0; i < cart.length; i++) {
             products.push(cart[i].id);
@@ -136,6 +142,7 @@ event.preventDefault();
             .then((response) => response.json())
             .then((data) => {
                 localStorage.setItem("order", JSON.stringify(data));
+                localStorage.setItem("totalPrice", JSON.stringify(totalPriceCart));
                 document.location.href = "order.html";
             })
             .catch((error) => console.log("error : " + error));

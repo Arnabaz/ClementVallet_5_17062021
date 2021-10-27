@@ -29,7 +29,8 @@
         <ul class="menu-items">
             <li class="menu-item"><a href="../index.html#products-section" class="menu-item__products">Produits</a></li>
             <li class="menu-item"><a href="./contact.html">Contact</a></li>
-            <li class="menu-item"><a href="./cart.html"><i class="fas fa-shopping-cart cart-icon"></i>Mon panier</a></li>
+            <li class="menu-item"><a href="./cart.html"><i class="fas fa-shopping-cart cart-icon"></i>Mon panier</a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -65,26 +66,27 @@
     </section>
     <section class="form-section">
         <form class="form-section__form d-none" method="post" name="order-form">
-            <p class="form-section__text">Afin de formaliser votre commande,<br /> merci de bien vouloir remplir le formulaire ci-dessous</p>
+            <p class="form-section__text">Afin de formaliser votre commande,<br/> merci de bien vouloir remplir le
+                formulaire ci-dessous</p>
             <h2 class="form-section__title">Formulaire de commande</h2>
-            <label class="form-section__label" for="first-name">Prénom</label>
-            <input class="form-section__input" id="first-name" type="text" name="order-form" placeholder="ex: Jean" pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$" autocomplete="off" required/>
-            <p class="form-section__error-message first-name d-none">Prénom incorrect</p>
-            <label class="form-section__label" for="last-name">Nom</label>
-            <input class="form-section__input" id="last-name" type="text" name="order-form" placeholder="ex: Dupont" pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$" autocomplete="off" required/>
-            <p class="form-section__error-message last-name d-none">Nom incorrect</p>
-            <label class="form-section__label" for="address">Adresse</label>
-            <input class="form-section__input" id="address" type="text" name="order-form" placeholder="ex: 1 rue des Champs-Elysées" pattern="^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$" autocomplete="off" required/>
-            <p class="form-section__error-message address d-none">Adresse incorrecte</p>
-            <label class="form-section__label" for="city">Ville</label>
-            <input class="form-section__input" id="city" type="text" name="order-form" placeholder="ex: Paris"  pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}" autocomplete="off" required/>
-            <p class="form-section__error-message city d-none">Ville incorrecte</p>
-            <label class="form-section__label" for="email-order">Email</label>
-            <input class="form-section__input" id="email-order" type="email" name="order-form" placeholder="ex: jean-dupont@mail.fr" pattern="^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$"/>
-            <p class="form-section__error-message first-name d-none">Email incorrect</p>
-            <input class="form-section__input" id="cgv-agreement" type="checkbox" value="" required />
-            <label class="form-section__label" for="cgv-agreement">
-                <a class="form-section__cgv-link" target="_blank" href="./cgv.html">Accepter les CGV</a>
+            <label class="form-section__label form-section__label-1" for="first-name">Prénom</label>
+            <input class="form-section__input form-section__input-1" id="first-name" type="text" name="order-form" placeholder="ex: Jean"
+                   autocomplete="off" required/>
+            <label class="form-section__label form-section__label-2" for="last-name">Nom</label>
+            <input class="form-section__input form-section__input-2" id="last-name" type="text" name="order-form" placeholder="ex: Dupont"
+                   autocomplete="off" required/>
+            <label class="form-section__label form-section__label-3" for="address">Adresse</label>
+            <input class="form-section__input form-section__input-3" id="address" type="text" name="order-form"
+                   placeholder="ex: 1 rue des Champs-Elysées" autocomplete="off" required/>
+            <label class="form-section__label form-section__label-4" for="city">Ville</label>
+            <input class="form-section__input form-section__input-4" id="city" type="text" name="order-form" placeholder="ex: Paris"
+                   autocomplete="off" required/>
+            <label class="form-section__label form-section__label-5" for="email-order">Email</label>
+            <input class="form-section__input form-section__input-5" id="email-order" type="email" name="order-form"
+                   placeholder="ex: jean-dupont@mail.fr"/>
+            <input class="form-section__input form-section__input-6" id="cgv-agreement" type="checkbox" value="" required/>
+            <label class="form-section__label form-section__label-6" for="cgv-agreement" id="cgv-label">Accepter les
+                <a class="form-section__cgv-link" target="_blank" href="./cgv.html">CGV</a>
             </label>
             <button class="form-section__button" id="order-button">Passer la commande</button>
         </form>
@@ -92,13 +94,14 @@
 </main>
 <section class="sub">
     <header>
-        <h3 class="sub_title">Inscrivez-vous à notre newsletter et recevez nos dernières actus et nos offres exclusives</h3>
+        <h3 class="sub_title">Inscrivez-vous à notre newsletter et recevez nos dernières actus et nos offres
+            exclusives</h3>
     </header>
     <form class="sub_form" method="post">
-            <label class="sub_form-label" for="email">
-                <i class="far fa-envelope"></i>
-            </label>
-            <input class="sub_form-input" type="email" name="email" placeholder="Entrez votre adresse e-mail" id="email"/>
+        <label class="sub_form-label" for="email">
+            <i class="far fa-envelope"></i>
+        </label>
+        <input class="sub_form-input" type="email" name="email" placeholder="Entrez votre adresse e-mail" id="email"/>
         <button class="sub_form-button">S'abonner</button>
     </form>
 </section>
@@ -137,9 +140,12 @@
     <h3 class="footer_title footer_title-4">Nous suivre</h3>
     <nav class="footer_nav footer_nav-4">
         <ul class="footer_nav-list footer_nav-list-4">
-            <li class="footer_nav-list_item"><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-            <li class="footer_nav-list_item"><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
-            <li class="footer_nav-list_item"><a href="https://www.pinterest.fr"><i class="fab fa-pinterest-p"></i></a></li>
+            <li class="footer_nav-list_item"><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="footer_nav-list_item"><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li class="footer_nav-list_item"><a href="https://www.pinterest.fr"><i class="fab fa-pinterest-p"></i></a>
+            </li>
             <li class="footer_nav-list_item"><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
             <li class="footer_nav-list_item"><a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a></li>
         </ul>
@@ -151,9 +157,9 @@
 <script src="./js/functions.js"></script>
 <script src="./js/menu-toggle.js"></script>
 <script src="js/cart-display.js"></script>
-<script src="./js/order-form-checker.js"></script>
-<script src="./js/total-price-order.js"></script>
 <script src="./js/remove-cart.js"></script>
 <script src="./js/remove-product.js"></script>
+<script src="./js/order-form-checker.js"></script>
+
 </body>
 </html>
