@@ -45,7 +45,17 @@
             <h2 class="presentation-section__subtitle">Meubles en chêne</h2>
         </header>
         <figure class="presentation-section__figure">
-            <img class="presentation-section__figure-img" src="./frontend/images/presentation_homepage.jpg"
+            <img class="presentation-section__figure-img"
+                 srcset="
+            ./frontend/images/homepage/presentation_homepage_short.webp 375w,
+            ./frontend/images/homepage/presentation_homepage_medium.webp 620w,
+            ./frontend/images/homepage/presentation_homepage_large.webp 1024w,
+            ./frontend/images/homepage/presentation_homepage_xlarge.webp 1440w"
+                 sizes="
+                 (max-width : 375px) 375px,
+                 max-width : 620px) 620px,
+                 max-width : 1024px) 1024px"
+                 src="./frontend/images/homepage/presentation_homepage_xlarge.webp"
                  alt="Orinoco">
             <figcaption>
                 <hgroup>
