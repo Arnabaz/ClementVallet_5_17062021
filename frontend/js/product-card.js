@@ -4,7 +4,7 @@ Chaque carte produit est organisée de cette manière en HTML :
         <figure class="product-section__card">
             <img class="product-page__img" src="../backend/images/oak_1.jpg"/>
                 <figcaption class="product-page__info">
-                    <h2 class="product-page__name">Cross-table</h2>
+                    <h3 class="product-page__name">Cross-table</h3>
                     <span class="product-page__price">699,00€</span>
                     <p class="product-page__text">Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit, sed do elusmod tempor
@@ -40,6 +40,22 @@ let product = []; // Variable pour stocker les données d'un produit de l'API
 
 
 // --- Déclaration de fonction
+// Fonction de création de l'élément h2
+function createH2ElementProductPage() {
+// Création de l'élément img
+    const newH2ElementProductPage = document.createElement("H2");
+// Rattachement de classe à l'élément H2
+    newH2ElementProductPage.classList.add("product-page__name");
+    // Création du contenu de l'élément h2
+    const newH2ContentProductPage = document.createTextNode("Présentation du produit");
+// Rattachement du contenu et de l'élément H2
+    newH2ElementProductPage.appendChild(newH2ContentProductPage);
+// Insertion de l'élément H2 dans le DOM
+    let AElementProductPage = document.querySelector(".product-page__add-to-cart");
+    let currentElementProductPage = document.querySelector(".product-section");
+    currentElementProductPage.insertBefore(newH2ElementProductPage, AElementProductPage);
+}
+
 // Fonction de création de l'élément figure
 function createFigureElementProductPage() {
     //Création de l'élément figure
@@ -77,21 +93,21 @@ function createFigcaptionElementProductPage() {
     currentElementProductPage.appendChild(newFigcaptionElementProductPage);
 }
 
-// Fonction de création de l'élément h2
-function createH2ElementProductPage() {
+// Fonction de création de l'élément h3
+function createH3ElementProductPage() {
 // Création de l'élément img
-    const newH2ElementProductPage = document.createElement("h2");
-// Rattachement de classe à l'élément h2
-    newH2ElementProductPage.classList.add("product-page__name");
+    const newH3ElementProductPage = document.createElement("H3");
+// Rattachement de classe à l'élément H3
+    newH3ElementProductPage.classList.add("product-page__name");
     // Création du contenu de l'élément h3
-    const newH2ContentProductPage = document.createTextNode(
+    const newH3ContentProductPage = document.createTextNode(
         product.name
     );
-// Rattachement du contenu et de l'élément h2
-    newH2ElementProductPage.appendChild(newH2ContentProductPage);
-// Insertion de l'élément h2 dans le DOM
+// Rattachement du contenu et de l'élément H3
+    newH3ElementProductPage.appendChild(newH3ContentProductPage);
+// Insertion de l'élément H3 dans le DOM
     let currentElementProductPage = document.querySelector(".product-page__info");
-    currentElementProductPage.appendChild(newH2ElementProductPage);
+    currentElementProductPage.appendChild(newH3ElementProductPage);
 }
 
 // Fonction de création de l'élément span
@@ -213,10 +229,11 @@ idProduct = params.get("id");
 getDataProductAPI(idProduct, product)
     .then((answer) => {
         product = answer;
+        createH2ElementProductPage();
         createFigureElementProductPage();
         createImgElementProductPage();
         createFigcaptionElementProductPage();
-        createH2ElementProductPage();
+        createH3ElementProductPage();
         createSpanElementProductPage();
         createPElementProductPage();
         createFormElementProductPage();
