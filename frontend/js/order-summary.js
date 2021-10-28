@@ -12,18 +12,23 @@ let orderHomeLink = document.querySelector(".order-section__return-button"); // 
 // Déclaration de fonction
 // Fonction d'affichage du récapitulatif de la commande
 function orderSummary() {
-    console.log("1", orderData)
-    console.log("2", totalPriceOrder)
-    console.log("3", orderNumberElement)
-    console.log("4", orderPriceElement)
-    console.log("5", orderData.orderId)
     // Afficher les informations de la commande client
     orderNumberElement.textContent = `${orderData.orderId}`;
     orderPriceElement.textContent = `${formatPrice(totalPriceOrder)} €`;
     // Vider le panier et le localStorage
     localStorage.clear();
-}
+    /* window.addEventListener("keypress", (e) => {
+         console.log(e.key)
+         let keypress = e.key;
+         if (keypress === "F5") {
+         location.replace("../index.html");
+         }
 
+    })
+
+         */
+
+}
 orderSummary();
 
 // Fonction pour vider le panier client (remise à zéro) après avoir cliqué sur retour à l'accueil
