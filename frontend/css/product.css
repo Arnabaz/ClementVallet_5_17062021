@@ -426,6 +426,19 @@ ul.circle-type {
     padding: 20px calc((100% - 520px) / 2);
   }
 }
+.product-section__product-title {
+  font-size: 1.5rem;
+  font-family: "Open sans", sans-serif;
+  font-weight: 600;
+  color: #24303D;
+  padding: 20px 0;
+  line-height: 40px;
+}
+@media (min-width: 345px) {
+  .product-section__product-title {
+    font-size: 1.6rem;
+  }
+}
 .product-section__card {
   border-radius: 20px;
   box-shadow: 3px 3px 10px 3px silver;

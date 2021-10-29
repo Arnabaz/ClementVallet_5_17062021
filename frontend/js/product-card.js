@@ -1,6 +1,7 @@
 /* --- Création de la carte d'un produit dans la page produit ---
 Chaque produit possède sa propre carte.
 Chaque carte produit est organisée de cette manière en HTML :
+       <h2 class= product-section__product-title>Présentation du produit</h2>
         <figure class="product-section__card">
             <img class="product-page__img" src="../backend/images/oak_1.jpg"/>
                 <figcaption class="product-page__info">
@@ -45,7 +46,7 @@ function createH2ElementProductPage() {
 // Création de l'élément img
     const newH2ElementProductPage = document.createElement("H2");
 // Rattachement de classe à l'élément H2
-    newH2ElementProductPage.classList.add("product-page__name");
+    newH2ElementProductPage.classList.add("product-section__product-title");
     // Création du contenu de l'élément h2
     const newH2ContentProductPage = document.createTextNode("Présentation du produit");
 // Rattachement du contenu et de l'élément H2

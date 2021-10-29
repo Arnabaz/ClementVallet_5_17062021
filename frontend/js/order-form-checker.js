@@ -25,7 +25,6 @@ function orderFormDisplaying() {
         orderFormElement.classList.remove("d-none");
     })
 }
-
 orderFormDisplaying();
 
 /* En cours de construction
