@@ -23,6 +23,7 @@ function orderFormDisplaying() {
     cartValidatorElement.addEventListener("click", (e) => {
         e.preventDefault();
         orderFormElement.classList.remove("d-none");
+        cartValidatorElement.classList.replace("cart-section__button", "cart-section__inactivated-button")
     })
 }
 orderFormDisplaying();

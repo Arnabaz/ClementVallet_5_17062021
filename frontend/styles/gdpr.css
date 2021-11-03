@@ -1,4 +1,3 @@
-/* -- NORMALIZER -- */
 /* Box sizing rules */
 *,
 *::before,
@@ -62,6 +61,7 @@ textarea,
 select {
   font: inherit;
   padding: 0;
+  margin: 0;
 }
 
 /* -------------------------------------------------- GENERAL CONTENT ------------------------------------------ */
@@ -411,16 +411,11 @@ ul.circle-type {
   border-top: solid 2px white;
 }
 
-/* PAGE CGV - cgv Section */
-.cgv-section {
+/* PAGE GDPR - gdpr Section */
+.gdpr-section {
   padding: 10px 20px 0 20px;
 }
-@media (min-width: 320px) and (max-width: 335px) {
-  .cgv-section__title {
-    font-size: 1.05rem;
-  }
-}
-.cgv-section__text {
+.gdpr-section__text {
   font-family: "Open sans", sans-serif;
   font-size: 0.8rem;
   font-weight: 100;
@@ -429,26 +424,23 @@ ul.circle-type {
   height: 400px;
   overflow-y: scroll;
 }
-.cgv-section h3, .cgv-section h4, .cgv-section h5 {
+.gdpr-section h3, .gdpr-section h4, .gdpr-section h5 {
   margin-bottom: 3px;
 }
-.cgv-section h3 {
+.gdpr-section h3 {
   font-size: 1rem;
   font-weight: 800;
   line-height: 25px;
 }
-.cgv-section h4 {
+.gdpr-section h4 {
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 20px;
 }
-.cgv-section h5 {
+.gdpr-section h5 {
   font-size: 0.8rem;
   font-weight: 600;
   line-height: 15px;
-}
-.cgv-section a {
-  color: #24303D;
 }
 
 .line-break__paragraph {
@@ -459,4 +451,4 @@ ul.circle-type {
   margin-bottom: 6px;
 }
 
-/*# sourceMappingURL=cgv.css.map */
+/*# sourceMappingURL=gdpr.css.map */

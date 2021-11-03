@@ -1,4 +1,3 @@
-/* -- NORMALIZER -- */
 /* Box sizing rules */
 *,
 *::before,
@@ -62,6 +61,7 @@ textarea,
 select {
   font: inherit;
   padding: 0;
+  margin: 0;
 }
 
 /* -------------------------------------------------- GENERAL CONTENT ------------------------------------------ */
@@ -411,86 +411,52 @@ ul.circle-type {
   border-top: solid 2px white;
 }
 
-/* PAGE ORDER - Order Section */
-.order-section {
-  padding: 10px 0 40px 0;
-  margin: 0 20px;
-  text-align: center;
-  border-bottom: solid 2px #24303D;
+/* PAGE CGV - cgv Section */
+.cgv-section {
+  padding: 10px 20px 0 20px;
 }
-@media (min-width: 425px) {
-  .order-section {
-    margin: 0 50px;
+@media (min-width: 320px) and (max-width: 335px) {
+  .cgv-section__title {
+    font-size: 1.05rem;
   }
 }
-.order-section__title {
-  font-size: 1.05rem;
-  line-height: 30px;
-}
-@media (min-width: 321px) {
-  .order-section__title {
-    line-height: 60px;
-  }
-}
-@media (min-width: 350px) {
-  .order-section__title {
-    font-size: 1.2rem;
-    line-height: 30px;
-  }
-}
-@media (min-width: 361px) {
-  .order-section__title {
-    line-height: 60px;
-  }
-}
-.order-section__text {
+.cgv-section__text {
   font-family: "Open sans", sans-serif;
   font-size: 0.8rem;
-  font-weight: 400;
-  padding: 10px 10px 50px 10px;
+  font-weight: 100;
+  padding: 10px 10px 20px 10px;
+  border-bottom: solid 2px #24303D;
+  height: 400px;
+  overflow-y: scroll;
 }
-@media (min-width: 620px) {
-  .order-section__text {
-    padding: 10px calc(50% - 250px) 50px calc(50% - 250px);
-  }
+.cgv-section h3, .cgv-section h4, .cgv-section h5 {
+  margin-bottom: 3px;
 }
-.order-section__text h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #24303D;
-  margin: 15px 0;
-}
-.order-section__text-message {
-  padding: 10px 0 30px 0;
-  line-height: 30px;
-}
-.order-section__order-summary {
-  padding: 10px;
-  border: solid 1px #24303D;
+.cgv-section h3 {
+  font-size: 1rem;
+  font-weight: 800;
   line-height: 25px;
 }
-.order-section__order-summary h3 {
-  color: #43658A;
+.cgv-section h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 20px;
+}
+.cgv-section h5 {
+  font-size: 0.8rem;
   font-weight: 600;
-  text-decoration: underline;
+  line-height: 15px;
 }
-.order-section__order-summary-number strong {
-  color: #C99D5C;
-  font-weight: 800;
-}
-.order-section__order-summary-price strong {
+.cgv-section a {
   color: #24303D;
-  font-weight: 800;
-}
-.order-section__return-button {
-  font-family: "Open sans", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: white;
-  background-color: #43658A;
-  border-radius: 5px;
-  box-shadow: 3px 3px 10px 5px silver;
-  padding: 20px 50px;
 }
 
-/*# sourceMappingURL=order.css.map */
+.line-break__paragraph {
+  margin-bottom: 12px;
+}
+
+.space-enhance__paragraph {
+  margin-bottom: 6px;
+}
+
+/*# sourceMappingURL=cgv.css.map */

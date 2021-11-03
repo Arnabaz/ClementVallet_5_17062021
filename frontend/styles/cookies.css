@@ -1,4 +1,3 @@
-/* -- NORMALIZER -- */
 /* Box sizing rules */
 *,
 *::before,
@@ -62,6 +61,7 @@ textarea,
 select {
   font: inherit;
   padding: 0;
+  margin: 0;
 }
 
 /* -------------------------------------------------- GENERAL CONTENT ------------------------------------------ */
@@ -411,150 +411,44 @@ ul.circle-type {
   border-top: solid 2px white;
 }
 
-/* PAGE PRODUIT - Product Section */
-.product-section {
-  padding: 20px;
-  text-align: center;
+/* PAGE COOKIES - Cookies Section */
+.cookies-section {
+  padding: 10px 20px 0 20px;
 }
-@media (min-width: 425px) {
-  .product-section {
-    padding: 20px 50px;
-  }
-}
-@media (min-width: 425px) and (min-width: 620px) {
-  .product-section {
-    padding: 20px calc((100% - 520px) / 2);
-  }
-}
-.product-section__product-title {
-  font-size: 1.5rem;
+.cookies-section__text {
   font-family: "Open sans", sans-serif;
-  font-weight: 600;
-  color: #24303D;
-  padding: 20px 0;
-  line-height: 40px;
+  font-size: 0.8rem;
+  font-weight: 100;
+  padding: 10px 10px 20px 10px;
+  border-bottom: solid 2px #24303D;
+  height: 400px;
+  overflow-y: scroll;
 }
-@media (min-width: 345px) {
-  .product-section__product-title {
-    font-size: 1.6rem;
-  }
+.cookies-section__text h3, .cookies-section__text h4, .cookies-section__text h5 {
+  margin-bottom: 3px;
 }
-.product-section__card {
-  border-radius: 20px;
-  box-shadow: 3px 3px 10px 3px silver;
-  margin-bottom: 30px;
-}
-
-.product-page__img {
-  border-radius: 20px 20px 0 0;
-  height: 188px;
-  object-fit: cover;
-}
-.product-page__info {
-  text-align: center;
-  background-color: white;
-  border-radius: 0 0 20px 20px;
-}
-.product-page__name {
-  padding: 20px;
-  font-family: "Open sans", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #24303D;
-  line-height: 40px;
-}
-.product-page__price {
-  padding: 11px 20px;
-  font-family: "Open sans", sans-serif;
+.cookies-section__text h3 {
   font-size: 1rem;
-  font-weight: 200;
-  color: #24303D;
-  line-height: 40px;
+  font-weight: 800;
+  line-height: 25px;
 }
-.product-page__text {
-  padding: 20px;
-  font-family: "Open sans", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 200;
-  color: #24303D;
-  line-height: 24px;
-}
-.product-page__alert {
-  font-family: "Open sans", sans-serif;
-  font-size: 0.9rem;
-  padding: 20px;
-  font-weight: 500;
-  color: red;
-  text-align: center;
-}
-.product-page__form {
-  padding: 20px;
-  font-family: "Open sans", sans-serif;
-  font-size: 1rem;
-  font-weight: 200;
-  color: #24303D;
-}
-.product-page__form label {
-  display: block;
-  font-weight: 600;
-}
-.product-page__form select {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ecf0f4;
-}
-.product-page__add-to-cart {
-  display: inline-block;
-  font-family: "Open sans", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: white;
-  background-color: #43658A;
-  padding: 16px 15%;
-  border-radius: 5px;
-  box-shadow: 3px 3px 10px 3px silver;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-.product-page__add-to-cart:hover {
-  transform: scale(1.1);
-  background-color: #C99D5C;
-  color: #2a3f57;
-}
-.product-page__success {
-  font-family: "Open sans", sans-serif;
-}
-.product-page__success-message {
-  color: #5F748A;
+.cookies-section__text h4 {
   font-size: 0.9rem;
   font-weight: 700;
-  line-height: 50px;
+  line-height: 20px;
 }
-.product-page__success-link {
-  display: block;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 40px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 3px 3px 10px 3px silver;
-  margin: 10px 30px;
-}
-.product-page__success-link.cart-link {
-  background-color: #43658A;
-  color: white;
-  transition: all 0.2s;
-}
-.product-page__success-link.cart-link:hover {
-  transform: scale(1.1);
-}
-.product-page__success-link.product-link {
-  background-color: #C99D5C;
-  color: #24303D;
-  transition: all 0.2s;
-}
-.product-page__success-link.product-link:hover {
-  color: white;
+.cookies-section__text h5 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 15px;
 }
 
-/*# sourceMappingURL=product.css.map */
+.line-break__paragraph {
+  margin-bottom: 12px;
+}
+
+.space-enhance__paragraph {
+  margin-bottom: 6px;
+}
+
+/*# sourceMappingURL=cookies.css.map */

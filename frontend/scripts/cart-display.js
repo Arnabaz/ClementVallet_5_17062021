@@ -20,31 +20,56 @@ let productLineElement = document.querySelector(".cart-section__product-line"); 
 const cartSectionButton = document.querySelector(".cart-section__button"); // Variable pour viser le bouton de validation du panier
 const cartSectionLinkReturn = document.querySelector(".cart-section__link-return"); // Variable pour viser le lien pour continuer ses achats
 const formSectionElement = document.querySelector(".form-section"); // Variable pour viser la section formulaire de commande
-let productPrice = 0; // Variable pour stocker le prix du produit
 let totalPriceCart = 0;
+let productFeature = {};
+let alertQuantity;
 
 
 // --- Déclaration de fonctions
+// Fonction de suppression d'un article dans le panier client
+function removeProduct () {
+    productList = document.getElementById("products-list");
+    productLineElement = document.querySelector(".cart-section__product-line");
+    removeProductElement = document.querySelectorAll(".cart-section__remove-product.fa-times")
+    if (productList.contains(productLineElement)) {
+        removeProductElement.forEach((removeElementIndex) => {
+            removeElementIndex.addEventListener("click", (e) => {
+                if (confirm("Voulez-vous vraiment supprimer cet article de votre panier ?")) {
+                    // Récupérer l'index du produit à supprimer dans le panier
+                    let indexProduct = e.target.getAttribute("data-index");
+                    // S'assurer que l'index soit bien un nombre entier
+                    indexProduct = parseInt(indexProduct, 10);
+                    //Supression de l'article dans le panier et le localStorage ET réindexation du tableau
+                    delete cart.splice(indexProduct, 1);
+                    localStorage.setItem("customCart", JSON.stringify(cart));
+                    // Refresh de la page pour actualiser le panier
+                    location.reload();
+                }
+            })
+        })
+    }
+}
+
 // Fonctions d'affichage du tableau de produit et ses composantes
 // Affichage du tableau des articles présents dans le panier du client
 async function cartDisplaying() {
     for (let i = 0; i < cart.length; i++) {
         // Récupération du prix du produit avec appel à l'API avec la fonction setPriceProductCart
-        await setPriceProductCart(i);
+        await setProductFeature(i);
         // Calcul du prix total de l'article
-        let productTotalPriceCart = productPrice * cart[i].quantity;
+        let productTotalPriceCart = productFeature.price * cart[i].quantity;
         totalPriceCart = totalPriceCart + productTotalPriceCart;
         // Affichage de l'article dans le panier client
         productList.innerHTML += `
     <tr class="cart-section__product-line">
     <td><i class="fa fa-times cart-section__remove-product" aria-hidden="true" title="Retirer le produit" data-index="${i}" ></i></td>
     <td class="cart-section__product-name">
-        ${cart[i].name}
+        ${productFeature.name}
     <em>${cart[i].varnish}</em>
     </td>
     <td>
         <label for="quantity-choice" data-index="${i}"></label>
-            <input type="number" id="quantity-choice" min="1" max="10" name="cart-form" data-index="${i}" value="${cart[i].quantity}"/>
+            <input type="number" id="quantity-choice" min="1" max="10" autocomplete="off" name="cart-form" data-index="${i}" value="${cart[i].quantity}"/>
         </td>
         <td class="cart-section__product-price">${formatPrice(productTotalPriceCart)} €</td>
     </tr>`;
@@ -59,16 +84,21 @@ async function cartDisplaying() {
 }
 
 // Fonction de calcul du prix total de l'article dans le panier client
-async function setPriceProductCart(number) {
+async function setProductFeature(number) {
     idProduct = cart[number].id;
-    await getDataProductAPI(idProduct, productPrice)
-        .then((answer) => (productPrice = answer.price))
+    await getDataProductAPI(idProduct, productFeature)
+        .then((answer) => {
+         productFeature = {
+                price: answer.price,
+                name: answer.name
+            }
+        })
         .catch((error) => (console.error(error)))
-    return productPrice;
+    return productFeature;
 }
 
 // Fonction d'affichage du prix total de la commande client
-function totalPriceDisplay () {
+function totalPriceDisplay() {
     productList.innerHTML += `<tr class="cart-section__total-line">
         <td></td>
         <td></td>
@@ -84,7 +114,16 @@ function removeCartDisplaying() {
     const removeCartElementContent = document.createTextNode("Vider le panier");
     removeCartElement.appendChild(removeCartElementContent);
     cartSectionElement.insertBefore(removeCartElement, cartSectionFormElement);
-    removeCart();
+    // Gestion du clic "Vider le panier"
+    removeCartElement.addEventListener("click", () => {
+        // Message de confirmation de suppression du panier client
+        if (confirm("Voulez-vous vraiment supprimer votre panier ?")) {
+            // Suppression de tout le localStorage
+            localStorage.clear();
+            // Refresh de la page panier
+            location.reload();
+        }
+    });
 }
 
 // Fonction de mise à jour d'affichage de la quantité de produits dans l'article du panier
@@ -107,9 +146,15 @@ function quantityDisplayUpdate() {
                 // Changer le prix de l'article
                 location.reload()
             } else if (quantityValue < 0 || quantityValue > 10 || (Number.isInteger(quantityValue) === false)) {
-                // Afficher un message à l'utilisateur et revenir à l'ancienne valeur entrée dans l'input
-                alert("La quantité de produit doit être comprise entre 1 et 10. Veuillez entrer une autre valeur s'il vous plait.");
-                location.reload();
+                if (cartSectionElement.contains(document.querySelector(".cart-section__alert"))){
+                    // Revenir à une quantité par défaut de 1
+                    e.target.value="1";
+                } else {
+                    // Afficher un message à l'utilisateur et revenir à une quantité par défaut de 1
+                    e.target.value="1";
+                    alertDisplay(alertQuantity, "cart-section__alert", "Vous devez choisir une quantité comprise entre 1 et 10", ".cart-section__form", ".cart-section");{
+                    }
+                }
             }
         })
     }))
