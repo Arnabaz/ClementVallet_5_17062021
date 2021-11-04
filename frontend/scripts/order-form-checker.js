@@ -16,6 +16,7 @@ const regexAddress = /^[a-zA-Z0-9\s,'-]*$/;
 const regexCity = /([A-Za-z])\w+/;
 const regexEmail = /^\S+@\S+\.\S+$/;
 const checkBox = document.getElementById("cgv-agreement");
+let alertOrder;
 
 // --- Déclaration de fonction
 // Fonction d'affichage du formulaire de commande et masquage du bouton de validation du panier
@@ -147,8 +148,10 @@ orderButtonElement.addEventListener("click", (event) => {
             })
             .catch((error) => console.log("error : " + error));
     } else {
-        alert(
-            "Veuillez correctement renseigner l'entièreté du formulaire pour valider votre commande."
-        );
+        if (document.querySelector(".form-section__form").contains(document.querySelector(".form-section__alert")) === false) {
+            alertDisplay(alertOrder, "form-section__alert", "Afin de valider votre commande, merci de correctement renseigner l'entièreté du formulaire.", ".form-section__button", ".form-section__form");
+        } else {
+            document.querySelector(".form-section__form").removeChild(document.querySelector(".form-section__alert"));
+        }
     }
 })

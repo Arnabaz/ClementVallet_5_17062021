@@ -579,9 +579,6 @@ ul.circle-type {
 }
 .form-section__form {
   display: grid;
-  grid-template-areas: ". ." ". ." ". ." ". ." ". ." ". ." ". ." ". ." ". ." ". ." ". ." ". ." ". ." ". ." ". .";
-  grid-template-rows: repeat(15, auto);
-  grid-template-columns: repeat(2, auto);
   justify-items: center;
 }
 .form-section__text {
@@ -666,6 +663,16 @@ ul.circle-type {
   justify-self: right;
   align-self: center;
   margin: 0;
+}
+.form-section__alert {
+  font-family: "Open sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: red;
+  line-height: 20px;
+  padding: 20px 0;
+  grid-area: 15/1/16/3;
+  text-align: center;
 }
 .form-section__button {
   grid-area: 14/1/15/3;
