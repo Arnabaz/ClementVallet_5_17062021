@@ -413,11 +413,24 @@ ul.circle-type {
 
 /* PAGE CGV - cgv Section */
 .cgv-section {
-  padding: 10px 20px 0 20px;
+  padding: 10px 20px;
 }
-@media (min-width: 320px) and (max-width: 335px) {
+@media (min-width: 425px) {
+  .cgv-section {
+    padding: 10px 50px;
+  }
+}
+@media (min-width: 980px) {
+  .cgv-section {
+    padding: 10px calc((100% - 980px) / 2);
+  }
+}
+.cgv-section__title {
+  font-size: 1.05rem;
+}
+@media (min-width: 335px) {
   .cgv-section__title {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
   }
 }
 .cgv-section__text {
@@ -428,6 +441,11 @@ ul.circle-type {
   border-bottom: solid 2px #24303D;
   height: 400px;
   overflow-y: scroll;
+}
+@media (min-width: 880px) {
+  .cgv-section__text {
+    height: auto;
+  }
 }
 .cgv-section h3, .cgv-section h4, .cgv-section h5 {
   margin-bottom: 3px;

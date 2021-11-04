@@ -15,24 +15,10 @@ let productData = []; // Variable pour stocker les données reçues de l'API
 let newAlertPElement; // Variable qui sert à viser l'élément d'alerte pour les vernis
 let figcaptionProductPage;// Variable pour viser figcaption
 let varnishCustomSelect = document.getElementById("varnish-choice"); // Variable pour viser le select du formulaire
+let alertVarnish;
 
 
 // --- Déclaration de fonction ---
-// Fonction d'affichage de l'alerte de non-sélection du vernis
-function alertVarnish() {
-    newAlertPElement = document.createElement("p");
-    // Rattachement de classe à l'élément p
-    newAlertPElement.classList.add("product-page__alert");
-    // Création du contenu de l'élément p
-    const newAlertPElementContent = document.createTextNode("Vous devez choisir un vernis avant d'ajouter le produit au panier");
-    // Rattachement du contenu et de l'élément p
-    newAlertPElement.appendChild(newAlertPElementContent);
-    // Insertion de l'élément p dans le DOM
-    let FormElementProductPage = document.querySelector(".product-page__form");
-    figcaptionProductPage = document.querySelector("figcaption");
-    figcaptionProductPage.insertBefore(newAlertPElement, FormElementProductPage);
-}
-
 // Fonction de supression du message d'alerte (manque sélection vernis) suite à l'utilisation du bouton Ajouter au panier
 function removeAlertElement() {
     figcaptionProductPage = document.querySelector("figcaption");
@@ -63,18 +49,15 @@ function addProductToCart() {
     newAlertPElement = document.querySelector(".product-page__alert")
     varnishCustomSelect = document.getElementById("varnish-choice");
     // Si l'utilisateur n'a pas sélectionné de vernis et s'il n'y a pas dèjà de message d'alerte alors afficher un message d'alerte
-    if (varnishCustomSelect.value === "" && figcaptionProductPage.contains(newAlertPElement) === false) {
-        alertVarnish();
-    } else if (varnishCustomSelect.value === "" && figcaptionProductPage.contains(newAlertPElement) === true) {
-
-    } else {
+    if (varnishCustomSelect.value === "") {
+        if (figcaptionProductPage.contains(newAlertPElement) === false) {
+        alertDisplay(alertVarnish, "product-page__alert", "Vous devez choisir un vernis avant d'ajouter le produit au panier", "product-page__form", "figcaption");
+    }} else {
         // Sinon ajouter le produit au panier dans le localStorage (création de l'objet customProduct pour l'ajouter au panier du localStorage)
         let objectCustomProduct = new CustomProduct(
             productData._id,
-            productData.name,
             varnishCustomSelect.value,
             1,
-            productData.imageUrl,
         );
         // Vérification de la présence ou non du produit dans le panier
         let isProductAlreadyPresent = false;

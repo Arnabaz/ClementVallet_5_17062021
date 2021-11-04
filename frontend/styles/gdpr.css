@@ -413,7 +413,17 @@ ul.circle-type {
 
 /* PAGE GDPR - gdpr Section */
 .gdpr-section {
-  padding: 10px 20px 0 20px;
+  padding: 10px 20px;
+}
+@media (min-width: 425px) {
+  .gdpr-section {
+    padding: 10px 50px;
+  }
+}
+@media (min-width: 980px) {
+  .gdpr-section {
+    padding: 10px calc((100% - 880px) / 2);
+  }
 }
 .gdpr-section__text {
   font-family: "Open sans", sans-serif;
@@ -423,6 +433,11 @@ ul.circle-type {
   border-bottom: solid 2px #24303D;
   height: 400px;
   overflow-y: scroll;
+}
+@media (min-width: 980px) {
+  .gdpr-section__text {
+    height: auto;
+  }
 }
 .gdpr-section h3, .gdpr-section h4, .gdpr-section h5 {
   margin-bottom: 3px;

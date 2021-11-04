@@ -647,5 +647,15 @@ ul.circle-type {
   line-height: 30px;
   text-align: center;
 }
+@media (min-width: 620px) {
+  .no-product {
+    grid-area: 2/1/2/3;
+  }
+}
+@media (min-width: 980px) {
+  .no-product {
+    grid-area: 2/1/2/4;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
