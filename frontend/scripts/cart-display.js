@@ -20,6 +20,7 @@ let productLineElement = document.querySelector(".cart-section__product-line"); 
 const cartSectionButton = document.querySelector(".cart-section__button"); // Variable pour viser le bouton de validation du panier
 const cartSectionLinkReturn = document.querySelector(".cart-section__link-return"); // Variable pour viser le lien pour continuer ses achats
 const formSectionElement = document.querySelector(".form-section"); // Variable pour viser la section formulaire de commande
+let productTotalPriceCart = 0;
 let totalPriceCart = 0;
 let productFeature = {};
 let alertQuantity;
@@ -27,7 +28,7 @@ let alertQuantity;
 
 // --- Déclaration de fonctions
 // Fonction de suppression d'un article dans le panier client
-function removeProduct () {
+function removeProduct() {
     productList = document.getElementById("products-list");
     productLineElement = document.querySelector(".cart-section__product-line");
     removeProductElement = document.querySelectorAll(".cart-section__remove-product.fa-times")
@@ -50,15 +51,25 @@ function removeProduct () {
     }
 }
 
+function totalProductPriceCalcul (number, productPrice, productQuantity) {
+    return productTotalPriceCart = productPrice * productQuantity;
+}
+
+function totalPriceCalcul(productTotalPrice){
+    totalPriceCart = totalPriceCart + productTotalPrice;
+        return totalPriceCart;
+}
+
 // Fonctions d'affichage du tableau de produit et ses composantes
 // Affichage du tableau des articles présents dans le panier du client
 async function cartDisplaying() {
     for (let i = 0; i < cart.length; i++) {
         // Récupération du prix du produit avec appel à l'API avec la fonction setPriceProductCart
-        await setProductFeature(i);
+        await getProductFeature(i);
         // Calcul du prix total de l'article
-        let productTotalPriceCart = productFeature.price * cart[i].quantity;
-        totalPriceCart = totalPriceCart + productTotalPriceCart;
+        totalProductPriceCalcul(i, productFeature.price, cart[i].quantity)
+        // Calcul du prix total du panier
+        totalPriceCalcul(productTotalPriceCart);
         // Affichage de l'article dans le panier client
         productList.innerHTML += `
     <tr class="cart-section__product-line">
@@ -84,7 +95,7 @@ async function cartDisplaying() {
 }
 
 // Fonction de calcul du prix total de l'article dans le panier client
-async function setProductFeature(number) {
+async function getProductFeature(number) {
     idProduct = cart[number].id;
     await getDataProductAPI(idProduct, productFeature)
         .then((answer) => {

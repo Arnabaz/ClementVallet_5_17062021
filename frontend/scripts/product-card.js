@@ -194,6 +194,13 @@ getDataProductAPI(idProduct, product)
         createSelectElementProductPage();
         createOptionElementProductPage();
         createOptionElementsProductPage();
+        addToCartButtonElement.addEventListener("click", () => {
+            figcaptionProductPage = document.querySelector("figcaption");
+            newAlertPElement = document.querySelector(".product-page__alert")
+            varnishCustomSelect = document.getElementById("varnish-choice");
+            // Ajout du produit au panier
+            addProductToCart();
+        });
     })
     .catch((error) => (console.error("L'erreur provient de l'appel à l'API", error)));
 

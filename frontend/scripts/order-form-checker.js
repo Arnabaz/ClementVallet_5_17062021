@@ -29,77 +29,6 @@ function orderFormDisplaying() {
 }
 orderFormDisplaying();
 
-/* En cours de construction
-// Fonction d'affichage d'une erreur de complétion du champ du formulaire de commande
-function errorMessageDisplaying (tag, message, valid) {
-    const
-}
-
-// Fonction de contrôle du prénom
-const firstNameChecker = (value) => {
-    if (!value.match(/^[a-zA-Z_.-]*$/)) {
-        errorMessageDisplaying("Le prénom doit uniquement contenir des lettres");
-    }
-};
-
-// Fonction de contrôle du nom
-const lastNameChecker = (value) => {
-    console.log(value);
-};
-
-// Fonction de contrôle de l'adresse
-const addressChecker = (value) => {
-    console.log(value);
-};
-
-// Fonction de contrôle de la ville
-const cityChecker = (value) => {
-    console.log(value);
-}
-
-// Fonction de contrôle de l'email
-const emailChecker = (value) => {
-    console.log(value);
-};
-
-// Fonction de contrôle de la checkbox
-const cgvChecker = (value) => {
-    console.log(value);
-};
-
-
-// Contrôle du formulaire de commande en temps réel :
-const inputsOrderForm = document.querySelectorAll(".form-section__input");
-inputsOrderForm.forEach((inputOrderForm) => {
-    inputOrderForm.addEventListener("input", (events) => {
-        switch (events.target.id) {
-            case "first-name":
-                firstNameChecker(events.target.value);
-                break;
-            case "last-name":
-                lastNameChecker(events.target.value);
-                break;
-            case "address":
-                addressChecker(events.target.value);
-                break;
-            case "city":
-                cityChecker(events.target.value);
-                break;
-            case "email-order":
-                emailChecker(events.target.value);
-                break;
-            case "cgv-agreement":
-                cgvChecker(events.target.checked);
-                break;
-            default:
-                null;
-        }
-    })
-})
-
-*/
-
-
 // Validation du formulaire de commande
 orderButtonElement.addEventListener("click", (event) => {
     event.preventDefault();
@@ -111,12 +40,6 @@ orderButtonElement.addEventListener("click", (event) => {
         city: document.getElementById("city").value,
         email: document.getElementById("email-order").value,
     };
-    console.log("1", regexName.test(contact.firstName));
-    console.log("2", regexName.test(contact.lastName));
-    console.log("3", regexAddress.test(contact.address));
-    console.log("4", regexCity.test(contact.city));
-    console.log("5", regexEmail.test(contact.email));
-    console.log("6", checkBox.checked);
     // Vérification des données entrées par le client
     if (
         (regexName.test(contact.firstName) === true) &&

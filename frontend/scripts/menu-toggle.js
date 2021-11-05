@@ -5,7 +5,7 @@
  */
 
 // --- Déclaration de fonctions ---
-// Fonction globale qui gère le menu-toggle
+// Fonction qui gère le menu-toggle
 function menuToggle () {
 const menuBarsElement = document.querySelector(".bars-button");
 const menuElement = document.querySelector(".menu-navbar");

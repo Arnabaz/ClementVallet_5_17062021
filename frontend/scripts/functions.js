@@ -25,7 +25,7 @@ function formatPrice(price) {
 
 
 // Fonction d'appel à l'API pour tous les produits
-function getDataProductsAPI (output) {
+function getDataProductsAPI(output) {
     // fetch sur l'url de l'API
     return fetch("http://localhost:3000/api/furniture/")
         // Résolution de la promesse en récupérant une réponse et la convertir en .json
@@ -37,7 +37,7 @@ function getDataProductsAPI (output) {
 }
 
 // Fonction d'appel à l'API pour un seul produit
-function getDataProductAPI (id, outputData) {
+function getDataProductAPI(id, outputData) {
     return fetch("http://localhost:3000/api/furniture/" + id)
         .then((response) => (response.json()))
         .then((productData) => (outputData = productData))
