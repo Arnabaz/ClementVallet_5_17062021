@@ -425,8 +425,8 @@ ul.circle-type {
 .cart-section__alert {
   text-align: center;
   font-family: "Open sans", sans-serif;
-  font-size: 10px;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 600;
   color: red;
 }
 .cart-section__empty-cart {
@@ -517,7 +517,7 @@ ul.circle-type {
   transition: all 0.2s;
 }
 .cart-section__button:hover {
-  transform: scaleX(1.1);
+  transform: scale(1.05);
 }
 .cart-section__inactivated-button {
   display: block;
@@ -559,6 +559,9 @@ ul.circle-type {
 }
 #quantity-choice:hover {
   border: solid 1px #547eac;
+}
+#quantity-choice.red-border {
+  border: solid 2px red;
 }
 
 #total-price {

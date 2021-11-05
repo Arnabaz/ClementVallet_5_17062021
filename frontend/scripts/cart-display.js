@@ -142,6 +142,7 @@ function quantityDisplayUpdate() {
     let inputQuantityChoiceElements = document.querySelectorAll("#quantity-choice");
     inputQuantityChoiceElements.forEach((inputQuantityChoiceElement => {
         inputQuantityChoiceElement.addEventListener("change", (e) => {
+            console.log(e)
             let quantityValue = e.target.value;
             quantityValue = parseInt(quantityValue, 10);
             // Vérifier que la variable quantityValue est bien un nombre entier positif inférieur ou égal à 10
@@ -163,8 +164,9 @@ function quantityDisplayUpdate() {
                 } else {
                     // Afficher un message à l'utilisateur et revenir à une quantité par défaut de 1
                     e.target.value="1";
-                    alertDisplay(alertQuantity, "cart-section__alert", "Vous devez choisir une quantité comprise entre 1 et 10", ".cart-section__form", ".cart-section");{
-                    }
+                    let dataIndexInput = e.target.getAttribute("data-index");
+                    alertDisplay(alertQuantity, "cart-section__alert", "Vous devez choisir une quantité comprise entre 1 et 10", ".cart-section__form", ".cart-section");
+                    document.querySelector(`#quantity-choice[data-index='${dataIndexInput}']`).classList.add("red-border");
                 }
             }
         })

@@ -445,6 +445,7 @@ ul.circle-type {
 @media (min-width: 880px) {
   .cgv-section__text {
     height: auto;
+    overflow-y: unset;
   }
 }
 .cgv-section h3, .cgv-section h4, .cgv-section h5 {
