@@ -12,7 +12,7 @@ function orderSummary() {
         <span class="loading-spinner-text">Redirection vers la page d'accueil</span>
         `;
         // Rediriger l'utilisateur vers la page d'accueil
-        document.location.href = "../index.html";
+        document.location.href = "./index.html";
     } else {
         // Afficher les informations de la commande client
         document.querySelector("main").innerHTML += `    
@@ -35,7 +35,7 @@ function orderSummary() {
                 <p class="order-section__order-price">Montant total de votre commande : <strong>${formatPrice(totalPriceOrder)} €</strong></p>
             </div>
         </article>
-        <a class="order-section__return-button" href="../index.html">Retour à l'accueil</a>
+        <a class="order-section__return-button" href="./index.html">Retour à l'accueil</a>
     </section>`;
         // Vider le panier et le localStorage
         localStorage.clear();

@@ -1,4 +1,9 @@
-/* --- Affichage des articles du panier client sur la page panier --- */
+/* --- CART-DISPLAY.JS --- */
+
+
+/*
+    Affichage des articles du panier client dans la section panier de la page panier
+*/
 /*
 
 la fonction permet d'afficher le panier du client.
@@ -23,7 +28,6 @@ const formSectionElement = document.querySelector(".form-section"); // Variable 
 let productTotalPriceCart = 0;
 let totalPriceCart = 0;
 let productFeature = {};
-let alertQuantity;
 
 
 // --- Déclaration de fonctions
@@ -73,7 +77,7 @@ async function cartDisplaying() {
         // Affichage de l'article dans le panier client
         productList.innerHTML += `
     <tr class="cart-section__product-line">
-    <td><i class="fa fa-times cart-section__remove-product" aria-hidden="true" title="Retirer le produit" data-index="${i}" ></i></td>
+    <td><i class="fa fa-times cart-section__remove-product" title="Retirer le produit" data-index="${i}" ></i></td>
     <td class="cart-section__product-name">
         ${productFeature.name}
     <em>${cart[i].varnish}</em>
@@ -87,8 +91,13 @@ async function cartDisplaying() {
         removeProductElement = document.querySelector(".cart-section__remove-product.fa-times");
         productLineElement = document.querySelector(".cart-section__product-line");
     }
-    // Affichage du total du panier de commande du client
-    totalPriceDisplay();
+    // Affichage de la ligne de prix total du panier de commande du client
+    productList.innerHTML += `<tr class="cart-section__total-line">
+        <td></td>
+        <td></td>
+        <td>TOTAL</td>
+        <td id="total-price"></td>
+   </tr>`;
     // Affichage du prix total
     let totalPriceElement = document.getElementById("total-price");
     totalPriceElement.innerText = formatPrice(totalPriceCart) + "€";
@@ -97,7 +106,8 @@ async function cartDisplaying() {
 // Fonction de calcul du prix total de l'article dans le panier client
 async function getProductFeature(number) {
     idProduct = cart[number].id;
-    await getDataProductAPI(idProduct, productFeature)
+    return fetch("http://localhost:3000/api/furniture/" + idProduct)
+        .then((answer) => answer.json())
         .then((answer) => {
          productFeature = {
                 price: answer.price,
@@ -105,17 +115,6 @@ async function getProductFeature(number) {
             }
         })
         .catch((error) => (console.error(error)))
-    return productFeature;
-}
-
-// Fonction d'affichage du prix total de la commande client
-function totalPriceDisplay() {
-    productList.innerHTML += `<tr class="cart-section__total-line">
-        <td></td>
-        <td></td>
-        <td>TOTAL</td>
-        <td id="total-price"></td>
-   </tr>`;
 }
 
 // Fonction d'affichage du lien de supression de tout le panier
@@ -165,7 +164,7 @@ function quantityDisplayUpdate() {
                     // Afficher un message à l'utilisateur et revenir à une quantité par défaut de 1
                     e.target.value="1";
                     let dataIndexInput = e.target.getAttribute("data-index");
-                    alertDisplay(alertQuantity, "cart-section__alert", "Vous devez choisir une quantité comprise entre 1 et 10", ".cart-section__form", ".cart-section");
+                    alertDisplay(".cart-section__remove-cart", "cart-section__alert", "Vous devez choisir une quantité comprise entre 1 et 10");
                     document.querySelector(`#quantity-choice[data-index='${dataIndexInput}']`).classList.add("red-border");
                 }
             }
@@ -175,26 +174,28 @@ function quantityDisplayUpdate() {
 
 // PAGE PANIER - Section Panier Client
 // Gestion de tous les affichages de la section du panier client
+// Si le panier est vide :
 if (cart.length < 1) {
-    emptyCartElement.classList.remove("d-none");
-    cartSectionLinkReturn.classList.remove("d-none");
-    cartSectionLinkReturn.classList.add("cart-section__empty-cart-link");
-    cartSectionLinkReturn.textContent = "Remplissez votre panier d'abord !";
-    cartTableElement.classList.add("d-none");
-    formSectionElement.classList.add("d-none");
-    cartSectionButton.classList.add("d-none");
+    emptyCartElement.classList.remove("d-none"); // Faire apparaitre l'élement pour indiquer que le panier est vide
+    cartSectionLinkReturn.classList.remove("d-none"); // Faire apparaitre le lien pour revenir à l'accueil avec une classe
+    cartSectionLinkReturn.classList.add("cart-section__empty-cart-link") // Ajouter une classe au lien de retour vers l'accueil
+    cartSectionLinkReturn.textContent = "Remplissez votre panier d'abord !"; // Ajouter le texte au message
+    cartTableElement.classList.add("d-none"); // Masquer le panier client
+    formSectionElement.classList.add("d-none"); // Masquer le formulaire de commande
+    cartSectionButton.classList.add("d-none"); // Masquer le bouton de validation du panier
 
+// Si le panier est rempli avec au moins 1 produit :
 } else {
-    emptyCartElement.classList.add("d-none");
-    cartTableElement.classList.remove("d-none");
-    formSectionElement.classList.remove("d-none");
-    cartDisplaying()
+    emptyCartElement.classList.add("d-none"); // Masquer l'élément qui indique que le panier est vide
+    cartTableElement.classList.remove("d-none"); // Faire apparaitre le panier client
+    formSectionElement.classList.remove("d-none"); // Faire apparaitre le formulaire de commande
+    cartDisplaying()// Fonction qui affiche le panier client
         .then(() => {
-            removeCartDisplaying();
-            quantityDisplayUpdate();
-            removeProduct();
+            removeCartDisplaying(); // Fonction qui affiche le lien pour vider le panier client
+            quantityDisplayUpdate(); // Fonction qui gère la personnalisation de la quantité de produit
+            removeProduct(); // Fonction qui affiche le lien pour supprimer une ligne de produit dans le panier client
         })
-        .catch((error) => console.error(error));
+        .catch((error) => console.error(error))
 }
 
 

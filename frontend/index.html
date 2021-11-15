@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./frontend/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 
     <script src="https://kit.fontawesome.com/662296abb9.js" crossorigin="anonymous"></script>
 
@@ -23,16 +23,16 @@
 <body>
 <!-- Header -->
 <header class="header">
-    <a href="index.html" class="logo__link"><img src="./frontend/images/logo_orinoco.png" alt="Logo Orinoco"/></a>
+    <a href="./index.html" class="logo__link"><img src="images/logo_orinoco.png" alt="Logo Orinoco"/></a>
     <button class="bars-button">
         <i class="fas fa-bars bars-icon"></i>
     </button>
     <nav class="menu-navbar folded">
         <ul class="menu-items">
             <li class="menu-item"><a href="#products-section" class="menu-item__products">Produits</a></li>
-            <li class="menu-item"><a href="./frontend/contact.html">Contact</a></li>
+            <li class="menu-item"><a href="contact.html">Contact</a></li>
             <li class="menu-item">
-                <a href="./frontend/cart.html"><i class="fas fa-shopping-cart cart-icon"></i>Mon panier</a>
+                <a href="cart.html"><i class="fas fa-shopping-cart cart-icon"></i>Mon panier</a>
             </li>
         </ul>
     </nav>
@@ -48,15 +48,15 @@
         <figure class="presentation-section__figure">
             <img class="presentation-section__figure-img"
                  srcset="
-            ./frontend/images/homepage/presentation_homepage_short.webp 375w,
-            ./frontend/images/homepage/presentation_homepage_medium.webp 620w,
-            ./frontend/images/homepage/presentation_homepage_large.webp 1024w,
-            ./frontend/images/homepage/presentation_homepage_xlarge.webp 1440w"
+            images/homepage/presentation_homepage_short.webp 375w,
+            ./images/homepage/presentation_homepage_medium.webp 620w,
+            ./images/homepage/presentation_homepage_large.webp 1024w,
+            ./images/homepage/presentation_homepage_xlarge.webp 1440w"
                  sizes="
                  (max-width: 375px) 375px,
                  (max-width: 620px) 620px,
                  (max-width: 1024px) 1024px"
-                 src="./frontend/images/homepage/presentation_homepage_xlarge.webp"
+                 src="./images/homepage/presentation_homepage_xlarge.webp"
                  alt="Orinoco">
             <figcaption>
                 <hgroup>
@@ -96,10 +96,10 @@
     <h3 class="footer_title footer_title-1">Mentions</h3>
     <nav class="footer_nav footer_nav-1">
         <ul class="footer_nav-list">
-            <li class="footer_nav-list_item"><a href="./frontend/legal.html">Mentions légales</a></li>
-            <li class="footer_nav-list_item"><a href="./frontend/cgv.html">CGV</a></li>
-            <li class="footer_nav-list_item"><a href="./frontend/gdpr.html">Politique de confidentialité</a></li>
-            <li class="footer_nav-list_item"><a href="./frontend/cookies.html">Cookies</a></li>
+            <li class="footer_nav-list_item"><a href="./legal.html">Mentions légales</a></li>
+            <li class="footer_nav-list_item"><a href="./cgv.html">CGV</a></li>
+            <li class="footer_nav-list_item"><a href="./gdpr.html">Politique de confidentialité</a></li>
+            <li class="footer_nav-list_item"><a href="./cookies.html">Cookies</a></li>
         </ul>
     </nav>
     <h3 class="footer_title footer_title-2">Liens utiles</h3>
@@ -118,7 +118,7 @@
             <li class="footer_nav-list_item"><a href="#">Suivi de colis</a></li>
             <li class="footer_nav-list_item"><a href="#">Retours</a></li>
             <li class="footer_nav-list_item"><a href="#">Carrière</a></li>
-            <li class="footer_nav-list_item"><a href="./frontend/contact.html">Nous écrire</a></li>
+            <li class="footer_nav-list_item"><a href="./contact.html">Nous écrire</a></li>
         </ul>
     </nav>
     <h3 class="footer_title footer_title-4">Nous suivre</h3>
@@ -139,7 +139,7 @@
 
 <!-- Consent Form -->
 <section class="consent-form__page-1 d-none">
-    <img class="consent-form__logo" src="./frontend/images/logo_orinoco.png" alt="Logo Orinoco"/>
+    <img class="consent-form__logo" src="images/logo_orinoco.png" alt="Logo Orinoco"/>
     <a class="consent-form__no-consent">Continuer sans accepter ></a>
     <h1 class="consent-form__title">Avant de continuer sur le site Orinoco</h1>
     <p class="consent-form__text">Nos partenaires et nous-mêmes utilisons des cookies ou une technologie équivalente
@@ -149,14 +149,14 @@
         audience ; pour développer et améliorer les produits de nos partenaires. Vous pouvez paramétrez vos choix
         pour accepter ou non les cookies soumis à votre consentement, ou vous y opposer lorsque les cookies
         concernés ne relèvent pas de votre consentement (tels que certains cookies de mesure d'audience.</p>
-    <a class="consent-form__gdpr" href="./frontend/gdpr.html">Pour en savoir plus, consultez notre politique de
+    <a class="consent-form__gdpr" href="gdpr.html">Pour en savoir plus, consultez notre politique de
         confidentialité</a>
     <a class="consent-form__accept">Tout accepter</a>
     <a class="consent-form__customize" href="#consent-form__page-2">Personnaliser</a>
 </section>
 <section class="consent-form__page-2 d-none" id="consent-form__page-2">
     <header>
-        <img class="consent-form__logo" src="./frontend/images/logo_orinoco.png" alt="Logo Orinoco"/>
+        <img class="consent-form__logo" src="images/logo_orinoco.png" alt="Logo Orinoco"/>
         <h2 class="consent-form__title">Personnaliser mes choix</h2>
     </header>
     <p class="consent-form__text">
@@ -263,8 +263,8 @@
 </section>
 
 <!-- JAVASCRIPT -->
-<script src="frontend/scripts/functions.js"></script>
-<script src="frontend/scripts/products-section.js"></script>
-<script src="frontend/scripts/menu-toggle.js"></script>
+<script src="scripts/functions.js"></script>
+<script src="scripts/index.js"></script>
+<script src="scripts/menu-toggle.js"></script>
 </body>
 </html>
