@@ -14,13 +14,13 @@ class CustomProduct {
 // --- Déclaration des fonctions ---
 // Price formatting :
 function formatPrice(price) {
-     if (Number.isInteger(price) === false || isNaN(price)) {
+    if (Number.isInteger(price) === false || isNaN(price)) {
         console.error("La variable indiquée en paramètre dans formatPrice() n'est pas un nombre");
-   } else {
-    let productPrice = parseInt(price, 10) / 100;
-    productPrice = productPrice.toFixed(2);
-    productPrice = productPrice.replace('.', ',');
-    return productPrice;
+    } else {
+        let productPrice = parseInt(price, 10) / 100;
+        productPrice = productPrice.toFixed(2);
+        productPrice = productPrice.replace('.', ',');
+        return productPrice;
     }
 }
 

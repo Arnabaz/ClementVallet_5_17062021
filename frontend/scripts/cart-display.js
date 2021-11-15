@@ -55,13 +55,13 @@ function removeProduct() {
     }
 }
 
-function totalProductPriceCalcul (number, productPrice, productQuantity) {
+function totalProductPriceCalcul(number, productPrice, productQuantity) {
     return productTotalPriceCart = productPrice * productQuantity;
 }
 
-function totalPriceCalcul(productTotalPrice){
+function totalPriceCalcul(productTotalPrice) {
     totalPriceCart = totalPriceCart + productTotalPrice;
-        return totalPriceCart;
+    return totalPriceCart;
 }
 
 // Fonctions d'affichage du tableau de produit et ses composantes
@@ -109,7 +109,7 @@ async function getProductFeature(number) {
     return fetch("http://localhost:3000/api/furniture/" + idProduct)
         .then((answer) => answer.json())
         .then((answer) => {
-         productFeature = {
+            productFeature = {
                 price: answer.price,
                 name: answer.name
             }
@@ -157,12 +157,12 @@ function quantityDisplayUpdate() {
                 // Changer le prix de l'article
                 location.reload()
             } else if (quantityValue < 0 || quantityValue > 10 || (Number.isInteger(quantityValue) === false)) {
-                if (cartSectionElement.contains(document.querySelector(".cart-section__alert"))){
+                if (cartSectionElement.contains(document.querySelector(".cart-section__alert"))) {
                     // Revenir à une quantité par défaut de 1
-                    e.target.value="1";
+                    e.target.value = "1";
                 } else {
                     // Afficher un message à l'utilisateur et revenir à une quantité par défaut de 1
-                    e.target.value="1";
+                    e.target.value = "1";
                     let dataIndexInput = e.target.getAttribute("data-index");
                     alertDisplay(".cart-section__remove-cart", "cart-section__alert", "Vous devez choisir une quantité comprise entre 1 et 10");
                     document.querySelector(`#quantity-choice[data-index='${dataIndexInput}']`).classList.add("red-border");

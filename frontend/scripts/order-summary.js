@@ -41,4 +41,5 @@ function orderSummary() {
         localStorage.clear();
     }
 }
+
 orderSummary();

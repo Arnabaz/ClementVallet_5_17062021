@@ -27,6 +27,7 @@ function orderFormDisplaying() {
         cartValidatorElement.classList.replace("cart-section__button", "cart-section__inactivated-button")
     })
 }
+
 orderFormDisplaying();
 
 // Validation du formulaire de commande
