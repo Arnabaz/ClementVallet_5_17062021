@@ -3,9 +3,7 @@
 const orderData = JSON.parse(localStorage.getItem("order"));
 const totalPriceOrder = JSON.parse(localStorage.getItem("totalPrice"));
 
-// --- Déclaration de fonction ---
-// Fonction d'affichage du récapitulatif de la commande
-function orderSummary() {
+// Affichage du récapitulatif de la commande
     if (orderData == null) {
         // Ajouter du texte au loading-spinner
         document.querySelector(".loading-spinner").innerHTML += `
@@ -40,6 +38,3 @@ function orderSummary() {
         // Vider le panier et le localStorage
         localStorage.clear();
     }
-}
-
-orderSummary();

@@ -1,13 +1,9 @@
 /* --- ORDER-FORM-CHECKER  --- */
 /*
-
-    1) Affichage du formulaire de commande et masquage du bouton de validation panier
-    2) Validation des informations entrées dans le formulaire de commande
-
+    Validation des informations entrées dans le formulaire de commande
  */
 
 // --- Déclaration des variables ---
-const cartValidatorElement = document.querySelector(".cart-section__button"); // Variable pour viser le bouton de validation du panier
 const orderFormElement = document.querySelector(".form-section__form") // Variable pour viser le formulaire de commande
 
 
@@ -17,18 +13,6 @@ const regexAddress = /^[a-zA-Z0-9\s,'-]*$/;
 const regexCity = /([A-Za-z])\w+/;
 const regexEmail = /^\S+@\S+\.\S+$/;
 const checkBox = document.getElementById("cgv-agreement");
-
-// --- Déclaration de fonction
-// Fonction d'affichage du formulaire de commande et masquage du bouton de validation du panier
-function orderFormDisplaying() {
-    cartValidatorElement.addEventListener("click", (e) => {
-        e.preventDefault();
-        orderFormElement.classList.remove("d-none");
-        cartValidatorElement.classList.replace("cart-section__button", "cart-section__inactivated-button")
-    })
-}
-
-orderFormDisplaying();
 
 // Validation du formulaire de commande
 orderButtonElement.addEventListener("click", (event) => {

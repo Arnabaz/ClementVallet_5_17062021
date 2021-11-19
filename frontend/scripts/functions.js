@@ -1,16 +1,6 @@
 // --- Déclaration variables ---
 let cart = JSON.parse(localStorage.getItem("customCart")) || [];
 
-
-// --- Déclaration des classes ---
-class CustomProduct {
-    constructor(id, varnish, quantity) {
-        this.id = id;
-        this.varnish = varnish;
-        this.quantity = quantity;
-    }
-}
-
 // --- Déclaration des fonctions ---
 // Price formatting :
 function formatPrice(price) {
@@ -30,6 +20,19 @@ function alertDisplay(referentElementQS, className, textAlert) {
     alertNameElement.outerHTML += `
     <p class=${className}>${textAlert}</p>
 `;
+}
+
+// Fonction de vérification de l'ID d'un produit
+function verifyingIdProduct(idProduct) {
+    return fetch("http://localhost:3000/api/furniture/")
+        .then((res) => res.json())
+        .then((res) => {
+            let idProducts = [];
+            for (let i = 0; i < res.length; i++) {
+                idProducts.push(res[i]._id);
+            }
+            return idProducts.includes(idProduct);
+        })
 }
 
 
