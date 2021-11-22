@@ -50,16 +50,20 @@ function updateProductQuantity(event, idProduct, newProductQuantity) {
 // Fonction de suppression d'un article dans le panier client
 function removeProduct(indexProduct) {
     // S'assurer que l'index soit bien un nombre entier
-    if (parseInt(indexProduct, 10)) {
-    //Supression de l'article dans le panier et le localStorage ET réindexation du tableau
-    delete cart.splice(indexProduct, 1);
-    localStorage.setItem("customCart", JSON.stringify(cart));
-    // Refresh de la page pour actualiser le panier
-    location.reload();
+    if (isNaN(indexProduct)) {
+        // S'il n'y a pas de message d'alerte :
+        if (!cartSectionElement.contains(document.querySelector(".cart-section__alert"))) {
+            // Afficher une erreur dans la console + message d'erreur pour l'utilisateur
+            console.error("Une erreur s'est produite lors de la suppression du produit");
+            alertDisplay(".cart-section__remove-cart", "cart-section__alert", "Le produit n'a pas été supprimé du panier, veuillez réessayer s'il vous plait.");
+        } else location.reload()
     } else {
-        console.error("Une erreur s'est produite lors de la suppression du produit");
-        alertDisplay(".cart-section__remove-cart", "cart-section__alert", "Le produit n'a pas été supprimé du panier, veuillez réessayer s'il vous plait.");
-                }
+        //Supression de l'article dans le panier et le localStorage ET réindexation du tableau
+        delete cart.splice(indexProduct, 1);
+        localStorage.setItem("customCart", JSON.stringify(cart));
+        // Refresh de la page pour actualiser le panier
+        location.reload();
+    }
 }
 
 // Fonction de calcul du prix total d'un produit
