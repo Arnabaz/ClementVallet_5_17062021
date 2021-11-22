@@ -33,6 +33,7 @@ function verifyingIdProduct(idProduct) {
             }
             return idProducts.includes(idProduct);
         })
+        .catch((error) => {console.error("Un problème est survenu pendant l'appel à l'API lors de la vérification de l'ID produit", error)})
 }
 
 

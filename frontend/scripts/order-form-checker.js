@@ -6,7 +6,6 @@
 // --- Déclaration des variables ---
 const orderFormElement = document.querySelector(".form-section__form") // Variable pour viser le formulaire de commande
 
-
 const orderButtonElement = document.getElementById("order-button");
 const regexName = /^[a-zàâäéèêëîïöôüûù ,.'-]+$/i;
 const regexAddress = /^[a-zA-Z0-9\s,'-]*$/;
