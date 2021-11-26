@@ -65,26 +65,26 @@
         </form>
     </section>
     <section class="form-section">
-        <form class="form-section__form d-none" method="post" name="order-form" onsubmit="return false;">
+        <form class="form-section__form d-none" method="post" name="order-form">
             <p class="form-section__text">Afin de formaliser votre commande,<br/> merci de bien vouloir remplir le
                 formulaire ci-dessous</p>
             <h2 class="form-section__title">Formulaire de commande</h2>
             <label class="form-section__label form-section__label-1" for="first-name">Prénom</label>
-            <input class="form-section__input form-section__input-1" id="first-name" type="text" name="order-form" placeholder="ex: Jean"
+            <input class="form-section__input form-section__input-1" id="first-name" type="text" name="first-name" placeholder="ex: Jean"
                    autocomplete="off" required/>
             <label class="form-section__label form-section__label-2" for="last-name">Nom</label>
-            <input class="form-section__input form-section__input-2" id="last-name" type="text" name="order-form" placeholder="ex: Dupont"
+            <input class="form-section__input form-section__input-2" id="last-name" type="text" name="last-name" placeholder="ex: Dupont"
                    autocomplete="off" required/>
             <label class="form-section__label form-section__label-3" for="address">Adresse</label>
-            <input class="form-section__input form-section__input-3" id="address" type="text" name="order-form"
+            <input class="form-section__input form-section__input-3" id="address" type="text" name="address"
                    placeholder="ex: 1 rue des Champs-Elysées" autocomplete="off" required/>
             <label class="form-section__label form-section__label-4" for="city">Ville</label>
-            <input class="form-section__input form-section__input-4" id="city" type="text" name="order-form" placeholder="ex: Paris"
+            <input class="form-section__input form-section__input-4" id="city" type="text" name="city" placeholder="ex: Paris"
                    autocomplete="off" required/>
             <label class="form-section__label form-section__label-5" for="email-order">Email</label>
-            <input class="form-section__input form-section__input-5" id="email-order" type="email" name="order-form"
+            <input class="form-section__input form-section__input-5" id="email-order" type="email" name="email"
                    placeholder="ex: jean-dupont@mail.fr" required/>
-            <input class="form-section__input form-section__input-6" id="cgv-agreement" type="checkbox" value="" required/>
+            <input class="form-section__input form-section__input-6" id="cgv-agreement" type="checkbox" value="" name="checkbox" required/>
             <label class="form-section__label form-section__label-6" for="cgv-agreement" id="cgv-label">Accepter les
                 <a class="form-section__cgv-link" target="_blank" href="./cgv.html">CGV</a>
             </label>

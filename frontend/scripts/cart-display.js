@@ -130,7 +130,7 @@ async function cartDisplaying() { // Pas une vraie fonction mais utile pour fair
     totalPriceElement.innerText = formatPrice(totalPriceCart) + "€";
 
     // 3. Affichage du lien pour supprimer le panier client
-    cartSectionHeaderElement.outerHTML +=`
+    cartSectionHeaderElement.outerHTML += `
     <p class="cart-section__remove-cart">Vider le panier</p>
     `
 }

@@ -705,4 +705,8 @@ ul.circle-type {
   color: #24303D;
 }
 
+.red-border {
+  border: solid 2px red;
+}
+
 /*# sourceMappingURL=cart.css.map */
