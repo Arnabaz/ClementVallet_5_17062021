@@ -5,8 +5,8 @@
 
 // --- Déclaration des variables ---
 const orderFormElement = document.querySelector(".form-section__form") // Variable pour viser le formulaire de commande
-
 const orderButtonElement = document.getElementById("order-button");
+
 const regexName = /^[a-zàâäéèêëîïöôüûù ,.'-]+$/i;
 const regexAddress = /^[a-zA-Z0-9\s,'-]*$/;
 const regexCity = /([A-Za-z])\w+/;
@@ -16,6 +16,7 @@ const checkBox = document.getElementById("cgv-agreement");
 // Validation du formulaire de commande
 orderButtonElement.addEventListener("click", (event) => {
     event.preventDefault();
+
     // Création de l'objet contact qui stockera les données entrées par le client
     let contact = {
         firstName: document.getElementById("first-name").value,
@@ -25,14 +26,13 @@ orderButtonElement.addEventListener("click", (event) => {
         email: document.getElementById("email-order").value,
     };
     // Vérification des données entrées par le client
-    if (
-        (regexName.test(contact.firstName) === true) &&
+    if ((regexName.test(contact.firstName) === true) &&
         (regexName.test(contact.lastName) === true) &&
         (regexAddress.test(contact.address) === true) &&
         (regexCity.test(contact.city) === true) &&
         (regexEmail.test(contact.email) === true) &&
-        (checkBox.checked === true)
-    ) {
+        (checkBox.checked === true)) {
+
         // Si tout est OK, on pousse les id des produits vers l'array products avant envoi à l'API
         let products = [];
         for (let i = 0; i < cart.length; i++) {
@@ -40,7 +40,7 @@ orderButtonElement.addEventListener("click", (event) => {
         }
 
         // Envoi des données à l'API avec post
-        fetch("http://localhost:3000/api/furniture//order", {
+        fetch("http://localhost:3000/api/furniture/order", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -53,12 +53,10 @@ orderButtonElement.addEventListener("click", (event) => {
                 localStorage.setItem("totalPrice", JSON.stringify(totalPriceCart));
                 document.location.href = "order.html";
             })
-            .catch((error) => console.log("error : " + error));
+            .catch((error) => console.log("error: ", error))
     } else {
-        if (document.querySelector(".form-section__form").contains(document.querySelector(".form-section__alert")) === false) {
-            alertDisplay(".form-section__button", "form-section__alert", "Afin de valider votre commande, merci de correctement renseigner l'entièreté du formulaire.");
-        } else {
-            document.querySelector(".form-section__form").removeChild(document.querySelector(".form-section__alert"));
+        if (!orderFormElement.contains(document.querySelector(".form-section__alert"))) {
+            alert("Afin de valider votre commande, merci de correctement renseigner l'entièreté du formulaire.")
         }
     }
 })

@@ -65,7 +65,7 @@
         </form>
     </section>
     <section class="form-section">
-        <form class="form-section__form d-none" method="post" name="order-form">
+        <form class="form-section__form d-none" method="post" name="order-form" onsubmit="return false;">
             <p class="form-section__text">Afin de formaliser votre commande,<br/> merci de bien vouloir remplir le
                 formulaire ci-dessous</p>
             <h2 class="form-section__title">Formulaire de commande</h2>
@@ -83,7 +83,7 @@
                    autocomplete="off" required/>
             <label class="form-section__label form-section__label-5" for="email-order">Email</label>
             <input class="form-section__input form-section__input-5" id="email-order" type="email" name="order-form"
-                   placeholder="ex: jean-dupont@mail.fr"/>
+                   placeholder="ex: jean-dupont@mail.fr" required/>
             <input class="form-section__input form-section__input-6" id="cgv-agreement" type="checkbox" value="" required/>
             <label class="form-section__label form-section__label-6" for="cgv-agreement" id="cgv-label">Accepter les
                 <a class="form-section__cgv-link" target="_blank" href="./cgv.html">CGV</a>
