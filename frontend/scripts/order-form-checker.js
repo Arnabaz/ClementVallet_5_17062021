@@ -94,13 +94,13 @@ orderButtonElement.addEventListener("click", (event) => {
             let referentElement = document.querySelector(".form-section__button");
             let parentElement = document.querySelector(".form-section__form");
             let elementNameVariable = document.createElement("p");
-                elementNameVariable.classList.add("form-section__alert");
+            elementNameVariable.classList.add("form-section__alert");
             textAlertContent = document.createTextNode("Afin de valider votre commande, merci de correctement renseigner l'entièreté du formulaire.");
             elementNameVariable.appendChild(textAlertContent);
             parentElement.insertBefore(elementNameVariable, referentElement);
-    } else {
-        document.querySelector(".form-section__form").removeChild(document.querySelector(".form-section__alert"));
-    }
+        } else {
+            document.querySelector(".form-section__form").removeChild(document.querySelector(".form-section__alert"));
+        }
     }
 
 })

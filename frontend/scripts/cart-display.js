@@ -207,6 +207,3 @@ cartValidatorElement.addEventListener("click", (e) => {
     orderFormElement.classList.remove("d-none");
     cartValidatorElement.classList.replace("cart-section__button", "cart-section__inactivated-button")
 })
-
-
-

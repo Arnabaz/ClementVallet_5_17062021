@@ -48,5 +48,3 @@ fetch("http://localhost:3000/api/furniture/")
     })
     // Rejet de la promesse et renvoi de l'erreur vers la console
     .catch((error) => console.error(error));
-
-

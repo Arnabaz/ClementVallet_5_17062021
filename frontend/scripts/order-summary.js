@@ -4,16 +4,16 @@ const orderData = JSON.parse(localStorage.getItem("order"));
 const totalPriceOrder = JSON.parse(localStorage.getItem("totalPrice"));
 
 // Affichage du récapitulatif de la commande
-    if (orderData == null) {
-        // Ajouter du texte au loading-spinner
-        document.querySelector(".loading-spinner").innerHTML += `
+if (orderData == null) {
+    // Ajouter du texte au loading-spinner
+    document.querySelector(".loading-spinner").innerHTML += `
         <span class="loading-spinner-text">Redirection vers la page d'accueil</span>
         `;
-        // Rediriger l'utilisateur vers la page d'accueil
-        document.location.href = "./index.html";
-    } else {
-        // Afficher les informations de la commande client
-        document.querySelector("main").innerHTML += `    
+    // Rediriger l'utilisateur vers la page d'accueil
+    document.location.href = "./index.html";
+} else {
+    // Afficher les informations de la commande client
+    document.querySelector("main").innerHTML += `    
     <section class="order-section">
         <header>
             <h2 class="order-section__title section-title">Récapitulatif de votre commande</h2>
@@ -35,6 +35,6 @@ const totalPriceOrder = JSON.parse(localStorage.getItem("totalPrice"));
         </article>
         <a class="order-section__return-button" href="./index.html">Retour à l'accueil</a>
     </section>`;
-        // Vider le panier et le localStorage
-        localStorage.clear();
-    }
+    // Vider le panier et le localStorage
+    localStorage.clear();
+}
