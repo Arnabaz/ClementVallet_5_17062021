@@ -12,7 +12,7 @@ const regexAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
 const regexCity = /([A-Za-z])\w+/;
 const regexEmail = /^\S+@\S+\.\S+$/;
 const checkBox = document.getElementById("cgv-agreement");
-console.log(document.getElementById("order-button"))
+
 // Validation du formulaire de commande
 orderButtonElement.addEventListener("click", (event) => {
     event.preventDefault();
@@ -87,7 +87,7 @@ orderButtonElement.addEventListener("click", (event) => {
                 localStorage.setItem("totalPrice", JSON.stringify(totalPriceCart));
                 document.location.href = "order.html";
             })
-            .catch((error) => console.log("error: ", error))
+            .catch((error) => console.error("error: ", error))
     } else {
         if (document.querySelector(".form-section__form").contains(document.querySelector(".form-section__alert")) === false) {
             let textAlertContent;
