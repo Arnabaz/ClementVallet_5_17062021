@@ -580,6 +580,17 @@ ul.circle-type {
     margin: 0 50px;
   }
 }
+.form-section[data-error]::after {
+  display: block;
+  content: attr(data-error);
+  color: red;
+  text-align: center;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 10px;
+}
 .form-section__form {
   display: grid;
   justify-items: center;
@@ -606,6 +617,16 @@ ul.circle-type {
   font-weight: 500;
   line-height: 25px;
   padding: 20px 0 5px 0;
+  text-align: center;
+}
+.form-section__label[data-error]::after {
+  display: block;
+  content: attr(data-error);
+  color: red;
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 20px;
 }
 .form-section__label-1 {
   grid-area: 3/1/4/3;

@@ -25,45 +25,77 @@ orderButtonElement.addEventListener("click", (event) => {
         city: document.getElementById("city").value,
         email: document.getElementById("email-order").value,
     };
-    // Initialisation de la variable "eror" pour le comptage du nombre d'erreur
+    // Initialisation de la variable "error" pour le comptage du nombre d'erreur
     let error = 0;
     // Comptage du nombre d'erreurs dans le formulaire de commande
+    // Prénom
     if (!regexName.test(contact.firstName)) {
         error++;
         document.querySelector(".form-section__input-1").classList.add("red-border");
+        document.querySelector(".form-section__label-1").setAttribute("data-error", "Votre prénom ne doit contenir que des lettres");
+        if (document.getElementById("first-name").value === "") {
+            document.querySelector(".form-section__label-1").setAttribute("data-error", "Veuillez remplir la case 'Prénom'");
+        }
     } else if (document.querySelector(".form-section__input-1").classList.contains("red-border")) {
         document.querySelector(".form-section__input-1").classList.remove("red-border");
+        document.querySelector(".form-section__label-1").setAttribute("data-error", "");
     }
+    // Nom
     if (!regexName.test(contact.lastName)) {
         error++;
         document.querySelector(".form-section__input-2").classList.add("red-border");
+        document.querySelector(".form-section__label-2").setAttribute("data-error", "Votre nom ne doit contenir que des lettres");
+        document.querySelector(".form-section__input-2").setAttribute("data-error", "Test");
+        if (document.getElementById("last-name").value === "") {
+            document.querySelector(".form-section__label-2").setAttribute("data-error", "Veuillez remplir la case 'Nom'");
+        }
     } else if (document.querySelector(".form-section__input-2").classList.contains("red-border")) {
         document.querySelector(".form-section__input-2").classList.remove("red-border");
+        document.querySelector(".form-section__label-2").setAttribute("data-error", "");
+        document.querySelector(".form-section__label-2").setAttribute("data-error", "");
     }
+    // Adresse
     if (!regexAddress.test(contact.address)) {
         error++;
         document.querySelector(".form-section__input-3").classList.add("red-border");
+        document.querySelector(".form-section__label-3").setAttribute("data-error", "Votre adresse n'est pas valable. Elle ne doit contenir que des lettres, des chiffres et le caractère '-'");
+        if (document.getElementById("address").value === "") {
+            document.querySelector(".form-section__label-3").setAttribute("data-error", "Veuillez remplir la case 'Adresse'");
+        }
     } else if (document.querySelector(".form-section__input-3").classList.contains("red-border")) {
         document.querySelector(".form-section__input-3").classList.remove("red-border");
+        document.querySelector(".form-section__label-3").setAttribute("data-error", "");
     }
+    // Ville
     if (!regexCity.test(contact.city)) {
         error++;
         document.querySelector(".form-section__input-4").classList.add("red-border");
+        document.querySelector(".form-section__label-4").setAttribute("data-error", "Votre ville ne doit contenir que des lettres");
+        if (document.getElementById("city").value === "") {
+            document.querySelector(".form-section__label-4").setAttribute("data-error", "Veuillez remplir la case 'Ville'");
+        }
     } else if (document.querySelector(".form-section__input-4").classList.contains("red-border")) {
         document.querySelector(".form-section__input-4").classList.remove("red-border");
+        document.querySelector(".form-section__label-4").setAttribute("data-error", "");
     }
+    // Email
     if (!regexEmail.test(contact.email)) {
         error++;
         document.querySelector(".form-section__input-5").classList.add("red-border");
+        document.querySelector(".form-section__label-5").setAttribute("data-error", "Votre email n'est pas valide.");
+        if (document.getElementById("email-order").value === "") {
+            document.querySelector(".form-section__label-5").setAttribute("data-error", "Veuillez remplir la case 'Email'");
+        }
     } else if (document.querySelector(".form-section__input-5").classList.contains("red-border")) {
         document.querySelector(".form-section__input-5").classList.remove("red-border");
+        document.querySelector(".form-section__label-5").setAttribute("data-error", "");
     }
+    // CGV
     if (!checkBox.checked) {
         error++;
-        document.querySelector(".form-section__label-6").classList.add("red-border");
-    } else if (document.querySelector(".form-section__label-6").classList.contains("red-border")) {
-        document.querySelector(".form-section__label-6").classList.remove("red-border");
-    }
+        document.querySelector(".form-section").setAttribute("data-error", "Pour pouvoir valider le formulaire de commande, veuillez accepter les conditions générales de vente en cochant la case prévue à cet effet.");
+    } else document.querySelector(".form-section").setAttribute("data-error", "");
+
 
     // Vérification des données entrées par le client
     if (error === 0) {
@@ -88,19 +120,5 @@ orderButtonElement.addEventListener("click", (event) => {
                 document.location.href = "order.html";
             })
             .catch((error) => console.error("error: ", error))
-    } else {
-        if (document.querySelector(".form-section__form").contains(document.querySelector(".form-section__alert")) === false) {
-            let textAlertContent;
-            let referentElement = document.querySelector(".form-section__button");
-            let parentElement = document.querySelector(".form-section__form");
-            let elementNameVariable = document.createElement("p");
-            elementNameVariable.classList.add("form-section__alert");
-            textAlertContent = document.createTextNode("Afin de valider votre commande, merci de correctement renseigner l'entièreté du formulaire.");
-            elementNameVariable.appendChild(textAlertContent);
-            parentElement.insertBefore(elementNameVariable, referentElement);
-        } else {
-            document.querySelector(".form-section__form").removeChild(document.querySelector(".form-section__alert"));
-        }
     }
-
 })
